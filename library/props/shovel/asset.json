@@ -1,0 +1,89 @@
+{
+ "id": "shovel",
+ "type": "props",
+ "name": "Shovel",
+ "tags": [
+  "tool",
+  "dig",
+  "entrenching",
+  "army",
+  "trench",
+  "ww1",
+  "ww2"
+ ],
+ "doc": "a long-handled shovel for digging trenches and gun pits (held in both hands; drawn around the hand)",
+ "size": 1.0,
+ "anchors": {
+  "grip": [
+   0,
+   0
+  ]
+ },
+ "parts": [
+  {
+   "line": [
+    [
+     0,
+     -160
+    ],
+    [
+     0,
+     150
+    ]
+   ],
+   "width": 10,
+   "stroke": "#7a5232"
+  },
+  {
+   "line": [
+    [
+     -24,
+     -162
+    ],
+    [
+     24,
+     -162
+    ]
+   ],
+   "width": 10,
+   "stroke": "#5a3e2a"
+  },
+  {
+   "rect": [
+    -10,
+    134,
+    20,
+    24
+   ],
+   "r": 3,
+   "fill": "#6a6e74"
+  },
+  {
+   "path": "M-34 152 L34 152 L30 214 Q0 238 -30 214 Z",
+   "fill": "#8a8f96"
+  },
+  {
+   "line": [
+    [
+     -22,
+     168
+    ],
+    [
+     -18,
+     206
+    ]
+   ],
+   "width": 3,
+   "stroke": "#b8bcc2",
+   "opacity": 0.8
+  }
+ ],
+ "source": {
+  "kind": "code"
+ },
+ "project": "_libtest",
+ "status": "approved",
+ "created": "2026-11-27",
+ "h": 400,
+ "promoted": "2026-11-27"
+}

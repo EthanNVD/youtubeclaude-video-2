@@ -54,20 +54,24 @@ def _near(word, options, n=3):
     return difflib.get_close_matches(str(word), list(options), n=n, cutoff=0.5)
 
 
-LIBRARY = TOOLS.parent / "assets" / "library" / "drawings"
+from . import library as LIBMOD  # noqa: E402
 
 
 def library():
-    """the shared drawing library: assets/library/drawings/<name>.json (grows with every film)"""
+    """the living library's drawable assets (library/<props|vehicles|buildings|plants>/<id>/asset.json)"""
     if "library" not in _VOCAB:
-        import json
-        _VOCAB["library"] = {f.stem: json.loads(f.read_text(encoding="utf-8")) for f in sorted(LIBRARY.glob("*.json"))} if LIBRARY.exists() else {}
+        _VOCAB["library"] = LIBMOD.drawables()
     return _VOCAB["library"]
 
 
 def drawings(film):
-    """declarative drawings this film can use: the library + cards/_film.json "drawings" (the film wins)"""
-    return {**library(), **(film.get("drawings") or {})}
+    """everything this film can place or hold: the library + the project's own assets (projects/<slug>/assets/) +
+    cards/_film.json "drawings" (the most local wins)"""
+    key = "drawings:" + str(film.get("_proj"))
+    if key not in _VOCAB:
+        proj = Path(film["_proj"]) if film.get("_proj") else None
+        _VOCAB[key] = LIBMOD.drawables(project=proj)
+    return {**_VOCAB[key], **(film.get("drawings") or {})}
 
 
 def _thing_ok(c, what):
@@ -80,7 +84,7 @@ def _hold_kv(c, item):
         return {"holds": "", "holdsDrawing": None, "holdsGrip": None}
     dw = drawings(c.film).get(item)
     if dw:
-        return {"holds": item, "holdsDrawing": dw["parts"], "holdsGrip": dw.get("grip")}
+        return {"holds": item, "holdsDrawing": dw["parts"], "holdsGrip": dw.get("grip") or (dw.get("anchors") or {}).get("grip")}
     if item not in vocab()["props"]:
         near = _near(item, list(vocab()["props"]) + list(drawings(c.film)))
         _warn(c, f"held thing \"{item}\" is neither an engine prop nor a drawing (shown as paper). Did you mean {near}? "
@@ -781,8 +785,9 @@ def _things(c, actors, world, drops=(), indoor=False):
             a.holds = what
             if dw:
                 a.extra["holdsDrawing"] = dw["parts"]
-                if dw.get("grip"):
-                    a.extra["holdsGrip"] = dw["grip"]
+                g = dw.get("grip") or (dw.get("anchors") or {}).get("grip")
+                if g:
+                    a.extra["holdsGrip"] = g
             if th.get("text"):
                 a.extra["holdsText"] = th["text"]
             continue

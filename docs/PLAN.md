@@ -43,12 +43,12 @@ Coordinates are those of the engine's Drawing parts: (0,0) = where the thing sta
 - [x] docs/BRIEF.md + docs/PLAN.md committed
 
 ### Phase 1 — library foundation
-- [ ] `library/` tree + `library/README.md` (how it works, for weak models)
-- [ ] Engine Drawing: `group` parts with motion (spin / sway / bob around a pivot), so wheels and crowns move
-- [ ] Compiler: a library asset is usable everywhere a thing is (`things`, `holds`, `vehicles` that move, rows/groves), with its anchors (ground, grip, top, seat)
-- [ ] `tools/lib.py`: `index`, `search`, `new`, `preview`, `check`, `promote`, `match` (+ make.py steps `lib`)
+- [x] `library/` tree + `library/README.md` (how it works, for weak models)
+- [x] Engine Drawing: `group` parts with motion (spin / sway / bob around a pivot), so wheels and crowns move
+- [x] Compiler: a library asset is usable everywhere a thing is (`things`, `holds`, `vehicles` that move, rows/groves), with its anchors (ground, grip, top, seat)
+- [x] `tools/lib.py`: `index`, `search`, `new`, `preview`, `check`, `promote`, `match` (+ make.py steps `lib`)
 - [ ] Builtin index: every engine prop, vehicle, preset, set, room/town style, act → index.json + INDEX.md with previews
-- [ ] Move `assets/library/drawings/*` into `library/props|vehicles/…` with asset.json
+- [x] Move `assets/library/drawings/*` into `library/props|vehicles/…` with asset.json
 
 ### Phase 2 — image → vector
 - [ ] `lib import <image>`: remove the plain background, quantise colours (≤ 12), trace regions (OpenCV contours with holes), simplify, darkest colour → INK, optional palette snap, find the ground point and size, write parts + art.svg
@@ -80,4 +80,4 @@ Coordinates are those of the engine's Drawing parts: (0,0) = where the thing sta
 - [ ] Create GitHub repo youtubeclaude-video-2 (private), push
 
 ## Progress log
-- 2026-11-27: brief approved; Phase 0 started.
+- 2026-11-27: brief approved; Phase 0 done. Phase 1: library loader, Drawing groups, lib.py (index/search/new/check/preview/promote/match) working; shovel made by code and promoted as the first test. Open: library/README.md text, builtin previews, moving library vehicles in scene cards.

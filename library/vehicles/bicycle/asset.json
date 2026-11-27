@@ -1,0 +1,151 @@
+{
+ "id": "bicycle",
+ "type": "vehicles",
+ "name": "Bicycle",
+ "tags": [
+  "bicycle",
+  "bike",
+  "cycle",
+  "messenger",
+  "village",
+  "civilian"
+ ],
+ "doc": "a bicycle standing on its stand (messengers, a soldier's or a nurse's bike, a village policeman)",
+ "size": 1.0,
+ "h": 150,
+ "anchors": {
+  "ground": [
+   0,
+   0
+  ]
+ },
+ "parts": [
+  {
+   "circle": [
+    -70,
+    -50,
+    48
+   ],
+   "fill": "none",
+   "stroke": "#2a2a2a",
+   "width": 8
+  },
+  {
+   "circle": [
+    76,
+    -50,
+    48
+   ],
+   "fill": "none",
+   "stroke": "#2a2a2a",
+   "width": 8
+  },
+  {
+   "line": [
+    [
+     -70,
+     -50
+    ],
+    [
+     -10,
+     -50
+    ],
+    [
+     40,
+     -118
+    ],
+    [
+     -34,
+     -118
+    ],
+    [
+     -70,
+     -50
+    ]
+   ],
+   "stroke": "#7a2a2a",
+   "width": 8
+  },
+  {
+   "line": [
+    [
+     -10,
+     -50
+    ],
+    [
+     -40,
+     -126
+    ]
+   ],
+   "stroke": "#7a2a2a",
+   "width": 8
+  },
+  {
+   "line": [
+    [
+     40,
+     -118
+    ],
+    [
+     76,
+     -50
+    ]
+   ],
+   "stroke": "#7a2a2a",
+   "width": 8
+  },
+  {
+   "line": [
+    [
+     30,
+     -140
+    ],
+    [
+     44,
+     -118
+    ]
+   ],
+   "stroke": "#2a2a2a",
+   "width": 7
+  },
+  {
+   "line": [
+    [
+     18,
+     -146
+    ],
+    [
+     48,
+     -140
+    ]
+   ],
+   "stroke": "#2a2a2a",
+   "width": 7
+  },
+  {
+   "rect": [
+    -62,
+    -136,
+    44,
+    12
+   ],
+   "r": 6,
+   "fill": "#3a2a1a",
+   "width": 3
+  },
+  {
+   "circle": [
+    -10,
+    -50,
+    9
+   ],
+   "fill": "#2a2a2a"
+  }
+ ],
+ "source": {
+  "kind": "code"
+ },
+ "project": "creative-blockade",
+ "status": "approved",
+ "created": "2026-11-21"
+}

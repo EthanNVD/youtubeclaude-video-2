@@ -1,0 +1,6149 @@
+[
+ {
+  "id": "bicycle",
+  "type": "vehicles",
+  "source": "library",
+  "name": "Bicycle",
+  "tags": [
+   "bicycle",
+   "bike",
+   "cycle",
+   "messenger",
+   "village",
+   "civilian"
+  ],
+  "doc": "a bicycle standing on its stand (messengers, a soldier's or a nurse's bike, a village policeman)",
+  "preview": null,
+  "path": "library/vehicles/bicycle",
+  "status": "approved",
+  "project": "creative-blockade"
+ },
+ {
+  "id": "field_kitchen",
+  "type": "vehicles",
+  "source": "library",
+  "name": "Army field kitchen",
+  "tags": [
+   "ww1",
+   "ww2",
+   "army",
+   "kitchen",
+   "wagon",
+   "soup",
+   "cook"
+  ],
+  "doc": "army field kitchen (a two-wheeled wagon with a soup kettle and a smoking chimney): soup queues, cooks at the front, soup kitchens at home",
+  "preview": null,
+  "path": "library/vehicles/field_kitchen",
+  "status": "approved",
+  "project": "creative-blockade"
+ },
+ {
+  "id": "notice_board",
+  "type": "props",
+  "source": "library",
+  "name": "Notice board",
+  "tags": [
+   "notice",
+   "board",
+   "poster",
+   "town",
+   "ration",
+   "announcement"
+  ],
+  "doc": "a notice board on two legs with pinned notices (ration announcements, call-up orders, casualty lists) — set \"text\" on the card's paper_note for the exact words",
+  "preview": null,
+  "path": "library/props/notice_board",
+  "status": "approved",
+  "project": "creative-blockade"
+ },
+ {
+  "id": "shovel",
+  "type": "props",
+  "source": "library",
+  "name": "Shovel",
+  "tags": [
+   "tool",
+   "dig",
+   "entrenching",
+   "army",
+   "trench",
+   "ww1",
+   "ww2"
+  ],
+  "doc": "a long-handled shovel for digging trenches and gun pits (held in both hands; drawn around the hand)",
+  "preview": "library/props/shovel/preview.jpg",
+  "path": "library/props/shovel",
+  "status": "approved",
+  "project": "_libtest"
+ },
+ {
+  "id": "zeppelin",
+  "type": "vehicles",
+  "source": "library",
+  "name": "Airship (Zeppelin)",
+  "tags": [
+   "ww1",
+   "airship",
+   "zeppelin",
+   "sky",
+   "germany",
+   "bombing"
+  ],
+  "doc": "WW1 airship (Zeppelin) — a thing in the sky: place it with \"y\" (screen y, e.g. 260) and \"scale\" (0.5-1.2); \"to\" makes it drift across",
+  "preview": null,
+  "path": "library/vehicles/zeppelin",
+  "status": "approved",
+  "project": "creative-blockade"
+ },
+ {
+  "id": "baby",
+  "type": "props",
+  "source": "builtin",
+  "name": "baby",
+  "tags": [
+   "baby"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"baby\"} in things, or \"holds\": \"baby\""
+ },
+ {
+  "id": "bale",
+  "type": "props",
+  "source": "builtin",
+  "name": "bale",
+  "tags": [
+   "bale"
+  ],
+  "doc": "bound bale (text: COTTON, WOOL…)",
+  "preview": null,
+  "how": "{\"what\": \"bale\"} in things, or \"holds\": \"bale\""
+ },
+ {
+  "id": "barrel",
+  "type": "props",
+  "source": "builtin",
+  "name": "barrel",
+  "tags": [
+   "barrel"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"barrel\"} in things, or \"holds\": \"barrel\""
+ },
+ {
+  "id": "basket",
+  "type": "props",
+  "source": "builtin",
+  "name": "basket",
+  "tags": [
+   "basket"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"basket\"} in things, or \"holds\": \"basket\""
+ },
+ {
+  "id": "bench",
+  "type": "props",
+  "source": "builtin",
+  "name": "bench",
+  "tags": [
+   "bench"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"bench\"} in things, or \"holds\": \"bench\""
+ },
+ {
+  "id": "binoculars",
+  "type": "props",
+  "source": "builtin",
+  "name": "binoculars",
+  "tags": [
+   "binoculars"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"binoculars\"} in things, or \"holds\": \"binoculars\""
+ },
+ {
+  "id": "bomb",
+  "type": "props",
+  "source": "builtin",
+  "name": "bomb",
+  "tags": [
+   "bomb"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"bomb\"} in things, or \"holds\": \"bomb\""
+ },
+ {
+  "id": "book",
+  "type": "props",
+  "source": "builtin",
+  "name": "book",
+  "tags": [
+   "book"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"book\"} in things, or \"holds\": \"book\""
+ },
+ {
+  "id": "bottle",
+  "type": "props",
+  "source": "builtin",
+  "name": "bottle",
+  "tags": [
+   "bottle"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"bottle\"} in things, or \"holds\": \"bottle\""
+ },
+ {
+  "id": "bowl",
+  "type": "props",
+  "source": "builtin",
+  "name": "bowl",
+  "tags": [
+   "bowl"
+  ],
+  "doc": "bowl (on: true = steaming, n: 0 = empty)",
+  "preview": null,
+  "how": "{\"what\": \"bowl\"} in things, or \"holds\": \"bowl\""
+ },
+ {
+  "id": "bread",
+  "type": "props",
+  "source": "builtin",
+  "name": "bread",
+  "tags": [
+   "bread"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"bread\"} in things, or \"holds\": \"bread\""
+ },
+ {
+  "id": "bucket",
+  "type": "props",
+  "source": "builtin",
+  "name": "bucket",
+  "tags": [
+   "bucket"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"bucket\"} in things, or \"holds\": \"bucket\""
+ },
+ {
+  "id": "candle",
+  "type": "props",
+  "source": "builtin",
+  "name": "candle",
+  "tags": [
+   "candle"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"candle\"} in things, or \"holds\": \"candle\""
+ },
+ {
+  "id": "card",
+  "type": "props",
+  "source": "builtin",
+  "name": "card",
+  "tags": [
+   "card"
+  ],
+  "doc": "ration card (text: BROTKARTE…)",
+  "preview": null,
+  "how": "{\"what\": \"card\"} in things, or \"holds\": \"card\""
+ },
+ {
+  "id": "cards",
+  "type": "props",
+  "source": "builtin",
+  "name": "cards",
+  "tags": [
+   "cards"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"cards\"} in things, or \"holds\": \"cards\""
+ },
+ {
+  "id": "cart",
+  "type": "props",
+  "source": "builtin",
+  "name": "cart",
+  "tags": [
+   "cart"
+  ],
+  "doc": "hand cart (n: 1 = loaded with sacks)",
+  "preview": null,
+  "how": "{\"what\": \"cart\"} in things, or \"holds\": \"cart\""
+ },
+ {
+  "id": "chair",
+  "type": "props",
+  "source": "builtin",
+  "name": "chair",
+  "tags": [
+   "chair"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"chair\"} in things, or \"holds\": \"chair\""
+ },
+ {
+  "id": "cigar",
+  "type": "props",
+  "source": "builtin",
+  "name": "cigar",
+  "tags": [
+   "cigar"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"cigar\"} in things, or \"holds\": \"cigar\""
+ },
+ {
+  "id": "clock",
+  "type": "props",
+  "source": "builtin",
+  "name": "clock",
+  "tags": [
+   "clock"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"clock\"} in things, or \"holds\": \"clock\""
+ },
+ {
+  "id": "coins",
+  "type": "props",
+  "source": "builtin",
+  "name": "coins",
+  "tags": [
+   "coins"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"coins\"} in things, or \"holds\": \"coins\""
+ },
+ {
+  "id": "counter",
+  "type": "props",
+  "source": "builtin",
+  "name": "counter",
+  "tags": [
+   "counter"
+  ],
+  "doc": "shop counter (shopkeeper behind, customers in front)",
+  "preview": null,
+  "how": "{\"what\": \"counter\"} in things, or \"holds\": \"counter\""
+ },
+ {
+  "id": "crate",
+  "type": "props",
+  "source": "builtin",
+  "name": "crate",
+  "tags": [
+   "crate"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"crate\"} in things, or \"holds\": \"crate\""
+ },
+ {
+  "id": "cross",
+  "type": "props",
+  "source": "builtin",
+  "name": "cross",
+  "tags": [
+   "cross"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"cross\"} in things, or \"holds\": \"cross\""
+ },
+ {
+  "id": "cup",
+  "type": "props",
+  "source": "builtin",
+  "name": "cup",
+  "tags": [
+   "cup"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"cup\"} in things, or \"holds\": \"cup\""
+ },
+ {
+  "id": "exit",
+  "type": "props",
+  "source": "builtin",
+  "name": "exit",
+  "tags": [
+   "exit"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"exit\"} in things, or \"holds\": \"exit\""
+ },
+ {
+  "id": "factory",
+  "type": "props",
+  "source": "builtin",
+  "name": "factory",
+  "tags": [
+   "factory"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"factory\"} in things, or \"holds\": \"factory\""
+ },
+ {
+  "id": "flag",
+  "type": "props",
+  "source": "builtin",
+  "name": "flag",
+  "tags": [
+   "flag"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"flag\"} in things, or \"holds\": \"flag\""
+ },
+ {
+  "id": "folder",
+  "type": "props",
+  "source": "builtin",
+  "name": "folder",
+  "tags": [
+   "folder"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"folder\"} in things, or \"holds\": \"folder\""
+ },
+ {
+  "id": "globe",
+  "type": "props",
+  "source": "builtin",
+  "name": "globe",
+  "tags": [
+   "globe"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"globe\"} in things, or \"holds\": \"globe\""
+ },
+ {
+  "id": "grave",
+  "type": "props",
+  "source": "builtin",
+  "name": "grave",
+  "tags": [
+   "grave"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"grave\"} in things, or \"holds\": \"grave\""
+ },
+ {
+  "id": "helmet",
+  "type": "props",
+  "source": "builtin",
+  "name": "helmet",
+  "tags": [
+   "helmet"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"helmet\"} in things, or \"holds\": \"helmet\""
+ },
+ {
+  "id": "hourglass",
+  "type": "props",
+  "source": "builtin",
+  "name": "hourglass",
+  "tags": [
+   "hourglass"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"hourglass\"} in things, or \"holds\": \"hourglass\""
+ },
+ {
+  "id": "ingots",
+  "type": "props",
+  "source": "builtin",
+  "name": "ingots",
+  "tags": [
+   "ingots"
+  ],
+  "doc": "copper / metal bars",
+  "preview": null,
+  "how": "{\"what\": \"ingots\"} in things, or \"holds\": \"ingots\""
+ },
+ {
+  "id": "jug",
+  "type": "props",
+  "source": "builtin",
+  "name": "jug",
+  "tags": [
+   "jug"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"jug\"} in things, or \"holds\": \"jug\""
+ },
+ {
+  "id": "knife",
+  "type": "props",
+  "source": "builtin",
+  "name": "knife",
+  "tags": [
+   "knife"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"knife\"} in things, or \"holds\": \"knife\""
+ },
+ {
+  "id": "lantern",
+  "type": "props",
+  "source": "builtin",
+  "name": "lantern",
+  "tags": [
+   "lantern"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"lantern\"} in things, or \"holds\": \"lantern\""
+ },
+ {
+  "id": "ledger",
+  "type": "props",
+  "source": "builtin",
+  "name": "ledger",
+  "tags": [
+   "ledger"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"ledger\"} in things, or \"holds\": \"ledger\""
+ },
+ {
+  "id": "letter",
+  "type": "props",
+  "source": "builtin",
+  "name": "letter",
+  "tags": [
+   "letter"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"letter\"} in things, or \"holds\": \"letter\""
+ },
+ {
+  "id": "magnifier",
+  "type": "props",
+  "source": "builtin",
+  "name": "magnifier",
+  "tags": [
+   "magnifier"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"magnifier\"} in things, or \"holds\": \"magnifier\""
+ },
+ {
+  "id": "medal",
+  "type": "props",
+  "source": "builtin",
+  "name": "medal",
+  "tags": [
+   "medal"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"medal\"} in things, or \"holds\": \"medal\""
+ },
+ {
+  "id": "microphone",
+  "type": "props",
+  "source": "builtin",
+  "name": "microphone",
+  "tags": [
+   "microphone"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"microphone\"} in things, or \"holds\": \"microphone\""
+ },
+ {
+  "id": "oil",
+  "type": "props",
+  "source": "builtin",
+  "name": "oil",
+  "tags": [
+   "oil"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"oil\"} in things, or \"holds\": \"oil\""
+ },
+ {
+  "id": "paper",
+  "type": "props",
+  "source": "builtin",
+  "name": "paper",
+  "tags": [
+   "paper"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"paper\"} in things, or \"holds\": \"paper\""
+ },
+ {
+  "id": "pen",
+  "type": "props",
+  "source": "builtin",
+  "name": "pen",
+  "tags": [
+   "pen"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"pen\"} in things, or \"holds\": \"pen\""
+ },
+ {
+  "id": "phone",
+  "type": "props",
+  "source": "builtin",
+  "name": "phone",
+  "tags": [
+   "phone"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"phone\"} in things, or \"holds\": \"phone\""
+ },
+ {
+  "id": "photo",
+  "type": "props",
+  "source": "builtin",
+  "name": "photo",
+  "tags": [
+   "photo"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"photo\"} in things, or \"holds\": \"photo\""
+ },
+ {
+  "id": "plate",
+  "type": "props",
+  "source": "builtin",
+  "name": "plate",
+  "tags": [
+   "plate"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"plate\"} in things, or \"holds\": \"plate\""
+ },
+ {
+  "id": "pot",
+  "type": "props",
+  "source": "builtin",
+  "name": "pot",
+  "tags": [
+   "pot"
+  ],
+  "doc": "cooking pot (steams)",
+  "preview": null,
+  "how": "{\"what\": \"pot\"} in things, or \"holds\": \"pot\""
+ },
+ {
+  "id": "potatoes",
+  "type": "props",
+  "source": "builtin",
+  "name": "potatoes",
+  "tags": [
+   "potatoes"
+  ],
+  "doc": "a heap of potatoes (color dark = rotten)",
+  "preview": null,
+  "how": "{\"what\": \"potatoes\"} in things, or \"holds\": \"potatoes\""
+ },
+ {
+  "id": "radio",
+  "type": "props",
+  "source": "builtin",
+  "name": "radio",
+  "tags": [
+   "radio"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"radio\"} in things, or \"holds\": \"radio\""
+ },
+ {
+  "id": "rifle",
+  "type": "props",
+  "source": "builtin",
+  "name": "rifle",
+  "tags": [
+   "rifle"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"rifle\"} in things, or \"holds\": \"rifle\""
+ },
+ {
+  "id": "sack",
+  "type": "props",
+  "source": "builtin",
+  "name": "sack",
+  "tags": [
+   "sack"
+  ],
+  "doc": "grain sack (text: MEHL…)",
+  "preview": null,
+  "how": "{\"what\": \"sack\"} in things, or \"holds\": \"sack\""
+ },
+ {
+  "id": "scale",
+  "type": "props",
+  "source": "builtin",
+  "name": "scale",
+  "tags": [
+   "scale"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"scale\"} in things, or \"holds\": \"scale\""
+ },
+ {
+  "id": "shell",
+  "type": "props",
+  "source": "builtin",
+  "name": "shell",
+  "tags": [
+   "shell"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"shell\"} in things, or \"holds\": \"shell\""
+ },
+ {
+  "id": "sign",
+  "type": "props",
+  "source": "builtin",
+  "name": "sign",
+  "tags": [
+   "sign"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"sign\"} in things, or \"holds\": \"sign\""
+ },
+ {
+  "id": "skull",
+  "type": "props",
+  "source": "builtin",
+  "name": "skull",
+  "tags": [
+   "skull"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"skull\"} in things, or \"holds\": \"skull\""
+ },
+ {
+  "id": "spoon",
+  "type": "props",
+  "source": "builtin",
+  "name": "spoon",
+  "tags": [
+   "spoon"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"spoon\"} in things, or \"holds\": \"spoon\""
+ },
+ {
+  "id": "stool",
+  "type": "props",
+  "source": "builtin",
+  "name": "stool",
+  "tags": [
+   "stool"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"stool\"} in things, or \"holds\": \"stool\""
+ },
+ {
+  "id": "stopwatch",
+  "type": "props",
+  "source": "builtin",
+  "name": "stopwatch",
+  "tags": [
+   "stopwatch"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"stopwatch\"} in things, or \"holds\": \"stopwatch\""
+ },
+ {
+  "id": "stove",
+  "type": "props",
+  "source": "builtin",
+  "name": "stove",
+  "tags": [
+   "stove"
+  ],
+  "doc": "iron stove with a flue (glows; on: false = cold)",
+  "preview": null,
+  "how": "{\"what\": \"stove\"} in things, or \"holds\": \"stove\""
+ },
+ {
+  "id": "stretcher",
+  "type": "props",
+  "source": "builtin",
+  "name": "stretcher",
+  "tags": [
+   "stretcher"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"stretcher\"} in things, or \"holds\": \"stretcher\""
+ },
+ {
+  "id": "suitcase",
+  "type": "props",
+  "source": "builtin",
+  "name": "suitcase",
+  "tags": [
+   "suitcase"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"suitcase\"} in things, or \"holds\": \"suitcase\""
+ },
+ {
+  "id": "table",
+  "type": "props",
+  "source": "builtin",
+  "name": "table",
+  "tags": [
+   "table"
+  ],
+  "doc": "kitchen / office table (people stand or sit behind it)",
+  "preview": null,
+  "how": "{\"what\": \"table\"} in things, or \"holds\": \"table\""
+ },
+ {
+  "id": "telegram",
+  "type": "props",
+  "source": "builtin",
+  "name": "telegram",
+  "tags": [
+   "telegram"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"telegram\"} in things, or \"holds\": \"telegram\""
+ },
+ {
+  "id": "turnip",
+  "type": "props",
+  "source": "builtin",
+  "name": "turnip",
+  "tags": [
+   "turnip"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"turnip\"} in things, or \"holds\": \"turnip\""
+ },
+ {
+  "id": "turnips",
+  "type": "props",
+  "source": "builtin",
+  "name": "turnips",
+  "tags": [
+   "turnips"
+  ],
+  "doc": "a heap of turnips (n = how many)",
+  "preview": null,
+  "how": "{\"what\": \"turnips\"} in things, or \"holds\": \"turnips\""
+ },
+ {
+  "id": "typewriter",
+  "type": "props",
+  "source": "builtin",
+  "name": "typewriter",
+  "tags": [
+   "typewriter"
+  ],
+  "doc": "engine prop",
+  "preview": null,
+  "how": "{\"what\": \"typewriter\"} in things, or \"holds\": \"typewriter\""
+ },
+ {
+  "id": "artillery",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "artillery",
+  "tags": [
+   "artillery"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"artillery\"} in vehicles"
+ },
+ {
+  "id": "assaultboat",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "assaultboat",
+  "tags": [
+   "assaultboat"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"assaultboat\"} in vehicles"
+ },
+ {
+  "id": "battleship",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "battleship",
+  "tags": [
+   "battleship"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"battleship\"} in vehicles"
+ },
+ {
+  "id": "boat",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "boat",
+  "tags": [
+   "boat"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"boat\"} in vehicles"
+ },
+ {
+  "id": "bomber",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "bomber",
+  "tags": [
+   "bomber"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"bomber\"} in vehicles"
+ },
+ {
+  "id": "car",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "car",
+  "tags": [
+   "car"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"car\"} in vehicles"
+ },
+ {
+  "id": "cargo",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "cargo",
+  "tags": [
+   "cargo"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"cargo\"} in vehicles"
+ },
+ {
+  "id": "carrier",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "carrier",
+  "tags": [
+   "carrier"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"carrier\"} in vehicles"
+ },
+ {
+  "id": "cart",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "cart",
+  "tags": [
+   "cart"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"cart\"} in vehicles"
+ },
+ {
+  "id": "cruiser",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "cruiser",
+  "tags": [
+   "cruiser"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"cruiser\"} in vehicles"
+ },
+ {
+  "id": "dakota",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "dakota",
+  "tags": [
+   "dakota"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"dakota\"} in vehicles"
+ },
+ {
+  "id": "destroyer",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "destroyer",
+  "tags": [
+   "destroyer"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"destroyer\"} in vehicles"
+ },
+ {
+  "id": "divebomber",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "divebomber",
+  "tags": [
+   "divebomber"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"divebomber\"} in vehicles"
+ },
+ {
+  "id": "fighter",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "fighter",
+  "tags": [
+   "fighter"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"fighter\"} in vehicles"
+ },
+ {
+  "id": "freighter",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "freighter",
+  "tags": [
+   "freighter"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"freighter\"} in vehicles"
+ },
+ {
+  "id": "glider",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "glider",
+  "tags": [
+   "glider"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"glider\"} in vehicles"
+ },
+ {
+  "id": "gun",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "gun",
+  "tags": [
+   "gun"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"gun\"} in vehicles"
+ },
+ {
+  "id": "halftrack",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "halftrack",
+  "tags": [
+   "halftrack"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"halftrack\"} in vehicles"
+ },
+ {
+  "id": "horse",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "horse",
+  "tags": [
+   "horse"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"horse\"} in vehicles"
+ },
+ {
+  "id": "jeep",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "jeep",
+  "tags": [
+   "jeep"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"jeep\"} in vehicles"
+ },
+ {
+  "id": "locomotive",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "locomotive",
+  "tags": [
+   "locomotive"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"locomotive\"} in vehicles"
+ },
+ {
+  "id": "markiv",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "markiv",
+  "tags": [
+   "markiv"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"markiv\"} in vehicles"
+ },
+ {
+  "id": "panther",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "panther",
+  "tags": [
+   "panther"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"panther\"} in vehicles"
+ },
+ {
+  "id": "panzer4",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "panzer4",
+  "tags": [
+   "panzer4"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"panzer4\"} in vehicles"
+ },
+ {
+  "id": "plane",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "plane",
+  "tags": [
+   "plane"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"plane\"} in vehicles"
+ },
+ {
+  "id": "renault",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "renault",
+  "tags": [
+   "renault"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"renault\"} in vehicles"
+ },
+ {
+  "id": "sherman",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "sherman",
+  "tags": [
+   "sherman"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"sherman\"} in vehicles"
+ },
+ {
+  "id": "stug",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "stug",
+  "tags": [
+   "stug"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"stug\"} in vehicles"
+ },
+ {
+  "id": "submarine",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "submarine",
+  "tags": [
+   "submarine"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"submarine\"} in vehicles"
+ },
+ {
+  "id": "t34",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "t34",
+  "tags": [
+   "t34"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"t34\"} in vehicles"
+ },
+ {
+  "id": "tank",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "tank",
+  "tags": [
+   "tank"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"tank\"} in vehicles"
+ },
+ {
+  "id": "tank_flat",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "tank flat",
+  "tags": [
+   "tank",
+   "flat"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"tank_flat\"} in vehicles"
+ },
+ {
+  "id": "tiger",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "tiger",
+  "tags": [
+   "tiger"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"tiger\"} in vehicles"
+ },
+ {
+  "id": "train",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "train",
+  "tags": [
+   "train"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"train\"} in vehicles"
+ },
+ {
+  "id": "traincar",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "traincar",
+  "tags": [
+   "traincar"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"traincar\"} in vehicles"
+ },
+ {
+  "id": "transport",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "transport",
+  "tags": [
+   "transport"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"transport\"} in vehicles"
+ },
+ {
+  "id": "truck",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "truck",
+  "tags": [
+   "truck"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"truck\"} in vehicles"
+ },
+ {
+  "id": "uboat",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "uboat",
+  "tags": [
+   "uboat"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"uboat\"} in vehicles"
+ },
+ {
+  "id": "wagon",
+  "type": "vehicles",
+  "source": "builtin",
+  "name": "wagon",
+  "tags": [
+   "wagon"
+  ],
+  "doc": "engine vehicle",
+  "preview": null,
+  "how": "{\"type\": \"wagon\"} in vehicles"
+ },
+ {
+  "id": "aide",
+  "type": "characters",
+  "source": "builtin",
+  "name": "aide",
+  "tags": [
+   "aide"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"aide\"}}"
+ },
+ {
+  "id": "american_pilot",
+  "type": "characters",
+  "source": "builtin",
+  "name": "american pilot",
+  "tags": [
+   "american",
+   "pilot"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"american_pilot\"}}"
+ },
+ {
+  "id": "american_sailor",
+  "type": "characters",
+  "source": "builtin",
+  "name": "american sailor",
+  "tags": [
+   "american",
+   "sailor"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"american_sailor\"}}"
+ },
+ {
+  "id": "american_soldier",
+  "type": "characters",
+  "source": "builtin",
+  "name": "american soldier",
+  "tags": [
+   "american",
+   "soldier"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"american_soldier\"}}"
+ },
+ {
+  "id": "bauer",
+  "type": "characters",
+  "source": "builtin",
+  "name": "bauer",
+  "tags": [
+   "bauer"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"bauer\"}}"
+ },
+ {
+  "id": "bedell_smith",
+  "type": "characters",
+  "source": "builtin",
+  "name": "bedell smith",
+  "tags": [
+   "bedell",
+   "smith"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"bedell_smith\"}}"
+ },
+ {
+  "id": "beria",
+  "type": "characters",
+  "source": "builtin",
+  "name": "beria",
+  "tags": [
+   "beria"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"beria\"}}"
+ },
+ {
+  "id": "bernhard",
+  "type": "characters",
+  "source": "builtin",
+  "name": "bernhard",
+  "tags": [
+   "bernhard"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"bernhard\"}}"
+ },
+ {
+  "id": "bittrich",
+  "type": "characters",
+  "source": "builtin",
+  "name": "bittrich",
+  "tags": [
+   "bittrich"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"bittrich\"}}"
+ },
+ {
+  "id": "brereton",
+  "type": "characters",
+  "source": "builtin",
+  "name": "brereton",
+  "tags": [
+   "brereton"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"brereton\"}}"
+ },
+ {
+  "id": "brian_urquhart",
+  "type": "characters",
+  "source": "builtin",
+  "name": "brian urquhart",
+  "tags": [
+   "brian",
+   "urquhart"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"brian_urquhart\"}}"
+ },
+ {
+  "id": "british_para",
+  "type": "characters",
+  "source": "builtin",
+  "name": "british para",
+  "tags": [
+   "british",
+   "para"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"british_para\"}}"
+ },
+ {
+  "id": "british_para_helmet",
+  "type": "characters",
+  "source": "builtin",
+  "name": "british para helmet",
+  "tags": [
+   "british",
+   "para",
+   "helmet"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"british_para_helmet\"}}"
+ },
+ {
+  "id": "british_soldier",
+  "type": "characters",
+  "source": "builtin",
+  "name": "british soldier",
+  "tags": [
+   "british",
+   "soldier"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"british_soldier\"}}"
+ },
+ {
+  "id": "browning",
+  "type": "characters",
+  "source": "builtin",
+  "name": "browning",
+  "tags": [
+   "browning"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"browning\"}}"
+ },
+ {
+  "id": "brusilov",
+  "type": "characters",
+  "source": "builtin",
+  "name": "brusilov",
+  "tags": [
+   "brusilov"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"brusilov\"}}"
+ },
+ {
+  "id": "caesar",
+  "type": "characters",
+  "source": "builtin",
+  "name": "caesar",
+  "tags": [
+   "caesar"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"caesar\"}}"
+ },
+ {
+  "id": "chamberlain",
+  "type": "characters",
+  "source": "builtin",
+  "name": "chamberlain",
+  "tags": [
+   "chamberlain"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"chamberlain\"}}"
+ },
+ {
+  "id": "chiang",
+  "type": "characters",
+  "source": "builtin",
+  "name": "chiang",
+  "tags": [
+   "chiang"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"chiang\"}}"
+ },
+ {
+  "id": "chill",
+  "type": "characters",
+  "source": "builtin",
+  "name": "chill",
+  "tags": [
+   "chill"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"chill\"}}"
+ },
+ {
+  "id": "churchill",
+  "type": "characters",
+  "source": "builtin",
+  "name": "churchill",
+  "tags": [
+   "churchill"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"churchill\"}}"
+ },
+ {
+  "id": "civilian_man",
+  "type": "characters",
+  "source": "builtin",
+  "name": "civilian man",
+  "tags": [
+   "civilian",
+   "man"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"civilian_man\"}}"
+ },
+ {
+  "id": "civilian_woman",
+  "type": "characters",
+  "source": "builtin",
+  "name": "civilian woman",
+  "tags": [
+   "civilian",
+   "woman"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"civilian_woman\"}}"
+ },
+ {
+  "id": "cunningham",
+  "type": "characters",
+  "source": "builtin",
+  "name": "cunningham",
+  "tags": [
+   "cunningham"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"cunningham\"}}"
+ },
+ {
+  "id": "currie",
+  "type": "characters",
+  "source": "builtin",
+  "name": "currie",
+  "tags": [
+   "currie"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"currie\"}}"
+ },
+ {
+  "id": "de_gaulle",
+  "type": "characters",
+  "source": "builtin",
+  "name": "de gaulle",
+  "tags": [
+   "de",
+   "gaulle"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"de_gaulle\"}}"
+ },
+ {
+  "id": "diplomat",
+  "type": "characters",
+  "source": "builtin",
+  "name": "diplomat",
+  "tags": [
+   "diplomat"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"diplomat\"}}"
+ },
+ {
+  "id": "dutch_civilian",
+  "type": "characters",
+  "source": "builtin",
+  "name": "dutch civilian",
+  "tags": [
+   "dutch",
+   "civilian"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"dutch_civilian\"}}"
+ },
+ {
+  "id": "dutch_woman",
+  "type": "characters",
+  "source": "builtin",
+  "name": "dutch woman",
+  "tags": [
+   "dutch",
+   "woman"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"dutch_woman\"}}"
+ },
+ {
+  "id": "eisenhower",
+  "type": "characters",
+  "source": "builtin",
+  "name": "eisenhower",
+  "tags": [
+   "eisenhower"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"eisenhower\"}}"
+ },
+ {
+  "id": "ernest_archer",
+  "type": "characters",
+  "source": "builtin",
+  "name": "ernest archer",
+  "tags": [
+   "ernest",
+   "archer"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"ernest_archer\"}}"
+ },
+ {
+  "id": "falkenhayn",
+  "type": "characters",
+  "source": "builtin",
+  "name": "falkenhayn",
+  "tags": [
+   "falkenhayn"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"falkenhayn\"}}"
+ },
+ {
+  "id": "finnish_soldier",
+  "type": "characters",
+  "source": "builtin",
+  "name": "finnish soldier",
+  "tags": [
+   "finnish",
+   "soldier"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"finnish_soldier\"}}"
+ },
+ {
+  "id": "foch",
+  "type": "characters",
+  "source": "builtin",
+  "name": "foch",
+  "tags": [
+   "foch"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"foch\"}}"
+ },
+ {
+  "id": "french_soldier",
+  "type": "characters",
+  "source": "builtin",
+  "name": "french soldier",
+  "tags": [
+   "french",
+   "soldier"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"french_soldier\"}}"
+ },
+ {
+  "id": "frost",
+  "type": "characters",
+  "source": "builtin",
+  "name": "frost",
+  "tags": [
+   "frost"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"frost\"}}"
+ },
+ {
+  "id": "gallieni",
+  "type": "characters",
+  "source": "builtin",
+  "name": "gallieni",
+  "tags": [
+   "gallieni"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"gallieni\"}}"
+ },
+ {
+  "id": "gamelin",
+  "type": "characters",
+  "source": "builtin",
+  "name": "gamelin",
+  "tags": [
+   "gamelin"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"gamelin\"}}"
+ },
+ {
+  "id": "gavin",
+  "type": "characters",
+  "source": "builtin",
+  "name": "gavin",
+  "tags": [
+   "gavin"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"gavin\"}}"
+ },
+ {
+  "id": "german_officer",
+  "type": "characters",
+  "source": "builtin",
+  "name": "german officer",
+  "tags": [
+   "german",
+   "officer"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"german_officer\"}}"
+ },
+ {
+  "id": "german_pilot",
+  "type": "characters",
+  "source": "builtin",
+  "name": "german pilot",
+  "tags": [
+   "german",
+   "pilot"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"german_pilot\"}}"
+ },
+ {
+  "id": "german_soldier",
+  "type": "characters",
+  "source": "builtin",
+  "name": "german soldier",
+  "tags": [
+   "german",
+   "soldier"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"german_soldier\"}}"
+ },
+ {
+  "id": "german_tanker",
+  "type": "characters",
+  "source": "builtin",
+  "name": "german tanker",
+  "tags": [
+   "german",
+   "tanker"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"german_tanker\"}}"
+ },
+ {
+  "id": "goebbels",
+  "type": "characters",
+  "source": "builtin",
+  "name": "goebbels",
+  "tags": [
+   "goebbels"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"goebbels\"}}"
+ },
+ {
+  "id": "goering",
+  "type": "characters",
+  "source": "builtin",
+  "name": "goering",
+  "tags": [
+   "goering"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"goering\"}}"
+ },
+ {
+  "id": "grabner",
+  "type": "characters",
+  "source": "builtin",
+  "name": "grabner",
+  "tags": [
+   "grabner"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"grabner\"}}"
+ },
+ {
+  "id": "guards_tanker",
+  "type": "characters",
+  "source": "builtin",
+  "name": "guards tanker",
+  "tags": [
+   "guards",
+   "tanker"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"guards_tanker\"}}"
+ },
+ {
+  "id": "guderian",
+  "type": "characters",
+  "source": "builtin",
+  "name": "guderian",
+  "tags": [
+   "guderian"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"guderian\"}}"
+ },
+ {
+  "id": "halder",
+  "type": "characters",
+  "source": "builtin",
+  "name": "halder",
+  "tags": [
+   "halder"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"halder\"}}"
+ },
+ {
+  "id": "halifax",
+  "type": "characters",
+  "source": "builtin",
+  "name": "halifax",
+  "tags": [
+   "halifax"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"halifax\"}}"
+ },
+ {
+  "id": "hannibal",
+  "type": "characters",
+  "source": "builtin",
+  "name": "hannibal",
+  "tags": [
+   "hannibal"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"hannibal\"}}"
+ },
+ {
+  "id": "harmel",
+  "type": "characters",
+  "source": "builtin",
+  "name": "harmel",
+  "tags": [
+   "harmel"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"harmel\"}}"
+ },
+ {
+  "id": "harmel_old",
+  "type": "characters",
+  "source": "builtin",
+  "name": "harmel old",
+  "tags": [
+   "harmel",
+   "old"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"harmel_old\"}}"
+ },
+ {
+  "id": "himmler",
+  "type": "characters",
+  "source": "builtin",
+  "name": "himmler",
+  "tags": [
+   "himmler"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"himmler\"}}"
+ },
+ {
+  "id": "hindenburg",
+  "type": "characters",
+  "source": "builtin",
+  "name": "hindenburg",
+  "tags": [
+   "hindenburg"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"hindenburg\"}}"
+ },
+ {
+  "id": "hirohito",
+  "type": "characters",
+  "source": "builtin",
+  "name": "hirohito",
+  "tags": [
+   "hirohito"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"hirohito\"}}"
+ },
+ {
+  "id": "hitler",
+  "type": "characters",
+  "source": "builtin",
+  "name": "hitler",
+  "tags": [
+   "hitler"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"hitler\"}}"
+ },
+ {
+  "id": "hitler_uniform",
+  "type": "characters",
+  "source": "builtin",
+  "name": "hitler uniform",
+  "tags": [
+   "hitler",
+   "uniform"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"hitler_uniform\"}}"
+ },
+ {
+  "id": "holtzendorff",
+  "type": "characters",
+  "source": "builtin",
+  "name": "holtzendorff",
+  "tags": [
+   "holtzendorff"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"holtzendorff\"}}"
+ },
+ {
+  "id": "horrocks",
+  "type": "characters",
+  "source": "builtin",
+  "name": "horrocks",
+  "tags": [
+   "horrocks"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"horrocks\"}}"
+ },
+ {
+  "id": "host",
+  "type": "characters",
+  "source": "builtin",
+  "name": "host",
+  "tags": [
+   "host"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"host\"}}"
+ },
+ {
+  "id": "host_field",
+  "type": "characters",
+  "source": "builtin",
+  "name": "host field",
+  "tags": [
+   "host",
+   "field"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"host_field\"}}"
+ },
+ {
+  "id": "host_old_style",
+  "type": "characters",
+  "source": "builtin",
+  "name": "host old style",
+  "tags": [
+   "host",
+   "old",
+   "style"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"host_old_style\"}}"
+ },
+ {
+  "id": "host_winter",
+  "type": "characters",
+  "source": "builtin",
+  "name": "host winter",
+  "tags": [
+   "host",
+   "winter"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"host_winter\"}}"
+ },
+ {
+  "id": "italian_soldier",
+  "type": "characters",
+  "source": "builtin",
+  "name": "italian soldier",
+  "tags": [
+   "italian",
+   "soldier"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"italian_soldier\"}}"
+ },
+ {
+  "id": "japanese_officer",
+  "type": "characters",
+  "source": "builtin",
+  "name": "japanese officer",
+  "tags": [
+   "japanese",
+   "officer"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"japanese_officer\"}}"
+ },
+ {
+  "id": "japanese_pilot",
+  "type": "characters",
+  "source": "builtin",
+  "name": "japanese pilot",
+  "tags": [
+   "japanese",
+   "pilot"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"japanese_pilot\"}}"
+ },
+ {
+  "id": "japanese_sailor",
+  "type": "characters",
+  "source": "builtin",
+  "name": "japanese sailor",
+  "tags": [
+   "japanese",
+   "sailor"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"japanese_sailor\"}}"
+ },
+ {
+  "id": "japanese_soldier",
+  "type": "characters",
+  "source": "builtin",
+  "name": "japanese soldier",
+  "tags": [
+   "japanese",
+   "soldier"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"japanese_soldier\"}}"
+ },
+ {
+  "id": "jellicoe",
+  "type": "characters",
+  "source": "builtin",
+  "name": "jellicoe",
+  "tags": [
+   "jellicoe"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"jellicoe\"}}"
+ },
+ {
+  "id": "joffre",
+  "type": "characters",
+  "source": "builtin",
+  "name": "joffre",
+  "tags": [
+   "joffre"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"joffre\"}}"
+ },
+ {
+  "id": "julian_cook",
+  "type": "characters",
+  "source": "builtin",
+  "name": "julian cook",
+  "tags": [
+   "julian",
+   "cook"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"julian_cook\"}}"
+ },
+ {
+  "id": "kaiser",
+  "type": "characters",
+  "source": "builtin",
+  "name": "kaiser",
+  "tags": [
+   "kaiser"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"kaiser\"}}"
+ },
+ {
+  "id": "kaiser_wilhelm",
+  "type": "characters",
+  "source": "builtin",
+  "name": "kaiser wilhelm",
+  "tags": [
+   "kaiser",
+   "wilhelm"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"kaiser_wilhelm\"}}"
+ },
+ {
+  "id": "khrushchev",
+  "type": "characters",
+  "source": "builtin",
+  "name": "khrushchev",
+  "tags": [
+   "khrushchev"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"khrushchev\"}}"
+ },
+ {
+  "id": "kluck",
+  "type": "characters",
+  "source": "builtin",
+  "name": "kluck",
+  "tags": [
+   "kluck"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"kluck\"}}"
+ },
+ {
+  "id": "krafft",
+  "type": "characters",
+  "source": "builtin",
+  "name": "krafft",
+  "tags": [
+   "krafft"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"krafft\"}}"
+ },
+ {
+  "id": "kutuzov",
+  "type": "characters",
+  "source": "builtin",
+  "name": "kutuzov",
+  "tags": [
+   "kutuzov"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"kutuzov\"}}"
+ },
+ {
+  "id": "lanrezac",
+  "type": "characters",
+  "source": "builtin",
+  "name": "lanrezac",
+  "tags": [
+   "lanrezac"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"lanrezac\"}}"
+ },
+ {
+  "id": "lenin",
+  "type": "characters",
+  "source": "builtin",
+  "name": "lenin",
+  "tags": [
+   "lenin"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"lenin\"}}"
+ },
+ {
+  "id": "lindemans",
+  "type": "characters",
+  "source": "builtin",
+  "name": "lindemans",
+  "tags": [
+   "lindemans"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"lindemans\"}}"
+ },
+ {
+  "id": "lindquist",
+  "type": "characters",
+  "source": "builtin",
+  "name": "lindquist",
+  "tags": [
+   "lindquist"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"lindquist\"}}"
+ },
+ {
+  "id": "ludendorff",
+  "type": "characters",
+  "source": "builtin",
+  "name": "ludendorff",
+  "tags": [
+   "ludendorff"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"ludendorff\"}}"
+ },
+ {
+  "id": "macarthur",
+  "type": "characters",
+  "source": "builtin",
+  "name": "macarthur",
+  "tags": [
+   "macarthur"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"macarthur\"}}"
+ },
+ {
+  "id": "mannerheim",
+  "type": "characters",
+  "source": "builtin",
+  "name": "mannerheim",
+  "tags": [
+   "mannerheim"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"mannerheim\"}}"
+ },
+ {
+  "id": "manstein",
+  "type": "characters",
+  "source": "builtin",
+  "name": "manstein",
+  "tags": [
+   "manstein"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"manstein\"}}"
+ },
+ {
+  "id": "model",
+  "type": "characters",
+  "source": "builtin",
+  "name": "model",
+  "tags": [
+   "model"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"model\"}}"
+ },
+ {
+  "id": "molotov",
+  "type": "characters",
+  "source": "builtin",
+  "name": "molotov",
+  "tags": [
+   "molotov"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"molotov\"}}"
+ },
+ {
+  "id": "moltke",
+  "type": "characters",
+  "source": "builtin",
+  "name": "moltke",
+  "tags": [
+   "moltke"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"moltke\"}}"
+ },
+ {
+  "id": "monash",
+  "type": "characters",
+  "source": "builtin",
+  "name": "monash",
+  "tags": [
+   "monash"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"monash\"}}"
+ },
+ {
+  "id": "montgomery",
+  "type": "characters",
+  "source": "builtin",
+  "name": "montgomery",
+  "tags": [
+   "montgomery"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"montgomery\"}}"
+ },
+ {
+  "id": "mussolini",
+  "type": "characters",
+  "source": "builtin",
+  "name": "mussolini",
+  "tags": [
+   "mussolini"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"mussolini\"}}"
+ },
+ {
+  "id": "nagumo",
+  "type": "characters",
+  "source": "builtin",
+  "name": "nagumo",
+  "tags": [
+   "nagumo"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"nagumo\"}}"
+ },
+ {
+  "id": "napoleon",
+  "type": "characters",
+  "source": "builtin",
+  "name": "napoleon",
+  "tags": [
+   "napoleon"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"napoleon\"}}"
+ },
+ {
+  "id": "narrator_accountant",
+  "type": "characters",
+  "source": "builtin",
+  "name": "narrator accountant",
+  "tags": [
+   "narrator",
+   "accountant"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"narrator_accountant\"}}"
+ },
+ {
+  "id": "narrator_archivist",
+  "type": "characters",
+  "source": "builtin",
+  "name": "narrator archivist",
+  "tags": [
+   "narrator",
+   "archivist"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"narrator_archivist\"}}"
+ },
+ {
+  "id": "nimitz",
+  "type": "characters",
+  "source": "builtin",
+  "name": "nimitz",
+  "tags": [
+   "nimitz"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"nimitz\"}}"
+ },
+ {
+  "id": "patton",
+  "type": "characters",
+  "source": "builtin",
+  "name": "patton",
+  "tags": [
+   "patton"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"patton\"}}"
+ },
+ {
+  "id": "paulus",
+  "type": "characters",
+  "source": "builtin",
+  "name": "paulus",
+  "tags": [
+   "paulus"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"paulus\"}}"
+ },
+ {
+  "id": "petain",
+  "type": "characters",
+  "source": "builtin",
+  "name": "petain",
+  "tags": [
+   "petain"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"petain\"}}"
+ },
+ {
+  "id": "pinto",
+  "type": "characters",
+  "source": "builtin",
+  "name": "pinto",
+  "tags": [
+   "pinto"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"pinto\"}}"
+ },
+ {
+  "id": "polish_para",
+  "type": "characters",
+  "source": "builtin",
+  "name": "polish para",
+  "tags": [
+   "polish",
+   "para"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"polish_para\"}}"
+ },
+ {
+  "id": "polish_soldier",
+  "type": "characters",
+  "source": "builtin",
+  "name": "polish soldier",
+  "tags": [
+   "polish",
+   "soldier"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"polish_soldier\"}}"
+ },
+ {
+  "id": "raf_pilot",
+  "type": "characters",
+  "source": "builtin",
+  "name": "raf pilot",
+  "tags": [
+   "raf",
+   "pilot"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"raf_pilot\"}}"
+ },
+ {
+  "id": "reporter",
+  "type": "characters",
+  "source": "builtin",
+  "name": "reporter",
+  "tags": [
+   "reporter"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"reporter\"}}"
+ },
+ {
+  "id": "roman_legionary",
+  "type": "characters",
+  "source": "builtin",
+  "name": "roman legionary",
+  "tags": [
+   "roman",
+   "legionary"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"roman_legionary\"}}"
+ },
+ {
+  "id": "rommel",
+  "type": "characters",
+  "source": "builtin",
+  "name": "rommel",
+  "tags": [
+   "rommel"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"rommel\"}}"
+ },
+ {
+  "id": "roosevelt",
+  "type": "characters",
+  "source": "builtin",
+  "name": "roosevelt",
+  "tags": [
+   "roosevelt"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"roosevelt\"}}"
+ },
+ {
+  "id": "roy_urquhart",
+  "type": "characters",
+  "source": "builtin",
+  "name": "roy urquhart",
+  "tags": [
+   "roy",
+   "urquhart"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"roy_urquhart\"}}"
+ },
+ {
+  "id": "scheer",
+  "type": "characters",
+  "source": "builtin",
+  "name": "scheer",
+  "tags": [
+   "scheer"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"scheer\"}}"
+ },
+ {
+  "id": "schlieffen",
+  "type": "characters",
+  "source": "builtin",
+  "name": "schlieffen",
+  "tags": [
+   "schlieffen"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"schlieffen\"}}"
+ },
+ {
+  "id": "sosabowski",
+  "type": "characters",
+  "source": "builtin",
+  "name": "sosabowski",
+  "tags": [
+   "sosabowski"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"sosabowski\"}}"
+ },
+ {
+  "id": "soviet_officer",
+  "type": "characters",
+  "source": "builtin",
+  "name": "soviet officer",
+  "tags": [
+   "soviet",
+   "officer"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"soviet_officer\"}}"
+ },
+ {
+  "id": "soviet_soldier",
+  "type": "characters",
+  "source": "builtin",
+  "name": "soviet soldier",
+  "tags": [
+   "soviet",
+   "soldier"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"soviet_soldier\"}}"
+ },
+ {
+  "id": "soviet_winter",
+  "type": "characters",
+  "source": "builtin",
+  "name": "soviet winter",
+  "tags": [
+   "soviet",
+   "winter"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"soviet_winter\"}}"
+ },
+ {
+  "id": "ss_soldier",
+  "type": "characters",
+  "source": "builtin",
+  "name": "ss soldier",
+  "tags": [
+   "ss",
+   "soldier"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"ss_soldier\"}}"
+ },
+ {
+  "id": "stalin",
+  "type": "characters",
+  "source": "builtin",
+  "name": "stalin",
+  "tags": [
+   "stalin"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"stalin\"}}"
+ },
+ {
+  "id": "tojo",
+  "type": "characters",
+  "source": "builtin",
+  "name": "tojo",
+  "tags": [
+   "tojo"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"tojo\"}}"
+ },
+ {
+  "id": "truman",
+  "type": "characters",
+  "source": "builtin",
+  "name": "truman",
+  "tags": [
+   "truman"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"truman\"}}"
+ },
+ {
+  "id": "uboat_captain",
+  "type": "characters",
+  "source": "builtin",
+  "name": "uboat captain",
+  "tags": [
+   "uboat",
+   "captain"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"uboat_captain\"}}"
+ },
+ {
+  "id": "us_navy_officer",
+  "type": "characters",
+  "source": "builtin",
+  "name": "us navy officer",
+  "tags": [
+   "us",
+   "navy",
+   "officer"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"us_navy_officer\"}}"
+ },
+ {
+  "id": "us_para",
+  "type": "characters",
+  "source": "builtin",
+  "name": "us para",
+  "tags": [
+   "us",
+   "para"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"us_para\"}}"
+ },
+ {
+  "id": "vn_peasant",
+  "type": "characters",
+  "source": "builtin",
+  "name": "vn peasant",
+  "tags": [
+   "vn",
+   "peasant"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"vn_peasant\"}}"
+ },
+ {
+  "id": "vn_soldier",
+  "type": "characters",
+  "source": "builtin",
+  "name": "vn soldier",
+  "tags": [
+   "vn",
+   "soldier"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"vn_soldier\"}}"
+ },
+ {
+  "id": "wellington",
+  "type": "characters",
+  "source": "builtin",
+  "name": "wellington",
+  "tags": [
+   "wellington"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"wellington\"}}"
+ },
+ {
+  "id": "wilson",
+  "type": "characters",
+  "source": "builtin",
+  "name": "wilson",
+  "tags": [
+   "wilson"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"wilson\"}}"
+ },
+ {
+  "id": "worker",
+  "type": "characters",
+  "source": "builtin",
+  "name": "worker",
+  "tags": [
+   "worker"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"worker\"}}"
+ },
+ {
+  "id": "ww1_american",
+  "type": "characters",
+  "source": "builtin",
+  "name": "ww1 american",
+  "tags": [
+   "ww1",
+   "american"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"ww1_american\"}}"
+ },
+ {
+  "id": "ww1_australian",
+  "type": "characters",
+  "source": "builtin",
+  "name": "ww1 australian",
+  "tags": [
+   "ww1",
+   "australian"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"ww1_australian\"}}"
+ },
+ {
+  "id": "ww1_austrian",
+  "type": "characters",
+  "source": "builtin",
+  "name": "ww1 austrian",
+  "tags": [
+   "ww1",
+   "austrian"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"ww1_austrian\"}}"
+ },
+ {
+  "id": "ww1_british",
+  "type": "characters",
+  "source": "builtin",
+  "name": "ww1 british",
+  "tags": [
+   "ww1",
+   "british"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"ww1_british\"}}"
+ },
+ {
+  "id": "ww1_french",
+  "type": "characters",
+  "source": "builtin",
+  "name": "ww1 french",
+  "tags": [
+   "ww1",
+   "french"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"ww1_french\"}}"
+ },
+ {
+  "id": "ww1_french_1914",
+  "type": "characters",
+  "source": "builtin",
+  "name": "ww1 french 1914",
+  "tags": [
+   "ww1",
+   "french",
+   "1914"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"ww1_french_1914\"}}"
+ },
+ {
+  "id": "ww1_german",
+  "type": "characters",
+  "source": "builtin",
+  "name": "ww1 german",
+  "tags": [
+   "ww1",
+   "german"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"ww1_german\"}}"
+ },
+ {
+  "id": "ww1_german_1914",
+  "type": "characters",
+  "source": "builtin",
+  "name": "ww1 german 1914",
+  "tags": [
+   "ww1",
+   "german",
+   "1914"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"ww1_german_1914\"}}"
+ },
+ {
+  "id": "ww1_russian",
+  "type": "characters",
+  "source": "builtin",
+  "name": "ww1 russian",
+  "tags": [
+   "ww1",
+   "russian"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"ww1_russian\"}}"
+ },
+ {
+  "id": "ww1_sailor_de",
+  "type": "characters",
+  "source": "builtin",
+  "name": "ww1 sailor de",
+  "tags": [
+   "ww1",
+   "sailor",
+   "de"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"ww1_sailor_de\"}}"
+ },
+ {
+  "id": "ww1_sailor_uk",
+  "type": "characters",
+  "source": "builtin",
+  "name": "ww1 sailor uk",
+  "tags": [
+   "ww1",
+   "sailor",
+   "uk"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"ww1_sailor_uk\"}}"
+ },
+ {
+  "id": "yamamoto",
+  "type": "characters",
+  "source": "builtin",
+  "name": "yamamoto",
+  "tags": [
+   "yamamoto"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"yamamoto\"}}"
+ },
+ {
+  "id": "zhukov",
+  "type": "characters",
+  "source": "builtin",
+  "name": "zhukov",
+  "tags": [
+   "zhukov"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"zhukov\"}}"
+ },
+ {
+  "id": "zimmermann",
+  "type": "characters",
+  "source": "builtin",
+  "name": "zimmermann",
+  "tags": [
+   "zimmermann"
+  ],
+  "doc": "cast preset (recipes/PEOPLE.md)",
+  "preview": null,
+  "how": "cast: {\"x\": {\"preset\": \"zimmermann\"}}"
+ },
+ {
+  "id": "air",
+  "type": "places",
+  "source": "builtin",
+  "name": "air",
+  "tags": [
+   "air"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"air\""
+ },
+ {
+  "id": "airfield",
+  "type": "places",
+  "source": "builtin",
+  "name": "airfield",
+  "tags": [
+   "airfield"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"airfield\""
+ },
+ {
+  "id": "archbridge",
+  "type": "places",
+  "source": "builtin",
+  "name": "archbridge",
+  "tags": [
+   "archbridge"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"archbridge\""
+ },
+ {
+  "id": "barbed",
+  "type": "places",
+  "source": "builtin",
+  "name": "barbed",
+  "tags": [
+   "barbed"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"barbed\""
+ },
+ {
+  "id": "beach",
+  "type": "places",
+  "source": "builtin",
+  "name": "beach",
+  "tags": [
+   "beach"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"beach\""
+ },
+ {
+  "id": "board",
+  "type": "places",
+  "source": "builtin",
+  "name": "board",
+  "tags": [
+   "board"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"board\""
+ },
+ {
+  "id": "branches",
+  "type": "places",
+  "source": "builtin",
+  "name": "branches",
+  "tags": [
+   "branches"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"branches\""
+ },
+ {
+  "id": "bridge",
+  "type": "places",
+  "source": "builtin",
+  "name": "bridge",
+  "tags": [
+   "bridge"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"bridge\""
+ },
+ {
+  "id": "bunker",
+  "type": "places",
+  "source": "builtin",
+  "name": "bunker",
+  "tags": [
+   "bunker"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"bunker\""
+ },
+ {
+  "id": "cabin",
+  "type": "places",
+  "source": "builtin",
+  "name": "cabin",
+  "tags": [
+   "cabin"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"cabin\""
+ },
+ {
+  "id": "cabinet",
+  "type": "places",
+  "source": "builtin",
+  "name": "cabinet",
+  "tags": [
+   "cabinet"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"cabinet\""
+ },
+ {
+  "id": "cell",
+  "type": "places",
+  "source": "builtin",
+  "name": "cell",
+  "tags": [
+   "cell"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"cell\""
+ },
+ {
+  "id": "city",
+  "type": "places",
+  "source": "builtin",
+  "name": "city",
+  "tags": [
+   "city"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"city\""
+ },
+ {
+  "id": "classroom",
+  "type": "places",
+  "source": "builtin",
+  "name": "classroom",
+  "tags": [
+   "classroom"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"classroom\""
+ },
+ {
+  "id": "cockpit",
+  "type": "places",
+  "source": "builtin",
+  "name": "cockpit",
+  "tags": [
+   "cockpit"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"cockpit\""
+ },
+ {
+  "id": "codebreak",
+  "type": "places",
+  "source": "builtin",
+  "name": "codebreak",
+  "tags": [
+   "codebreak"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"codebreak\""
+ },
+ {
+  "id": "conference",
+  "type": "places",
+  "source": "builtin",
+  "name": "conference",
+  "tags": [
+   "conference"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"conference\""
+ },
+ {
+  "id": "corridor",
+  "type": "places",
+  "source": "builtin",
+  "name": "corridor",
+  "tags": [
+   "corridor"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"corridor\""
+ },
+ {
+  "id": "countryside",
+  "type": "places",
+  "source": "builtin",
+  "name": "countryside",
+  "tags": [
+   "countryside"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"countryside\""
+ },
+ {
+  "id": "curtain",
+  "type": "places",
+  "source": "builtin",
+  "name": "curtain",
+  "tags": [
+   "curtain"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"curtain\""
+ },
+ {
+  "id": "dark",
+  "type": "places",
+  "source": "builtin",
+  "name": "dark",
+  "tags": [
+   "dark"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"dark\""
+ },
+ {
+  "id": "deck",
+  "type": "places",
+  "source": "builtin",
+  "name": "deck",
+  "tags": [
+   "deck"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"deck\""
+ },
+ {
+  "id": "desert",
+  "type": "places",
+  "source": "builtin",
+  "name": "desert",
+  "tags": [
+   "desert"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"desert\""
+ },
+ {
+  "id": "desk",
+  "type": "places",
+  "source": "builtin",
+  "name": "desk",
+  "tags": [
+   "desk"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"desk\""
+ },
+ {
+  "id": "dock",
+  "type": "places",
+  "source": "builtin",
+  "name": "dock",
+  "tags": [
+   "dock"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"dock\""
+ },
+ {
+  "id": "doorframe",
+  "type": "places",
+  "source": "builtin",
+  "name": "doorframe",
+  "tags": [
+   "doorframe"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"doorframe\""
+ },
+ {
+  "id": "factory",
+  "type": "places",
+  "source": "builtin",
+  "name": "factory",
+  "tags": [
+   "factory"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"factory\""
+ },
+ {
+  "id": "field",
+  "type": "places",
+  "source": "builtin",
+  "name": "field",
+  "tags": [
+   "field"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"field\""
+ },
+ {
+  "id": "flightdeck",
+  "type": "places",
+  "source": "builtin",
+  "name": "flightdeck",
+  "tags": [
+   "flightdeck"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"flightdeck\""
+ },
+ {
+  "id": "frontdesk",
+  "type": "places",
+  "source": "builtin",
+  "name": "frontdesk",
+  "tags": [
+   "frontdesk"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"frontdesk\""
+ },
+ {
+  "id": "garden",
+  "type": "places",
+  "source": "builtin",
+  "name": "garden",
+  "tags": [
+   "garden"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"garden\""
+ },
+ {
+  "id": "grass",
+  "type": "places",
+  "source": "builtin",
+  "name": "grass",
+  "tags": [
+   "grass"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"grass\""
+ },
+ {
+  "id": "hangar",
+  "type": "places",
+  "source": "builtin",
+  "name": "hangar",
+  "tags": [
+   "hangar"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"hangar\""
+ },
+ {
+  "id": "harbor",
+  "type": "places",
+  "source": "builtin",
+  "name": "harbor",
+  "tags": [
+   "harbor"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"harbor\""
+ },
+ {
+  "id": "heath",
+  "type": "places",
+  "source": "builtin",
+  "name": "heath",
+  "tags": [
+   "heath"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"heath\""
+ },
+ {
+  "id": "home",
+  "type": "places",
+  "source": "builtin",
+  "name": "home",
+  "tags": [
+   "home"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"home\""
+ },
+ {
+  "id": "hotel",
+  "type": "places",
+  "source": "builtin",
+  "name": "hotel",
+  "tags": [
+   "hotel"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"hotel\""
+ },
+ {
+  "id": "jungle",
+  "type": "places",
+  "source": "builtin",
+  "name": "jungle",
+  "tags": [
+   "jungle"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"jungle\""
+ },
+ {
+  "id": "kitchen",
+  "type": "places",
+  "source": "builtin",
+  "name": "kitchen",
+  "tags": [
+   "kitchen"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"kitchen\""
+ },
+ {
+  "id": "memorial",
+  "type": "places",
+  "source": "builtin",
+  "name": "memorial",
+  "tags": [
+   "memorial"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"memorial\""
+ },
+ {
+  "id": "mud",
+  "type": "places",
+  "source": "builtin",
+  "name": "mud",
+  "tags": [
+   "mud"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"mud\""
+ },
+ {
+  "id": "nomansland",
+  "type": "places",
+  "source": "builtin",
+  "name": "nomansland",
+  "tags": [
+   "nomansland"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"nomansland\""
+ },
+ {
+  "id": "ocean",
+  "type": "places",
+  "source": "builtin",
+  "name": "ocean",
+  "tags": [
+   "ocean"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"ocean\""
+ },
+ {
+  "id": "office",
+  "type": "places",
+  "source": "builtin",
+  "name": "office",
+  "tags": [
+   "office"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"office\""
+ },
+ {
+  "id": "officedesk",
+  "type": "places",
+  "source": "builtin",
+  "name": "officedesk",
+  "tags": [
+   "officedesk"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"officedesk\""
+ },
+ {
+  "id": "paper",
+  "type": "places",
+  "source": "builtin",
+  "name": "paper",
+  "tags": [
+   "paper"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"paper\""
+ },
+ {
+  "id": "parliament",
+  "type": "places",
+  "source": "builtin",
+  "name": "parliament",
+  "tags": [
+   "parliament"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"parliament\""
+ },
+ {
+  "id": "plant",
+  "type": "places",
+  "source": "builtin",
+  "name": "plant",
+  "tags": [
+   "plant"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"plant\""
+ },
+ {
+  "id": "podium",
+  "type": "places",
+  "source": "builtin",
+  "name": "podium",
+  "tags": [
+   "podium"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"podium\""
+ },
+ {
+  "id": "polder",
+  "type": "places",
+  "source": "builtin",
+  "name": "polder",
+  "tags": [
+   "polder"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"polder\""
+ },
+ {
+  "id": "radio",
+  "type": "places",
+  "source": "builtin",
+  "name": "radio",
+  "tags": [
+   "radio"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"radio\""
+ },
+ {
+  "id": "rail",
+  "type": "places",
+  "source": "builtin",
+  "name": "rail",
+  "tags": [
+   "rail"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"rail\""
+ },
+ {
+  "id": "railway",
+  "type": "places",
+  "source": "builtin",
+  "name": "railway",
+  "tags": [
+   "railway"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"railway\""
+ },
+ {
+  "id": "rally",
+  "type": "places",
+  "source": "builtin",
+  "name": "rally",
+  "tags": [
+   "rally"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"rally\""
+ },
+ {
+  "id": "river",
+  "type": "places",
+  "source": "builtin",
+  "name": "river",
+  "tags": [
+   "river"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"river\""
+ },
+ {
+  "id": "ruins",
+  "type": "places",
+  "source": "builtin",
+  "name": "ruins",
+  "tags": [
+   "ruins"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"ruins\""
+ },
+ {
+  "id": "sandbags",
+  "type": "places",
+  "source": "builtin",
+  "name": "sandbags",
+  "tags": [
+   "sandbags"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"sandbags\""
+ },
+ {
+  "id": "sea",
+  "type": "places",
+  "source": "builtin",
+  "name": "sea",
+  "tags": [
+   "sea"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"sea\""
+ },
+ {
+  "id": "sky",
+  "type": "places",
+  "source": "builtin",
+  "name": "sky",
+  "tags": [
+   "sky"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"sky\""
+ },
+ {
+  "id": "snow",
+  "type": "places",
+  "source": "builtin",
+  "name": "snow",
+  "tags": [
+   "snow"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"snow\""
+ },
+ {
+  "id": "station",
+  "type": "places",
+  "source": "builtin",
+  "name": "station",
+  "tags": [
+   "station"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"station\""
+ },
+ {
+  "id": "steppe",
+  "type": "places",
+  "source": "builtin",
+  "name": "steppe",
+  "tags": [
+   "steppe"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"steppe\""
+ },
+ {
+  "id": "street",
+  "type": "places",
+  "source": "builtin",
+  "name": "street",
+  "tags": [
+   "street"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"street\""
+ },
+ {
+  "id": "studio",
+  "type": "places",
+  "source": "builtin",
+  "name": "studio",
+  "tags": [
+   "studio"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"studio\""
+ },
+ {
+  "id": "study",
+  "type": "places",
+  "source": "builtin",
+  "name": "study",
+  "tags": [
+   "study"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"study\""
+ },
+ {
+  "id": "tent",
+  "type": "places",
+  "source": "builtin",
+  "name": "tent",
+  "tags": [
+   "tent"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"tent\""
+ },
+ {
+  "id": "train_interior",
+  "type": "places",
+  "source": "builtin",
+  "name": "train interior",
+  "tags": [
+   "train",
+   "interior"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"train_interior\""
+ },
+ {
+  "id": "trench",
+  "type": "places",
+  "source": "builtin",
+  "name": "trench",
+  "tags": [
+   "trench"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"trench\""
+ },
+ {
+  "id": "void",
+  "type": "places",
+  "source": "builtin",
+  "name": "void",
+  "tags": [
+   "void"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"void\""
+ },
+ {
+  "id": "warroom",
+  "type": "places",
+  "source": "builtin",
+  "name": "warroom",
+  "tags": [
+   "warroom"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"warroom\""
+ },
+ {
+  "id": "workshop",
+  "type": "places",
+  "source": "builtin",
+  "name": "workshop",
+  "tags": [
+   "workshop"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"workshop\""
+ },
+ {
+  "id": "room_kitchen",
+  "type": "places",
+  "source": "builtin",
+  "name": "room kitchen",
+  "tags": [
+   "room",
+   "interior",
+   "kitchen",
+   "room",
+   "kitchen"
+  ],
+  "doc": "family kitchen: jar shelf, window, clock, iron stove",
+  "preview": "recipes/img/stagecraft/room_kitchen.jpg",
+  "how": "\"where\": {\"room\": \"kitchen\"}"
+ },
+ {
+  "id": "room_tenement",
+  "type": "places",
+  "source": "builtin",
+  "name": "room tenement",
+  "tags": [
+   "room",
+   "interior",
+   "tenement",
+   "room",
+   "tenement"
+  ],
+  "doc": "one-room flat of the poor: cracked plaster, bed, small stove",
+  "preview": "recipes/img/stagecraft/room_tenement.jpg",
+  "how": "\"where\": {\"room\": \"tenement\"}"
+ },
+ {
+  "id": "room_parlour",
+  "type": "places",
+  "source": "builtin",
+  "name": "room parlour",
+  "tags": [
+   "room",
+   "interior",
+   "parlour",
+   "room",
+   "parlour"
+  ],
+  "doc": "middle-class sitting room: wallpaper, portrait, photos",
+  "preview": "recipes/img/stagecraft/room_parlour.jpg",
+  "how": "\"where\": {\"room\": \"parlour\"}"
+ },
+ {
+  "id": "room_farmhouse",
+  "type": "places",
+  "source": "builtin",
+  "name": "room farmhouse",
+  "tags": [
+   "room",
+   "interior",
+   "farmhouse",
+   "room",
+   "farmhouse"
+  ],
+  "doc": "farm kitchen: hearth fire, beams, sacks",
+  "preview": "recipes/img/stagecraft/room_farmhouse.jpg",
+  "how": "\"where\": {\"room\": \"farmhouse\"}"
+ },
+ {
+  "id": "room_shop",
+  "type": "places",
+  "source": "builtin",
+  "name": "room shop",
+  "tags": [
+   "room",
+   "interior",
+   "shop",
+   "room",
+   "shop"
+  ],
+  "doc": "grocer: shelves behind the counter (add a counter thing)",
+  "preview": "recipes/img/stagecraft/room_shop.jpg",
+  "how": "\"where\": {\"room\": \"shop\"}"
+ },
+ {
+  "id": "room_bakery",
+  "type": "places",
+  "source": "builtin",
+  "name": "room bakery",
+  "tags": [
+   "room",
+   "interior",
+   "bakery",
+   "room",
+   "bakery"
+  ],
+  "doc": "bakery: bread shelves and a brick oven",
+  "preview": "recipes/img/stagecraft/room_bakery.jpg",
+  "how": "\"where\": {\"room\": \"bakery\"}"
+ },
+ {
+  "id": "room_office",
+  "type": "places",
+  "source": "builtin",
+  "name": "room office",
+  "tags": [
+   "room",
+   "interior",
+   "office",
+   "room",
+   "office"
+  ],
+  "doc": "official office: map, cabinet, window",
+  "preview": "recipes/img/stagecraft/room_office.jpg",
+  "how": "\"where\": {\"room\": \"office\"}"
+ },
+ {
+  "id": "room_ministry",
+  "type": "places",
+  "source": "builtin",
+  "name": "room ministry",
+  "tags": [
+   "room",
+   "interior",
+   "ministry",
+   "room",
+   "ministry"
+  ],
+  "doc": "grand government room: tall windows, portrait (add flag:<NATION> for a flag)",
+  "preview": "recipes/img/stagecraft/room_ministry.jpg",
+  "how": "\"where\": {\"room\": \"ministry\"}"
+ },
+ {
+  "id": "room_admiralty",
+  "type": "places",
+  "source": "builtin",
+  "name": "room admiralty",
+  "tags": [
+   "room",
+   "interior",
+   "admiralty",
+   "room",
+   "admiralty"
+  ],
+  "doc": "naval staff room: big sea chart, window on the sea",
+  "preview": "recipes/img/stagecraft/room_admiralty.jpg",
+  "how": "\"where\": {\"room\": \"admiralty\"}"
+ },
+ {
+  "id": "room_food_office",
+  "type": "places",
+  "source": "builtin",
+  "name": "room food office",
+  "tags": [
+   "room",
+   "interior",
+   "food_office",
+   "room",
+   "food",
+   "office"
+  ],
+  "doc": "ration office: posters, filing drawers, clock",
+  "preview": "recipes/img/stagecraft/room_food_office.jpg",
+  "how": "\"where\": {\"room\": \"food_office\"}"
+ },
+ {
+  "id": "room_ward",
+  "type": "places",
+  "source": "builtin",
+  "name": "room ward",
+  "tags": [
+   "room",
+   "interior",
+   "ward",
+   "room",
+   "ward"
+  ],
+  "doc": "hospital ward: white tiles, row of beds",
+  "preview": "recipes/img/stagecraft/room_ward.jpg",
+  "how": "\"where\": {\"room\": \"ward\"}"
+ },
+ {
+  "id": "room_barracks",
+  "type": "places",
+  "source": "builtin",
+  "name": "room barracks",
+  "tags": [
+   "room",
+   "interior",
+   "barracks",
+   "room",
+   "barracks"
+  ],
+  "doc": "soldiers barracks: bunks, rifle rack, stove",
+  "preview": "recipes/img/stagecraft/room_barracks.jpg",
+  "how": "\"where\": {\"room\": \"barracks\"}"
+ },
+ {
+  "id": "room_dugout",
+  "type": "places",
+  "source": "builtin",
+  "name": "room dugout",
+  "tags": [
+   "room",
+   "interior",
+   "dugout",
+   "room",
+   "dugout"
+  ],
+  "doc": "trench dugout: timber walls, duckboards, lantern",
+  "preview": "recipes/img/stagecraft/room_dugout.jpg",
+  "how": "\"where\": {\"room\": \"dugout\"}"
+ },
+ {
+  "id": "room_cellar",
+  "type": "places",
+  "source": "builtin",
+  "name": "room cellar",
+  "tags": [
+   "room",
+   "interior",
+   "cellar",
+   "room",
+   "cellar"
+  ],
+  "doc": "stone cellar / shelter: arch, barrels, candlelight",
+  "preview": "recipes/img/stagecraft/room_cellar.jpg",
+  "how": "\"where\": {\"room\": \"cellar\"}"
+ },
+ {
+  "id": "room_warehouse",
+  "type": "places",
+  "source": "builtin",
+  "name": "room warehouse",
+  "tags": [
+   "room",
+   "interior",
+   "warehouse",
+   "room",
+   "warehouse"
+  ],
+  "doc": "dock warehouse: sacks, crates, barrels, big door",
+  "preview": "recipes/img/stagecraft/room_warehouse.jpg",
+  "how": "\"where\": {\"room\": \"warehouse\"}"
+ },
+ {
+  "id": "room_classroom",
+  "type": "places",
+  "source": "builtin",
+  "name": "room classroom",
+  "tags": [
+   "room",
+   "interior",
+   "classroom",
+   "room",
+   "classroom"
+  ],
+  "doc": "school room: blackboard, map",
+  "preview": "recipes/img/stagecraft/room_classroom.jpg",
+  "how": "\"where\": {\"room\": \"classroom\"}"
+ },
+ {
+  "id": "room_church",
+  "type": "places",
+  "source": "builtin",
+  "name": "room church",
+  "tags": [
+   "room",
+   "interior",
+   "church",
+   "room",
+   "church"
+  ],
+  "doc": "church: stained glass, cross, candles",
+  "preview": "recipes/img/stagecraft/room_church.jpg",
+  "how": "\"where\": {\"room\": \"church\"}"
+ },
+ {
+  "id": "room_tavern",
+  "type": "places",
+  "source": "builtin",
+  "name": "room tavern",
+  "tags": [
+   "room",
+   "interior",
+   "tavern",
+   "room",
+   "tavern"
+  ],
+  "doc": "inn / bar: bottles, barrels, beams",
+  "preview": "recipes/img/stagecraft/room_tavern.jpg",
+  "how": "\"where\": {\"room\": \"tavern\"}"
+ },
+ {
+  "id": "town_german",
+  "type": "places",
+  "source": "builtin",
+  "name": "town german",
+  "tags": [
+   "town",
+   "street",
+   "german",
+   "town",
+   "german"
+  ],
+  "doc": "German town: half-timbered houses, red roofs, German shop signs",
+  "preview": "recipes/img/stagecraft/town_german.jpg",
+  "how": "\"where\": {\"town\": \"german\"}"
+ },
+ {
+  "id": "town_austrian",
+  "type": "places",
+  "source": "builtin",
+  "name": "town austrian",
+  "tags": [
+   "town",
+   "street",
+   "austrian",
+   "town",
+   "austrian"
+  ],
+  "doc": "Vienna-style street: pale stucco blocks, Austrian signs",
+  "preview": "recipes/img/stagecraft/town_austrian.jpg",
+  "how": "\"where\": {\"town\": \"austrian\"}"
+ },
+ {
+  "id": "town_french",
+  "type": "places",
+  "source": "builtin",
+  "name": "town french",
+  "tags": [
+   "town",
+   "street",
+   "french",
+   "town",
+   "french"
+  ],
+  "doc": "French town: pale stone, slate roofs, French signs",
+  "preview": "recipes/img/stagecraft/town_french.jpg",
+  "how": "\"where\": {\"town\": \"french\"}"
+ },
+ {
+  "id": "town_english",
+  "type": "places",
+  "source": "builtin",
+  "name": "town english",
+  "tags": [
+   "town",
+   "street",
+   "english",
+   "town",
+   "english"
+  ],
+  "doc": "British street: brick terraces, chimney pots, English signs",
+  "preview": "recipes/img/stagecraft/town_english.jpg",
+  "how": "\"where\": {\"town\": \"english\"}"
+ },
+ {
+  "id": "town_russian",
+  "type": "places",
+  "source": "builtin",
+  "name": "town russian",
+  "tags": [
+   "town",
+   "street",
+   "russian",
+   "town",
+   "russian"
+  ],
+  "doc": "Russian town: painted stucco, green roofs, Cyrillic signs",
+  "preview": "recipes/img/stagecraft/town_russian.jpg",
+  "how": "\"where\": {\"town\": \"russian\"}"
+ },
+ {
+  "id": "town_dutch",
+  "type": "places",
+  "source": "builtin",
+  "name": "town dutch",
+  "tags": [
+   "town",
+   "street",
+   "dutch",
+   "town",
+   "dutch"
+  ],
+  "doc": "Dutch street: narrow brick gables, Dutch signs (neutral 1914-18)",
+  "preview": "recipes/img/stagecraft/town_dutch.jpg",
+  "how": "\"where\": {\"town\": \"dutch\"}"
+ },
+ {
+  "id": "town_industrial",
+  "type": "places",
+  "source": "builtin",
+  "name": "town industrial",
+  "tags": [
+   "town",
+   "street",
+   "industrial",
+   "town",
+   "industrial"
+  ],
+  "doc": "factory district: brick tenements and a smoking works",
+  "preview": "recipes/img/stagecraft/town_industrial.jpg",
+  "how": "\"where\": {\"town\": \"industrial\"}"
+ },
+ {
+  "id": "town_village",
+  "type": "places",
+  "source": "builtin",
+  "name": "town village",
+  "tags": [
+   "town",
+   "street",
+   "village",
+   "town",
+   "village"
+  ],
+  "doc": "village street: low houses, church, fields behind",
+  "preview": "recipes/img/stagecraft/town_village.jpg",
+  "how": "\"where\": {\"town\": \"village\"}"
+ },
+ {
+  "id": "kit_house",
+  "type": "buildings",
+  "source": "builtin",
+  "name": "kit house",
+  "tags": [
+   "town",
+   "kit",
+   "kit",
+   "house"
+  ],
+  "doc": "gabled house (half-timbered in german/village style)",
+  "preview": null,
+  "how": "\"buildings\": [\"house\"] in a town place"
+ },
+ {
+  "id": "kit_tenement",
+  "type": "buildings",
+  "source": "builtin",
+  "name": "kit tenement",
+  "tags": [
+   "town",
+   "kit",
+   "kit",
+   "tenement"
+  ],
+  "doc": "four-storey apartment block",
+  "preview": null,
+  "how": "\"buildings\": [\"tenement\"] in a town place"
+ },
+ {
+  "id": "kit_shop",
+  "type": "buildings",
+  "source": "builtin",
+  "name": "kit shop",
+  "tags": [
+   "town",
+   "kit",
+   "kit",
+   "shop"
+  ],
+  "doc": "shop:<bakery|butcher|grocer|cafe|post|bank|office> with sign, awning and display window ({\"item\": \"shop:bakery\", \"goods\": \"empty\"}; goods = bread | meat | veg | turnips | tins | empty)",
+  "preview": null,
+  "how": "\"buildings\": [\"shop\"] in a town place"
+ },
+ {
+  "id": "kit_church",
+  "type": "buildings",
+  "source": "builtin",
+  "name": "kit church",
+  "tags": [
+   "town",
+   "kit",
+   "kit",
+   "church"
+  ],
+  "doc": "church with a tower and clock",
+  "preview": null,
+  "how": "\"buildings\": [\"church\"] in a town place"
+ },
+ {
+  "id": "kit_townhall",
+  "type": "buildings",
+  "source": "builtin",
+  "name": "kit townhall",
+  "tags": [
+   "town",
+   "kit",
+   "kit",
+   "townhall"
+  ],
+  "doc": "town hall with columns, flag and clock",
+  "preview": null,
+  "how": "\"buildings\": [\"townhall\"] in a town place"
+ },
+ {
+  "id": "kit_factory",
+  "type": "buildings",
+  "source": "builtin",
+  "name": "kit factory",
+  "tags": [
+   "town",
+   "kit",
+   "kit",
+   "factory"
+  ],
+  "doc": "works with sawtooth roof and smoking chimneys",
+  "preview": null,
+  "how": "\"buildings\": [\"factory\"] in a town place"
+ },
+ {
+  "id": "kit_office",
+  "type": "buildings",
+  "source": "builtin",
+  "name": "kit office",
+  "tags": [
+   "town",
+   "kit",
+   "kit",
+   "office"
+  ],
+  "doc": "official building with a sign (ration office, ministry)",
+  "preview": null,
+  "how": "\"buildings\": [\"office\"] in a town place"
+ },
+ {
+  "id": "kit_post",
+  "type": "buildings",
+  "source": "builtin",
+  "name": "kit post",
+  "tags": [
+   "town",
+   "kit",
+   "kit",
+   "post"
+  ],
+  "doc": "post office",
+  "preview": null,
+  "how": "\"buildings\": [\"post\"] in a town place"
+ },
+ {
+  "id": "kit_ruin",
+  "type": "buildings",
+  "source": "builtin",
+  "name": "kit ruin",
+  "tags": [
+   "town",
+   "kit",
+   "kit",
+   "ruin"
+  ],
+  "doc": "shelled ruin with empty windows",
+  "preview": null,
+  "how": "\"buildings\": [\"ruin\"] in a town place"
+ },
+ {
+  "id": "kit_station",
+  "type": "buildings",
+  "source": "builtin",
+  "name": "kit station",
+  "tags": [
+   "town",
+   "kit",
+   "kit",
+   "station"
+  ],
+  "doc": "railway station front with a big clock",
+  "preview": null,
+  "how": "\"buildings\": [\"station\"] in a town place"
+ },
+ {
+  "id": "room_item_window",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item window",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "window"
+  ],
+  "doc": "window:<view> view = street, snow_street, field, sea, harbor, city, ruins, garden, front, sky; window:small / window:tall",
+  "preview": null,
+  "how": "\"items\": [\"window\"] in a room place"
+ },
+ {
+  "id": "room_item_door",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item door",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "door"
+  ],
+  "doc": "door (door:open shows the light outside)",
+  "preview": null,
+  "how": "\"items\": [\"door\"] in a room place"
+ },
+ {
+  "id": "room_item_shelf",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item shelf",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "shelf"
+  ],
+  "doc": "wall shelf: shelf:jars | tins | bottles | books | bread | plates | empty (bare boards = scarcity)",
+  "preview": null,
+  "how": "\"items\": [\"shelf\"] in a room place"
+ },
+ {
+  "id": "room_item_cupboard",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item cupboard",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "cupboard"
+  ],
+  "doc": "kitchen dresser with plates",
+  "preview": null,
+  "how": "\"items\": [\"cupboard\"] in a room place"
+ },
+ {
+  "id": "room_item_cabinet",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item cabinet",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "cabinet"
+  ],
+  "doc": "filing cabinet",
+  "preview": null,
+  "how": "\"items\": [\"cabinet\"] in a room place"
+ },
+ {
+  "id": "room_item_drawers",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item drawers",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "drawers"
+  ],
+  "doc": "wall of labelled drawers (archive / ration office)",
+  "preview": null,
+  "how": "\"items\": [\"drawers\"] in a room place"
+ },
+ {
+  "id": "room_item_stove",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item stove",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "stove"
+  ],
+  "doc": "iron kitchen stove with a pot and a flue pipe (glows)",
+  "preview": null,
+  "how": "\"items\": [\"stove\"] in a room place"
+ },
+ {
+  "id": "room_item_fireplace",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item fireplace",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "fireplace"
+  ],
+  "doc": "hearth with a fire and a mantel",
+  "preview": null,
+  "how": "\"items\": [\"fireplace\"] in a room place"
+ },
+ {
+  "id": "room_item_oven",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item oven",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "oven"
+  ],
+  "doc": "brick baker's oven with fire",
+  "preview": null,
+  "how": "\"items\": [\"oven\"] in a room place"
+ },
+ {
+  "id": "room_item_bed",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item bed",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "bed"
+  ],
+  "doc": "iron bed with a blanket",
+  "preview": null,
+  "how": "\"items\": [\"bed\"] in a room place"
+ },
+ {
+  "id": "room_item_beds",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item beds",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "beds"
+  ],
+  "doc": "a row of three hospital beds",
+  "preview": null,
+  "how": "\"items\": [\"beds\"] in a room place"
+ },
+ {
+  "id": "room_item_bunk",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item bunk",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "bunk"
+  ],
+  "doc": "two-tier bunk",
+  "preview": null,
+  "how": "\"items\": [\"bunk\"] in a room place"
+ },
+ {
+  "id": "room_item_clock",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item clock",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "clock"
+  ],
+  "doc": "wall clock (clock:HH:MM)",
+  "preview": null,
+  "how": "\"items\": [\"clock\"] in a room place"
+ },
+ {
+  "id": "room_item_portrait",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item portrait",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "portrait"
+  ],
+  "doc": "framed portrait (portrait:<nation> shows a flag)",
+  "preview": null,
+  "how": "\"items\": [\"portrait\"] in a room place"
+ },
+ {
+  "id": "room_item_map",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item map",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "map"
+  ],
+  "doc": "wall map (map:sea = sea chart)",
+  "preview": null,
+  "how": "\"items\": [\"map\"] in a room place"
+ },
+ {
+  "id": "room_item_poster",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item poster",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "poster"
+  ],
+  "doc": "printed notice; text from the item {\"item\": \"poster\", \"text\": \"BREAD CARD\"}",
+  "preview": null,
+  "how": "\"items\": [\"poster\"] in a room place"
+ },
+ {
+  "id": "room_item_flag",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item flag",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "flag"
+  ],
+  "doc": "flag on a pole (flag:<nation>; default the film side)",
+  "preview": null,
+  "how": "\"items\": [\"flag\"] in a room place"
+ },
+ {
+  "id": "room_item_calendar",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item calendar",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "calendar"
+  ],
+  "doc": "wall calendar; {\"item\": \"calendar\", \"text\": \"1917\"}",
+  "preview": null,
+  "how": "\"items\": [\"calendar\"] in a room place"
+ },
+ {
+  "id": "room_item_photos",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item photos",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "photos"
+  ],
+  "doc": "family photos in frames",
+  "preview": null,
+  "how": "\"items\": [\"photos\"] in a room place"
+ },
+ {
+  "id": "room_item_crucifix",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item crucifix",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "crucifix"
+  ],
+  "doc": "a cross on the wall",
+  "preview": null,
+  "how": "\"items\": [\"crucifix\"] in a room place"
+ },
+ {
+  "id": "room_item_mirror",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item mirror",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "mirror"
+  ],
+  "doc": "small mirror",
+  "preview": null,
+  "how": "\"items\": [\"mirror\"] in a room place"
+ },
+ {
+  "id": "room_item_hooks",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item hooks",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "hooks"
+  ],
+  "doc": "coat hooks with coats and a cap",
+  "preview": null,
+  "how": "\"items\": [\"hooks\"] in a room place"
+ },
+ {
+  "id": "room_item_lamp",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item lamp",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "lamp"
+  ],
+  "doc": "hanging lamp from the ceiling (lights a pool)",
+  "preview": null,
+  "how": "\"items\": [\"lamp\"] in a room place"
+ },
+ {
+  "id": "room_item_barrels",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item barrels",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "barrels"
+  ],
+  "doc": "stacked barrels",
+  "preview": null,
+  "how": "\"items\": [\"barrels\"] in a room place"
+ },
+ {
+  "id": "room_item_crates",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item crates",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "crates"
+  ],
+  "doc": "stacked crates (crates:<stencil text>)",
+  "preview": null,
+  "how": "\"items\": [\"crates\"] in a room place"
+ },
+ {
+  "id": "room_item_sacks",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item sacks",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "sacks"
+  ],
+  "doc": "stacked grain sacks",
+  "preview": null,
+  "how": "\"items\": [\"sacks\"] in a room place"
+ },
+ {
+  "id": "room_item_rifles",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item rifles",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "rifles"
+  ],
+  "doc": "rifle rack",
+  "preview": null,
+  "how": "\"items\": [\"rifles\"] in a room place"
+ },
+ {
+  "id": "room_item_blackboard",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item blackboard",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "blackboard"
+  ],
+  "doc": "blackboard; {\"item\": \"blackboard\", \"text\": \"1914\"}",
+  "preview": null,
+  "how": "\"items\": [\"blackboard\"] in a room place"
+ },
+ {
+  "id": "room_item_sink",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item sink",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "sink"
+  ],
+  "doc": "stone sink with a hand pump",
+  "preview": null,
+  "how": "\"items\": [\"sink\"] in a room place"
+ },
+ {
+  "id": "room_item_cradle",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item cradle",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "cradle"
+  ],
+  "doc": "wooden cradle",
+  "preview": null,
+  "how": "\"items\": [\"cradle\"] in a room place"
+ },
+ {
+  "id": "room_item_arch",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item arch",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "arch"
+  ],
+  "doc": "brick arch opening into darkness",
+  "preview": null,
+  "how": "\"items\": [\"arch\"] in a room place"
+ },
+ {
+  "id": "room_item_stained",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item stained",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "stained"
+  ],
+  "doc": "stained-glass window",
+  "preview": null,
+  "how": "\"items\": [\"stained\"] in a room place"
+ },
+ {
+  "id": "room_item_sign",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item sign",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "sign"
+  ],
+  "doc": "shop sign board; {\"item\": \"sign\", \"text\": \"KOLONIALWAREN\"}",
+  "preview": null,
+  "how": "\"items\": [\"sign\"] in a room place"
+ },
+ {
+  "id": "room_item_radio",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item radio",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "radio"
+  ],
+  "doc": "wireless set on a bracket",
+  "preview": null,
+  "how": "\"items\": [\"radio\"] in a room place"
+ },
+ {
+  "id": "room_item_pipes",
+  "type": "props",
+  "source": "builtin",
+  "name": "room item pipes",
+  "tags": [
+   "room",
+   "kit",
+   "room",
+   "item",
+   "pipes"
+  ],
+  "doc": "exposed pipes along the wall (cellar, factory office)",
+  "preview": null,
+  "how": "\"items\": [\"pipes\"] in a room place"
+ },
+ {
+  "id": "outfit_tunic",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "outfit tunic",
+  "tags": [
+   "outfit",
+   "outfit",
+   "tunic"
+  ],
+  "doc": "character look option: outfit = tunic",
+  "preview": null,
+  "how": "cast: {\"outfit\": \"tunic\"}"
+ },
+ {
+  "id": "outfit_suit",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "outfit suit",
+  "tags": [
+   "outfit",
+   "outfit",
+   "suit"
+  ],
+  "doc": "character look option: outfit = suit",
+  "preview": null,
+  "how": "cast: {\"outfit\": \"suit\"}"
+ },
+ {
+  "id": "outfit_navy",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "outfit navy",
+  "tags": [
+   "outfit",
+   "outfit",
+   "navy"
+  ],
+  "doc": "character look option: outfit = navy",
+  "preview": null,
+  "how": "cast: {\"outfit\": \"navy\"}"
+ },
+ {
+  "id": "outfit_navywhite",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "outfit navywhite",
+  "tags": [
+   "outfit",
+   "outfit",
+   "navywhite"
+  ],
+  "doc": "character look option: outfit = navywhite",
+  "preview": null,
+  "how": "cast: {\"outfit\": \"navywhite\"}"
+ },
+ {
+  "id": "outfit_coat",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "outfit coat",
+  "tags": [
+   "outfit",
+   "outfit",
+   "coat"
+  ],
+  "doc": "character look option: outfit = coat",
+  "preview": null,
+  "how": "cast: {\"outfit\": \"coat\"}"
+ },
+ {
+  "id": "outfit_sailor",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "outfit sailor",
+  "tags": [
+   "outfit",
+   "outfit",
+   "sailor"
+  ],
+  "doc": "character look option: outfit = sailor",
+  "preview": null,
+  "how": "cast: {\"outfit\": \"sailor\"}"
+ },
+ {
+  "id": "outfit_civil",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "outfit civil",
+  "tags": [
+   "outfit",
+   "outfit",
+   "civil"
+  ],
+  "doc": "character look option: outfit = civil",
+  "preview": null,
+  "how": "cast: {\"outfit\": \"civil\"}"
+ },
+ {
+  "id": "outfit_dress",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "outfit dress",
+  "tags": [
+   "outfit",
+   "outfit",
+   "dress"
+  ],
+  "doc": "character look option: outfit = dress",
+  "preview": null,
+  "how": "cast: {\"outfit\": \"dress\"}"
+ },
+ {
+  "id": "outfit_party",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "outfit party",
+  "tags": [
+   "outfit",
+   "outfit",
+   "party"
+  ],
+  "doc": "character look option: outfit = party",
+  "preview": null,
+  "how": "cast: {\"outfit\": \"party\"}"
+ },
+ {
+  "id": "outfit_armor",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "outfit armor",
+  "tags": [
+   "outfit",
+   "outfit",
+   "armor"
+  ],
+  "doc": "character look option: outfit = armor",
+  "preview": null,
+  "how": "cast: {\"outfit\": \"armor\"}"
+ },
+ {
+  "id": "outfit_robe",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "outfit robe",
+  "tags": [
+   "outfit",
+   "outfit",
+   "robe"
+  ],
+  "doc": "character look option: outfit = robe",
+  "preview": null,
+  "how": "cast: {\"outfit\": \"robe\"}"
+ },
+ {
+  "id": "outfit_pilot",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "outfit pilot",
+  "tags": [
+   "outfit",
+   "outfit",
+   "pilot"
+  ],
+  "doc": "character look option: outfit = pilot",
+  "preview": null,
+  "how": "cast: {\"outfit\": \"pilot\"}"
+ },
+ {
+  "id": "outfit_tweed",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "outfit tweed",
+  "tags": [
+   "outfit",
+   "outfit",
+   "tweed"
+  ],
+  "doc": "character look option: outfit = tweed",
+  "preview": null,
+  "how": "cast: {\"outfit\": \"tweed\"}"
+ },
+ {
+  "id": "hair_side",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hair side",
+  "tags": [
+   "hair",
+   "hair",
+   "side"
+  ],
+  "doc": "character look option: hair = side",
+  "preview": null,
+  "how": "cast: {\"hair\": \"side\"}"
+ },
+ {
+  "id": "hair_back",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hair back",
+  "tags": [
+   "hair",
+   "hair",
+   "back"
+  ],
+  "doc": "character look option: hair = back",
+  "preview": null,
+  "how": "cast: {\"hair\": \"back\"}"
+ },
+ {
+  "id": "hair_bald",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hair bald",
+  "tags": [
+   "hair",
+   "hair",
+   "bald"
+  ],
+  "doc": "character look option: hair = bald",
+  "preview": null,
+  "how": "cast: {\"hair\": \"bald\"}"
+ },
+ {
+  "id": "hair_baldtop",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hair baldtop",
+  "tags": [
+   "hair",
+   "hair",
+   "baldtop"
+  ],
+  "doc": "character look option: hair = baldtop",
+  "preview": null,
+  "how": "cast: {\"hair\": \"baldtop\"}"
+ },
+ {
+  "id": "hair_short",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hair short",
+  "tags": [
+   "hair",
+   "hair",
+   "short"
+  ],
+  "doc": "character look option: hair = short",
+  "preview": null,
+  "how": "cast: {\"hair\": \"short\"}"
+ },
+ {
+  "id": "hair_part",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hair part",
+  "tags": [
+   "hair",
+   "hair",
+   "part"
+  ],
+  "doc": "character look option: hair = part",
+  "preview": null,
+  "how": "cast: {\"hair\": \"part\"}"
+ },
+ {
+  "id": "hair_curly",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hair curly",
+  "tags": [
+   "hair",
+   "hair",
+   "curly"
+  ],
+  "doc": "character look option: hair = curly",
+  "preview": null,
+  "how": "cast: {\"hair\": \"curly\"}"
+ },
+ {
+  "id": "hair_bun",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hair bun",
+  "tags": [
+   "hair",
+   "hair",
+   "bun"
+  ],
+  "doc": "character look option: hair = bun",
+  "preview": null,
+  "how": "cast: {\"hair\": \"bun\"}"
+ },
+ {
+  "id": "hair_long",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hair long",
+  "tags": [
+   "hair",
+   "hair",
+   "long"
+  ],
+  "doc": "character look option: hair = long",
+  "preview": null,
+  "how": "cast: {\"hair\": \"long\"}"
+ },
+ {
+  "id": "hair_messy",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hair messy",
+  "tags": [
+   "hair",
+   "hair",
+   "messy"
+  ],
+  "doc": "character look option: hair = messy",
+  "preview": null,
+  "how": "cast: {\"hair\": \"messy\"}"
+ },
+ {
+  "id": "hair_tousled",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hair tousled",
+  "tags": [
+   "hair",
+   "hair",
+   "tousled"
+  ],
+  "doc": "character look option: hair = tousled",
+  "preview": null,
+  "how": "cast: {\"hair\": \"tousled\"}"
+ },
+ {
+  "id": "hair_none",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hair none",
+  "tags": [
+   "hair",
+   "hair",
+   "none"
+  ],
+  "doc": "character look option: hair = none",
+  "preview": null,
+  "how": "cast: {\"hair\": \"none\"}"
+ },
+ {
+  "id": "facial_toothbrush",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "facial toothbrush",
+  "tags": [
+   "facial",
+   "facial",
+   "toothbrush"
+  ],
+  "doc": "character look option: facial = toothbrush",
+  "preview": null,
+  "how": "cast: {\"facial\": \"toothbrush\"}"
+ },
+ {
+  "id": "facial_walrus",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "facial walrus",
+  "tags": [
+   "facial",
+   "facial",
+   "walrus"
+  ],
+  "doc": "character look option: facial = walrus",
+  "preview": null,
+  "how": "cast: {\"facial\": \"walrus\"}"
+ },
+ {
+  "id": "facial_pencil",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "facial pencil",
+  "tags": [
+   "facial",
+   "facial",
+   "pencil"
+  ],
+  "doc": "character look option: facial = pencil",
+  "preview": null,
+  "how": "cast: {\"facial\": \"pencil\"}"
+ },
+ {
+  "id": "facial_handlebar",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "facial handlebar",
+  "tags": [
+   "facial",
+   "facial",
+   "handlebar"
+  ],
+  "doc": "character look option: facial = handlebar",
+  "preview": null,
+  "how": "cast: {\"facial\": \"handlebar\"}"
+ },
+ {
+  "id": "facial_beard",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "facial beard",
+  "tags": [
+   "facial",
+   "facial",
+   "beard"
+  ],
+  "doc": "character look option: facial = beard",
+  "preview": null,
+  "how": "cast: {\"facial\": \"beard\"}"
+ },
+ {
+  "id": "facial_goatee",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "facial goatee",
+  "tags": [
+   "facial",
+   "facial",
+   "goatee"
+  ],
+  "doc": "character look option: facial = goatee",
+  "preview": null,
+  "how": "cast: {\"facial\": \"goatee\"}"
+ },
+ {
+  "id": "facial_stubble",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "facial stubble",
+  "tags": [
+   "facial",
+   "facial",
+   "stubble"
+  ],
+  "doc": "character look option: facial = stubble",
+  "preview": null,
+  "how": "cast: {\"facial\": \"stubble\"}"
+ },
+ {
+  "id": "facial_none",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "facial none",
+  "tags": [
+   "facial",
+   "facial",
+   "none"
+  ],
+  "doc": "character look option: facial = none",
+  "preview": null,
+  "how": "cast: {\"facial\": \"none\"}"
+ },
+ {
+  "id": "hat_peaked",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat peaked",
+  "tags": [
+   "hat",
+   "hat",
+   "peaked"
+  ],
+  "doc": "character look option: hat = peaked",
+  "preview": null,
+  "how": "cast: {\"hat\": \"peaked\"}"
+ },
+ {
+  "id": "hat_garrison",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat garrison",
+  "tags": [
+   "hat",
+   "hat",
+   "garrison"
+  ],
+  "doc": "character look option: hat = garrison",
+  "preview": null,
+  "how": "cast: {\"hat\": \"garrison\"}"
+ },
+ {
+  "id": "hat_helmet_de",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat helmet de",
+  "tags": [
+   "hat",
+   "hat",
+   "helmet",
+   "de"
+  ],
+  "doc": "character look option: hat = helmet_de",
+  "preview": null,
+  "how": "cast: {\"hat\": \"helmet_de\"}"
+ },
+ {
+  "id": "hat_helmet_us",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat helmet us",
+  "tags": [
+   "hat",
+   "hat",
+   "helmet",
+   "us"
+  ],
+  "doc": "character look option: hat = helmet_us",
+  "preview": null,
+  "how": "cast: {\"hat\": \"helmet_us\"}"
+ },
+ {
+  "id": "hat_helmet_uk",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat helmet uk",
+  "tags": [
+   "hat",
+   "hat",
+   "helmet",
+   "uk"
+  ],
+  "doc": "character look option: hat = helmet_uk",
+  "preview": null,
+  "how": "cast: {\"hat\": \"helmet_uk\"}"
+ },
+ {
+  "id": "hat_helmet_su",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat helmet su",
+  "tags": [
+   "hat",
+   "hat",
+   "helmet",
+   "su"
+  ],
+  "doc": "character look option: hat = helmet_su",
+  "preview": null,
+  "how": "cast: {\"hat\": \"helmet_su\"}"
+ },
+ {
+  "id": "hat_helmet_jp",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat helmet jp",
+  "tags": [
+   "hat",
+   "hat",
+   "helmet",
+   "jp"
+  ],
+  "doc": "character look option: hat = helmet_jp",
+  "preview": null,
+  "how": "cast: {\"hat\": \"helmet_jp\"}"
+ },
+ {
+  "id": "hat_navy",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat navy",
+  "tags": [
+   "hat",
+   "hat",
+   "navy"
+  ],
+  "doc": "character look option: hat = navy",
+  "preview": null,
+  "how": "cast: {\"hat\": \"navy\"}"
+ },
+ {
+  "id": "hat_navy_white",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat navy white",
+  "tags": [
+   "hat",
+   "hat",
+   "navy",
+   "white"
+  ],
+  "doc": "character look option: hat = navy_white",
+  "preview": null,
+  "how": "cast: {\"hat\": \"navy_white\"}"
+ },
+ {
+  "id": "hat_beret",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat beret",
+  "tags": [
+   "hat",
+   "hat",
+   "beret"
+  ],
+  "doc": "character look option: hat = beret",
+  "preview": null,
+  "how": "cast: {\"hat\": \"beret\"}"
+ },
+ {
+  "id": "hat_bicorne",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat bicorne",
+  "tags": [
+   "hat",
+   "hat",
+   "bicorne"
+  ],
+  "doc": "character look option: hat = bicorne",
+  "preview": null,
+  "how": "cast: {\"hat\": \"bicorne\"}"
+ },
+ {
+  "id": "hat_kepi",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat kepi",
+  "tags": [
+   "hat",
+   "hat",
+   "kepi"
+  ],
+  "doc": "character look option: hat = kepi",
+  "preview": null,
+  "how": "cast: {\"hat\": \"kepi\"}"
+ },
+ {
+  "id": "hat_ushanka",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat ushanka",
+  "tags": [
+   "hat",
+   "hat",
+   "ushanka"
+  ],
+  "doc": "character look option: hat = ushanka",
+  "preview": null,
+  "how": "cast: {\"hat\": \"ushanka\"}"
+ },
+ {
+  "id": "hat_fedora",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat fedora",
+  "tags": [
+   "hat",
+   "hat",
+   "fedora"
+  ],
+  "doc": "character look option: hat = fedora",
+  "preview": null,
+  "how": "cast: {\"hat\": \"fedora\"}"
+ },
+ {
+  "id": "hat_tophat",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat tophat",
+  "tags": [
+   "hat",
+   "hat",
+   "tophat"
+  ],
+  "doc": "character look option: hat = tophat",
+  "preview": null,
+  "how": "cast: {\"hat\": \"tophat\"}"
+ },
+ {
+  "id": "hat_pith",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat pith",
+  "tags": [
+   "hat",
+   "hat",
+   "pith"
+  ],
+  "doc": "character look option: hat = pith",
+  "preview": null,
+  "how": "cast: {\"hat\": \"pith\"}"
+ },
+ {
+  "id": "hat_sailor",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat sailor",
+  "tags": [
+   "hat",
+   "hat",
+   "sailor"
+  ],
+  "doc": "character look option: hat = sailor",
+  "preview": null,
+  "how": "cast: {\"hat\": \"sailor\"}"
+ },
+ {
+  "id": "hat_pilot",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat pilot",
+  "tags": [
+   "hat",
+   "hat",
+   "pilot"
+  ],
+  "doc": "character look option: hat = pilot",
+  "preview": null,
+  "how": "cast: {\"hat\": \"pilot\"}"
+ },
+ {
+  "id": "hat_roman",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat roman",
+  "tags": [
+   "hat",
+   "hat",
+   "roman"
+  ],
+  "doc": "character look option: hat = roman",
+  "preview": null,
+  "how": "cast: {\"hat\": \"roman\"}"
+ },
+ {
+  "id": "hat_crown",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat crown",
+  "tags": [
+   "hat",
+   "hat",
+   "crown"
+  ],
+  "doc": "character look option: hat = crown",
+  "preview": null,
+  "how": "cast: {\"hat\": \"crown\"}"
+ },
+ {
+  "id": "hat_flatcap",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat flatcap",
+  "tags": [
+   "hat",
+   "hat",
+   "flatcap"
+  ],
+  "doc": "character look option: hat = flatcap",
+  "preview": null,
+  "how": "cast: {\"hat\": \"flatcap\"}"
+ },
+ {
+  "id": "hat_none",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "hat none",
+  "tags": [
+   "hat",
+   "hat",
+   "none"
+  ],
+  "doc": "character look option: hat = none",
+  "preview": null,
+  "how": "cast: {\"hat\": \"none\"}"
+ },
+ {
+  "id": "glasses_round",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "glasses round",
+  "tags": [
+   "glasses",
+   "glasses",
+   "round"
+  ],
+  "doc": "character look option: glasses = round",
+  "preview": null,
+  "how": "cast: {\"glasses\": \"round\"}"
+ },
+ {
+  "id": "glasses_pince",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "glasses pince",
+  "tags": [
+   "glasses",
+   "glasses",
+   "pince"
+  ],
+  "doc": "character look option: glasses = pince",
+  "preview": null,
+  "how": "cast: {\"glasses\": \"pince\"}"
+ },
+ {
+  "id": "glasses_sun",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "glasses sun",
+  "tags": [
+   "glasses",
+   "glasses",
+   "sun"
+  ],
+  "doc": "character look option: glasses = sun",
+  "preview": null,
+  "how": "cast: {\"glasses\": \"sun\"}"
+ },
+ {
+  "id": "glasses_none",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "glasses none",
+  "tags": [
+   "glasses",
+   "glasses",
+   "none"
+  ],
+  "doc": "character look option: glasses = none",
+  "preview": null,
+  "how": "cast: {\"glasses\": \"none\"}"
+ },
+ {
+  "id": "extra_cigar",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "extra cigar",
+  "tags": [
+   "extra",
+   "extra",
+   "cigar"
+  ],
+  "doc": "character look option: extra = cigar",
+  "preview": null,
+  "how": "cast: {\"extra\": \"cigar\"}"
+ },
+ {
+  "id": "extra_pipe",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "extra pipe",
+  "tags": [
+   "extra",
+   "extra",
+   "pipe"
+  ],
+  "doc": "character look option: extra = pipe",
+  "preview": null,
+  "how": "cast: {\"extra\": \"pipe\"}"
+ },
+ {
+  "id": "extra_medals",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "extra medals",
+  "tags": [
+   "extra",
+   "extra",
+   "medals"
+  ],
+  "doc": "character look option: extra = medals",
+  "preview": null,
+  "how": "cast: {\"extra\": \"medals\"}"
+ },
+ {
+  "id": "extra_armband",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "extra armband",
+  "tags": [
+   "extra",
+   "extra",
+   "armband"
+  ],
+  "doc": "character look option: extra = armband",
+  "preview": null,
+  "how": "cast: {\"extra\": \"armband\"}"
+ },
+ {
+  "id": "extra_epaulettes",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "extra epaulettes",
+  "tags": [
+   "extra",
+   "extra",
+   "epaulettes"
+  ],
+  "doc": "character look option: extra = epaulettes",
+  "preview": null,
+  "how": "cast: {\"extra\": \"epaulettes\"}"
+ },
+ {
+  "id": "extra_tie",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "extra tie",
+  "tags": [
+   "extra",
+   "extra",
+   "tie"
+  ],
+  "doc": "character look option: extra = tie",
+  "preview": null,
+  "how": "cast: {\"extra\": \"tie\"}"
+ },
+ {
+  "id": "extra_bowtie",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "extra bowtie",
+  "tags": [
+   "extra",
+   "extra",
+   "bowtie"
+  ],
+  "doc": "character look option: extra = bowtie",
+  "preview": null,
+  "how": "cast: {\"extra\": \"bowtie\"}"
+ },
+ {
+  "id": "extra_scarf",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "extra scarf",
+  "tags": [
+   "extra",
+   "extra",
+   "scarf"
+  ],
+  "doc": "character look option: extra = scarf",
+  "preview": null,
+  "how": "cast: {\"extra\": \"scarf\"}"
+ },
+ {
+  "id": "extra_monocle",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "extra monocle",
+  "tags": [
+   "extra",
+   "extra",
+   "monocle"
+  ],
+  "doc": "character look option: extra = monocle",
+  "preview": null,
+  "how": "cast: {\"extra\": \"monocle\"}"
+ },
+ {
+  "id": "extra_wrinkles",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "extra wrinkles",
+  "tags": [
+   "extra",
+   "extra",
+   "wrinkles"
+  ],
+  "doc": "character look option: extra = wrinkles",
+  "preview": null,
+  "how": "cast: {\"extra\": \"wrinkles\"}"
+ },
+ {
+  "id": "extra_jowls",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "extra jowls",
+  "tags": [
+   "extra",
+   "extra",
+   "jowls"
+  ],
+  "doc": "character look option: extra = jowls",
+  "preview": null,
+  "how": "cast: {\"extra\": \"jowls\"}"
+ },
+ {
+  "id": "extra_blush",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "extra blush",
+  "tags": [
+   "extra",
+   "extra",
+   "blush"
+  ],
+  "doc": "character look option: extra = blush",
+  "preview": null,
+  "how": "cast: {\"extra\": \"blush\"}"
+ },
+ {
+  "id": "extra_vest",
+  "type": "costumes",
+  "source": "builtin",
+  "name": "extra vest",
+  "tags": [
+   "extra",
+   "extra",
+   "vest"
+  ],
+  "doc": "character look option: extra = vest",
+  "preview": null,
+  "how": "cast: {\"extra\": \"vest\"}"
+ },
+ {
+  "id": "rain",
+  "type": "weather",
+  "source": "builtin",
+  "name": "rain",
+  "tags": [
+   "rain"
+  ],
+  "doc": "engine weather: rain",
+  "preview": null,
+  "how": "\"weather\": \"rain\""
+ },
+ {
+  "id": "snow",
+  "type": "weather",
+  "source": "builtin",
+  "name": "snow",
+  "tags": [
+   "snow"
+  ],
+  "doc": "engine weather: snow",
+  "preview": null,
+  "how": "\"weather\": \"snow\""
+ }
+]

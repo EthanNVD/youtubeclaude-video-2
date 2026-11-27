@@ -86,6 +86,7 @@ def compile_project(proj: Path, write=True):
     history, scenes = {}, []
     places = {}          # place_id -> {"setting": ..., "tag": ..., "first": card}: a story place keeps its look and tag
     cast = json.loads(json.dumps(film.get("cast", {})))
+    film["_proj"] = str(proj)  # recipes find this project's own assets (projects/<slug>/assets/<id>/asset.json)
     for k, raw in enumerate(cards):
         i0 = starts[k][0]
         i1 = starts[k + 1][0] if k + 1 < len(cards) else len(W.words)
@@ -159,6 +160,7 @@ def compile_project(proj: Path, write=True):
     warns += scene_checks(scenes)
     # things the writers wanted but the engine lacks: the to-do list for the next engine upgrade (playbook/scene-writing.md §9)
     missing = film.pop("_missing", [])
+    film.pop("_proj", None)
     if write:
         (proj / "work").mkdir(exist_ok=True)
         (proj / "work" / "missing_assets.json").write_text(json.dumps(missing, indent=1, ensure_ascii=False), encoding="utf-8")
