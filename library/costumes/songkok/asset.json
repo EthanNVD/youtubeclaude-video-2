@@ -1,0 +1,42 @@
+{
+ "id": "songkok",
+ "type": "costumes",
+ "name": "Songkok (Malay velvet cap)",
+ "tags": [
+  "malaya",
+  "malay",
+  "indonesia",
+  "brunei",
+  "hat",
+  "cap",
+  "muslim",
+  "civilian",
+  "ww2"
+ ],
+ "doc": "the black velvet songkok, flat-topped and oval, worn by Malay men (villagers, clerks, policemen, aristocrats)",
+ "slot": "head",
+ "parts": [
+  {
+   "path": "M-58 -38 L-55 -92 Q0 -101 55 -92 L58 -38 Q0 -28 -58 -38 Z",
+   "fill": "#26252c",
+   "width": 4
+  },
+  {
+   "path": "M-51 -85 Q0 -93 51 -85",
+   "stroke": "#45444f",
+   "width": 5
+  },
+  {
+   "path": "M-55 -46 Q0 -37 55 -46",
+   "stroke": "#3a3942",
+   "width": 3
+  }
+ ],
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

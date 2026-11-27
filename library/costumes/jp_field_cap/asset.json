@@ -1,0 +1,112 @@
+{
+ "id": "jp_field_cap",
+ "type": "costumes",
+ "name": "Japanese field cap with neck flaps",
+ "tags": [
+  "japan",
+  "ija",
+  "japanese",
+  "malaya",
+  "burma",
+  "pacific",
+  "cap",
+  "soldier",
+  "ww2"
+ ],
+ "doc": "the Imperial Japanese Army field cap (senjo-bo): soft khaki cap, short visor, yellow star, cloth neck flaps hanging to the shoulders",
+ "pieces": [
+  {
+   "slot": "headback",
+   "parts": [
+    {
+     "path": "M-60 -46 L-80 58 L-52 66 L-40 -40 Z",
+     "fill": "#a8986a",
+     "width": 3.5
+    },
+    {
+     "path": "M60 -46 L80 58 L52 66 L40 -40 Z",
+     "fill": "#a8986a",
+     "width": 3.5
+    },
+    {
+     "path": "M-66 0 L-56 4 M66 0 L56 4",
+     "stroke": "#857648",
+     "width": 3
+    }
+   ]
+  },
+  {
+   "slot": "head",
+   "parts": [
+    {
+     "path": "M-63 -40 Q-68 -98 0 -106 Q68 -98 63 -40 Z",
+     "fill": "#9c8c5c",
+     "width": 4
+    },
+    {
+     "path": "M-63 -40 L63 -40 L62 -54 Q0 -60 -62 -54 Z",
+     "fill": "#857648",
+     "width": 3.5
+    },
+    {
+     "path": "M-44 -40 Q0 -54 44 -40 Q20 -26 0 -26 Q-20 -26 -44 -40 Z",
+     "fill": "#7a6b42",
+     "width": 3.5
+    },
+    {
+     "poly": [
+      [
+       0,
+       -82
+      ],
+      [
+       3.5,
+       -72
+      ],
+      [
+       14,
+       -72
+      ],
+      [
+       5.5,
+       -66
+      ],
+      [
+       8.5,
+       -56
+      ],
+      [
+       0,
+       -62
+      ],
+      [
+       -8.5,
+       -56
+      ],
+      [
+       -5.5,
+       -66
+      ],
+      [
+       -14,
+       -72
+      ],
+      [
+       -3.5,
+       -72
+      ]
+     ],
+     "fill": "#e2b93c",
+     "width": 2
+    }
+   ]
+  }
+ ],
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

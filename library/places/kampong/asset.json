@@ -1,0 +1,68 @@
+{
+ "id": "kampong",
+ "type": "places",
+ "name": "Kampong (Malay village)",
+ "tags": [
+  "malaya",
+  "malay",
+  "southeast_asia",
+  "village",
+  "kampong",
+  "coconut",
+  "stilts",
+  "tropical",
+  "ww2"
+ ],
+ "doc": "a Malay village among coconut palms: houses on stilts, banana plants, a red road",
+ "spec": {
+  "compose": {
+   "far": [
+    "palms"
+   ],
+   "ground": "grass",
+   "road": {
+    "kind": "laterite",
+    "y": 960,
+    "w": 200
+   },
+   "rows": [
+    {
+     "what": "coconut_palm",
+     "depth": 690,
+     "gap": 180
+    },
+    {
+     "what": "kampong_house",
+     "depth": 790,
+     "from": 1080,
+     "to": 1700,
+     "gap": 620,
+     "flip": "none"
+    },
+    {
+     "what": "coconut_palm",
+     "depth": 800,
+     "from": -100,
+     "to": 900,
+     "gap": 230
+    },
+    {
+     "what": "banana_plant",
+     "depth": 860,
+     "from": 1350,
+     "to": 2100,
+     "gap": 380
+    }
+   ]
+  },
+  "horizon": 600,
+  "weather": "haze"
+ },
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

@@ -12,6 +12,8 @@ _things people hold or that stand on floors and tables (a broom, a lectern, a no
 | id | what | tags | made in | preview |
 |---|---|---|---|---|
 | `notice_board` | a notice board on two legs with pinned notices (ration announcements, call-up orders, casualty lists) — set "text" on the card's paper_note for the exact words | notice, board, poster, town, ration, announcement | creative-blockade |  |
+| `parang` | a parang: the heavy Malay machete used to cut through undergrowth (held in the hand) | malaya, southeast_asia, machete, parang, jungle, blade, tool, ww2 | malaya-test | <img src="../library/props/parang/preview.jpg" width="220"> |
+| `sandbag_wall` | a low wall of stacked sandbags (three courses, waist high): a roadblock, a gun position, the front of a trench | ww2, ww1, sandbags, roadblock, position, defence, trench, cover | malaya-test | <img src="../library/props/sandbag_wall/preview.jpg" width="220"> |
 | `shovel` | a long-handled shovel for digging trenches and gun pits (held in both hands; drawn around the hand) | tool, dig, entrenching, army, trench, ww1, ww2 | _libtest | <img src="../library/props/shovel/preview.jpg" width="220"> |
 
 Builtin (102): `baby`, `bale`, `barrel`, `basket`, `bench`, `binoculars`, `bomb`, `book`, `bottle`, `bowl`, `bread`, `bucket`, `candle`, `card`, `cards`, `cart`, `chair`, `cigar`, `clock`, `coins`, `counter`, `crate`, `cross`, `cup`, `exit`, `factory`, `flag`, `folder`, `globe`, `grave`, `helmet`, `hourglass`, `ingots`, `jug`, `knife`, `lantern`, `ledger`, `letter`, `magnifier`, `medal`, `microphone`, `oil`, `paper`, `pen`, `phone`, `photo`, `plate`, `pot`, `potatoes`, `radio`, `rifle`, `sack`, `scale`, `shell`, `sign`, `skull`, `spoon`, `stool`, `stopwatch`, `stove`, `stretcher`, `suitcase`, `table`, `telegram`, `turnip`, `turnips`, `typewriter`, `room_item_window`, `room_item_door`, `room_item_shelf`, `room_item_cupboard`, `room_item_cabinet`, `room_item_drawers`, `room_item_stove`, `room_item_fireplace`, `room_item_oven`, `room_item_bed`, `room_item_beds`, `room_item_bunk`, `room_item_clock`, `room_item_portrait`, `room_item_map`, `room_item_poster`, `room_item_flag`, `room_item_calendar`, `room_item_photos`, `room_item_crucifix`, `room_item_mirror`, `room_item_hooks`, `room_item_lamp`, `room_item_barrels`, `room_item_crates`, `room_item_sacks`, `room_item_rifles`, `room_item_blackboard`, `room_item_sink`, `room_item_cradle`, `room_item_arch`, `room_item_stained`, `room_item_sign`, `room_item_radio`, `room_item_pipes`
@@ -22,7 +24,7 @@ _things that move with wheels, tracks, hulls or wings (a bicycle, a cart, a fiel
 
 | id | what | tags | made in | preview |
 |---|---|---|---|---|
-| `bicycle` | a bicycle standing on its stand (messengers, a soldier's or a nurse's bike, a village policeman) | bicycle, bike, cycle, messenger, village, civilian | creative-blockade |  |
+| `bicycle` | a bicycle, upright (a messenger's, a soldier's or a nurse's bike, a village policeman); people ride it with "rides": "bicycle" | bicycle, bike, civilian, cycle, cyclist, messenger, ride, transport | creative-blockade | <img src="../library/vehicles/bicycle/preview.jpg" width="220"> |
 | `field_kitchen` | army field kitchen (a two-wheeled wagon with a soup kettle and a smoking chimney): soup queues, cooks at the front, soup kitchens at home | ww1, ww2, army, kitchen, wagon, soup, cook | creative-blockade |  |
 | `zeppelin` | WW1 airship (Zeppelin) — a thing in the sky: place it with "y" (screen y, e.g. 260) and "scale" (0.5-1.2); "to" makes it drift across | ww1, airship, zeppelin, sky, germany, bombing | creative-blockade |  |
 
@@ -32,15 +34,37 @@ Builtin (39): `artillery`, `assaultboat`, `battleship`, `boat`, `bomber`, `car`,
 
 _houses, shops, huts, temples, bunkers: whole buildings placed in a street or a landscape_
 
+| id | what | tags | made in | preview |
+|---|---|---|---|---|
+| `kampong_house` | a Malay village house raised on wooden stilts: plank walls, shuttered windows, a steep thatched (attap) roof with a gable, wooden steps up to the door | malaya, malay, kampong, village, house, stilts, attap, southeast_asia | malaya-test | <img src="../library/buildings/kampong_house/preview.jpg" width="220"> |
+| `shophouse` | a two-storey Chinese shophouse of a Malayan town: a covered five-foot way with pillars and the open shop behind, shuttered windows above, a tiled roof, a red signboard; put several side by side for a street | malaya, singapore, penang, chinese, shop, shophouse, town, street | malaya-test | <img src="../library/buildings/shophouse/preview.jpg" width="220"> |
+
 Builtin (10): `kit_house`, `kit_tenement`, `kit_shop`, `kit_church`, `kit_townhall`, `kit_factory`, `kit_office`, `kit_post`, `kit_ruin`, `kit_station`
 
 ## plants
 
 _trees, palms, bushes, grass clumps, crops (they sway in the wind)_
 
+| id | what | tags | made in | preview |
+|---|---|---|---|---|
+| `banana_plant` | a banana plant: a green pseudo-stem with big torn paddle leaves (kampong gardens, roadsides) | malaya, southeast_asia, tropical, banana, village, kampong, garden, plant | malaya-test | <img src="../library/plants/banana_plant/preview.jpg" width="220"> |
+| `coconut_palm` | a tall coconut palm with a curved ringed trunk, a crown of feathery fronds and a bunch of coconuts (groves, kampongs, beaches) | malaya, southeast_asia, pacific, tropical, palm, coconut, beach, village | malaya-test | <img src="../library/plants/coconut_palm/preview.jpg" width="220"> |
+| `jungle_edge` | a stretch of dense tropical rainforest seen from its edge: tall trunks with buttress roots, lianas, layers of dark foliage, ferns at the foot; put several side by side for a wall of jungle | malaya, burma, new_guinea, southeast_asia, jungle, rainforest, forest, tropical | malaya-test | <img src="../library/plants/jungle_edge/preview.jpg" width="220"> |
+| `lalang_grass` | a clump of tall lalang grass (waist high): roadsides and clearings; a row of it in front hides a watcher | malaya, southeast_asia, tropical, grass, lalang, roadside, cover, hiding | malaya-test | <img src="../library/plants/lalang_grass/preview.jpg" width="220"> |
+| `rubber_tree` | a tapped rubber tree: slim grey trunk with the diagonal tapping cut and a latex cup, a light crown high up; plant it in straight rows (Malayan rubber estates) | malaya, southeast_asia, plantation, estate, rubber, tree, tropical, ww2 | malaya-test | <img src="../library/plants/rubber_tree/preview.jpg" width="220"> |
+
 ## costumes
 
 _pieces people wear: hats, turbans, headscarves, sarongs, tunics, vests (drawn on the character rig)_
+
+| id | what | tags | made in | preview |
+|---|---|---|---|---|
+| `jp_field_cap` | the Imperial Japanese Army field cap (senjo-bo): soft khaki cap, short visor, yellow star, cloth neck flaps hanging to the shoulders | japan, ija, japanese, malaya, burma, pacific, cap, soldier | malaya-test | <img src="../library/costumes/jp_field_cap/preview.jpg" width="220"> |
+| `sarong` | a checked cotton sarong wrapped at the waist and falling to the ankles (Malay, Tamil, Burmese men); recolour it in the cast | malaya, malay, indonesia, india, burma, southeast_asia, sarong, skirt | malaya-test | <img src="../library/costumes/sarong/preview.jpg" width="220"> |
+| `sikh_turban` | the Sikh soldier's wrapped turban, folds crossing to a point over the forehead (Indian Army: khaki); give the person a beard | india, indian_army, sikh, punjab, malaya, burma, turban, headwear | malaya-test | <img src="../library/costumes/sikh_turban/preview.jpg" width="220"> |
+| `singlet` | a white cotton singlet: the scoop neck and arm holes (give the person outfit robe, color #efece2 and armColor = skin colour) | malaya, singapore, china, chinese, shopkeeper, worker, coolie, civilian | malaya-test | <img src="../library/costumes/singlet/preview.jpg" width="220"> |
+| `slouch_hat` | the Australian Army slouch hat: khaki felt, dented crown, puggaree band, the left brim turned up with the Rising Sun badge | australia, aif, anzac, malaya, singapore, new_guinea, hat, soldier | malaya-test | <img src="../library/costumes/slouch_hat/preview.jpg" width="220"> |
+| `songkok` | the black velvet songkok, flat-topped and oval, worn by Malay men (villagers, clerks, policemen, aristocrats) | malaya, malay, indonesia, brunei, hat, cap, muslim, civilian | malaya-test | <img src="../library/costumes/songkok/preview.jpg" width="220"> |
 
 Builtin (72): `outfit_tunic`, `outfit_suit`, `outfit_navy`, `outfit_navywhite`, `outfit_coat`, `outfit_sailor`, `outfit_civil`, `outfit_dress`, `outfit_party`, `outfit_armor`, `outfit_robe`, `outfit_pilot`, `outfit_tweed`, `hair_side`, `hair_back`, `hair_bald`, `hair_baldtop`, `hair_short`, `hair_part`, `hair_curly`, `hair_bun`, `hair_long`, `hair_messy`, `hair_tousled`, `hair_none`, `facial_toothbrush`, `facial_walrus`, `facial_pencil`, `facial_handlebar`, `facial_beard`, `facial_goatee`, `facial_stubble`, `facial_none`, `hat_peaked`, `hat_garrison`, `hat_helmet_de`, `hat_helmet_us`, `hat_helmet_uk`, `hat_helmet_su`, `hat_helmet_jp`, `hat_navy`, `hat_navy_white`, `hat_beret`, `hat_bicorne`, `hat_kepi`, `hat_ushanka`, `hat_fedora`, `hat_tophat`, `hat_pith`, `hat_sailor`, `hat_pilot`, `hat_roman`, `hat_crown`, `hat_flatcap`, `hat_none`, `glasses_round`, `glasses_pince`, `glasses_sun`, `glasses_none`, `extra_cigar`, `extra_pipe`, `extra_medals`, `extra_armband`, `extra_epaulettes`, `extra_tie`, `extra_bowtie`, `extra_scarf`, `extra_monocle`, `extra_wrinkles`, `extra_jowls`, `extra_blush`, `extra_vest`
 
@@ -54,7 +78,19 @@ Builtin (141): `aide`, `american_pilot`, `american_sailor`, `american_soldier`, 
 
 _story places: a room or town from the kit, or a composed landscape (sky + plates + ground + rows of assets)_
 
-Builtin (97): `air`, `airfield`, `archbridge`, `barbed`, `beach`, `board`, `branches`, `bridge`, `bunker`, `cabin`, `cabinet`, `cell`, `city`, `classroom`, `cockpit`, `codebreak`, `conference`, `corridor`, `countryside`, `curtain`, `dark`, `deck`, `desert`, `desk`, `dock`, `doorframe`, `factory`, `field`, `flightdeck`, `frontdesk`, `garden`, `grass`, `hangar`, `harbor`, `heath`, `home`, `hotel`, `jungle`, `kitchen`, `memorial`, `mud`, `nomansland`, `ocean`, `office`, `officedesk`, `paper`, `parliament`, `plant`, `podium`, `polder`, `radio`, `rail`, `railway`, `rally`, `river`, `ruins`, `sandbags`, `sea`, `sky`, `snow`, `station`, `steppe`, `street`, `studio`, `study`, `tent`, `train_interior`, `trench`, `void`, `warroom`, `workshop`, `room_kitchen`, `room_tenement`, `room_parlour`, `room_farmhouse`, `room_shop`, `room_bakery`, `room_office`, `room_ministry`, `room_admiralty`, `room_food_office`, `room_ward`, `room_barracks`, `room_dugout`, `room_cellar`, `room_warehouse`, `room_classroom`, `room_church`, `room_tavern`, `town_german`, `town_austrian`, `town_french`, `town_english`, `town_russian`, `town_dutch`, `town_industrial`, `town_village`
+| id | what | tags | made in | preview |
+|---|---|---|---|---|
+| `estate_road` | a red laterite road through a rubber estate, tall lalang grass in front (a watcher can hide in it) | malaya, southeast_asia, road, laterite, plantation, rubber, hiding, tropical | malaya-test | <img src="../library/places/estate_road/preview.jpg" width="220"> |
+| `estate_road_open` | a red laterite road through a rubber estate, open to the camera (columns, cyclists, convoys) | malaya, southeast_asia, road, laterite, plantation, rubber, tropical, ww2 | malaya-test | <img src="../library/places/estate_road_open/preview.jpg" width="220"> |
+| `jungle_myth` | inside dense rainforest in mist: giant trunks and leaves (the jungle of legend) | malaya, burma, new_guinea, southeast_asia, jungle, rainforest, fog, tropical | malaya-test | <img src="../library/places/jungle_myth/preview.jpg" width="220"> |
+| `kampong` | a Malay village among coconut palms: houses on stilts, banana plants, a red road | malaya, malay, southeast_asia, village, kampong, coconut, stilts, tropical | malaya-test | <img src="../library/places/kampong/preview.jpg" width="220"> |
+| `malay_town` | a street of Chinese shophouses with coconut palms and a red laterite road | malaya, singapore, southeast_asia, town, street, shophouse, chinese, tropical | malaya-test | <img src="../library/places/malay_town/preview.jpg" width="220"> |
+| `rainforest_edge` | where a plantation meets the rainforest: a dark wall of jungle behind open ground | malaya, burma, southeast_asia, jungle, rainforest, edge, plantation, tropical | malaya-test | <img src="../library/places/rainforest_edge/preview.jpg" width="220"> |
+| `roadblock` | a laterite road through rubber with a gap in the near trees: room for a roadblock or a gun position | malaya, southeast_asia, road, laterite, plantation, roadblock, position, tropical | malaya-test | <img src="../library/places/roadblock/preview.jpg" width="220"> |
+| `rubber_estate` | inside a Malayan rubber estate: straight rows of tapped rubber trees in the humid haze | malaya, southeast_asia, plantation, rubber, estate, tropical, ww2 | malaya-test | <img src="../library/places/rubber_estate/preview.jpg" width="220"> |
+| `singora_beach` | a sandy tropical beach with coconut palms and the sea: landings, dawn arrivals | thailand, malaya, southeast_asia, beach, sea, landing, coconut, tropical | malaya-test | <img src="../library/places/singora_beach/preview.jpg" width="220"> |
+
+Builtin (98): `air`, `airfield`, `archbridge`, `barbed`, `beach`, `board`, `branches`, `bridge`, `bunker`, `cabin`, `cabinet`, `cell`, `city`, `classroom`, `cockpit`, `codebreak`, `compose`, `conference`, `corridor`, `countryside`, `curtain`, `dark`, `deck`, `desert`, `desk`, `dock`, `doorframe`, `factory`, `field`, `flightdeck`, `frontdesk`, `garden`, `grass`, `hangar`, `harbor`, `heath`, `home`, `hotel`, `jungle`, `kitchen`, `memorial`, `mud`, `nomansland`, `ocean`, `office`, `officedesk`, `paper`, `parliament`, `plant`, `podium`, `polder`, `radio`, `rail`, `railway`, `rally`, `river`, `ruins`, `sandbags`, `sea`, `sky`, `snow`, `station`, `steppe`, `street`, `studio`, `study`, `tent`, `train_interior`, `trench`, `void`, `warroom`, `workshop`, `room_kitchen`, `room_tenement`, `room_parlour`, `room_farmhouse`, `room_shop`, `room_bakery`, `room_office`, `room_ministry`, `room_admiralty`, `room_food_office`, `room_ward`, `room_barracks`, `room_dugout`, `room_cellar`, `room_warehouse`, `room_classroom`, `room_church`, `room_tavern`, `town_german`, `town_austrian`, `town_french`, `town_english`, `town_russian`, `town_dutch`, `town_industrial`, `town_village`
 
 ## plates
 

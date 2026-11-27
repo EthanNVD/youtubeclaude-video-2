@@ -1,0 +1,91 @@
+{
+ "id": "sarong",
+ "type": "costumes",
+ "name": "Sarong (checked kain pelikat)",
+ "tags": [
+  "malaya",
+  "malay",
+  "indonesia",
+  "india",
+  "burma",
+  "southeast_asia",
+  "sarong",
+  "skirt",
+  "civilian",
+  "ww2"
+ ],
+ "doc": "a checked cotton sarong wrapped at the waist and falling to the ankles (Malay, Tamil, Burmese men); recolour it in the cast",
+ "slot": "hips",
+ "parts": [
+  {
+   "path": "M-39 -104 L39 -104 L36 -14 Q0 -6 -36 -14 Z",
+   "fill": "#3e5d8c",
+   "width": 4
+  },
+  {
+   "rect": [
+    -38,
+    -76,
+    76,
+    9
+   ],
+   "fill": "#2b4471",
+   "stroke": false
+  },
+  {
+   "rect": [
+    -37,
+    -44,
+    74,
+    9
+   ],
+   "fill": "#2b4471",
+   "stroke": false
+  },
+  {
+   "line": [
+    [
+     -14,
+     -102
+    ],
+    [
+     -13,
+     -12
+    ]
+   ],
+   "stroke": "#6f8fc0",
+   "width": 4
+  },
+  {
+   "line": [
+    [
+     16,
+     -102
+    ],
+    [
+     15,
+     -12
+    ]
+   ],
+   "stroke": "#6f8fc0",
+   "width": 4
+  },
+  {
+   "path": "M6 -100 Q10 -60 4 -12",
+   "stroke": "#25395e",
+   "width": 3
+  },
+  {
+   "path": "M-39 -104 L39 -104 L36 -14 Q0 -6 -36 -14 Z",
+   "fill": "none",
+   "width": 4
+  }
+ ],
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

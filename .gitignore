@@ -18,3 +18,5 @@ projects/_recipes/
 scripts_out/
 krishnamurti/
 abooks/
+# painted plates are copied here from library/ and projects/*/assets/ when cards compile
+public/plates/

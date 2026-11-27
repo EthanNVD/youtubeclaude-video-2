@@ -1,4 +1,5 @@
 import React from 'react';
+import { Drawing, type Part } from '../props/Drawing';
 import { INK, SKIN, nation } from '../theme';
 import { rnd, clamp } from '../lib/anim';
 
@@ -32,6 +33,10 @@ export type CharSpec = {
   vest?: string; // vest colour (tweed / suit with extra 'vest')
   shadeFace?: boolean; // pale face with cool grey shading on the lower half (narrator style)
   tie?: string; // tie colour for trench / suit
+  /** sleeve colour (default: the jacket); the skin colour = bare arms (a singlet, a sleeveless vest) */
+  armColor?: string;
+  /** costume pieces drawn on the rig (library/costumes): slot back | hips | body | headback | head; parts in that slot's frame */
+  wear?: { slot: string; parts: Part[]; above?: boolean }[];
 };
 
 export type CharState = {
@@ -64,6 +69,14 @@ export type CharState = {
   bigMove?: boolean;
   /** walking style: shuffle (hungry, exhausted) | march (parade) | limp (wounded) | sneak (crouched) */
   gaitStyle?: string;
+  /** riding a bicycle: sits higher (on the saddle) and the feet go round the crank */
+  ride?: boolean;
+  /** pedal angle in radians (follows the distance ridden) */
+  pedal?: number;
+  /** the thing ridden (a bicycle), drawn under the rider: its parts and anchors in its own units (seat = under the hips,
+   *  crank = the centre the feet go round), its size; `travel` = distance ridden in the rider's units (turns roll wheels) */
+  rideWith?: { parts: Part[]; seat?: number[]; crank?: number[]; size?: number };
+  rideTravel?: number;
 };
 
 export type Held = { node: React.ReactNode; scale?: number; rotate?: number; dx?: number; dy?: number; both?: boolean; grip?: number;
@@ -223,6 +236,8 @@ export const POSES: Record<string, Pose> = {
   read: { r: [28, -140], l: [-28, -140], rb: 1, lb: -1, rh: 'grip', lh: 'grip', tilt: 6 },
   wait: { r: [10, -102], l: [-10, -104], rb: 1, lb: -1, rh: 'mitten', lh: 'mitten' },
   basket: { r: [44, -112], l: [-42, -92], rb: -1, rh: 'grip' },
+  ride: { r: [74, -112], l: [62, -110], rb: -1, lb: -1, rh: 'grip', lh: 'grip', tilt: -2 },
+  dig: { r: [40, -112], l: [6, -150], rb: -1, lb: 1, rh: 'grip', lh: 'grip', tilt: 8 },
   thumbsup: { r: [66, -150], l: [-44, -92], rb: -1, rh: 'fist' },
   // rifle drill (use with holds: "rifle"): port arms across the chest, aiming, slope arms on the shoulder, bayonet charge, at ease
   port: { r: [36, -96], l: [-30, -150], rb: 1, lb: -1, rh: 'grip', lh: 'grip', rifle: 'two', rifleAng: -122 },
@@ -417,6 +432,7 @@ export const Character: React.FC<{ spec: CharSpec; state: CharState; t: number; 
       case 'shiver': rx += Math.sin(t * 29) * 1.2; lx += Math.sin(t * 27) * 1.2; break;
       case 'read': ry += Math.sin(t * 0.9) * 2; ly += Math.sin(t * 0.9) * 2; break;
       case 'comfort': ry += Math.sin(t * 2.1) * 3 * settle; break;
+      case 'dig': { const q = Math.sin(t * 4.2), c = Math.cos(t * 4.2); ry += q * 18 * settle; ly += q * 18 * settle; rx += c * 6 * settle; lx += c * 6 * settle; break; }
       default: break;
     }
   }
@@ -481,7 +497,7 @@ export const Character: React.FC<{ spec: CharSpec; state: CharState; t: number; 
   }
   const armK = crossK > 0.5 ? 0.95 : 0.62;
 
-  const sleeve = jacket;
+  const sleeve = spec.armColor ?? jacket;
   const sleeveDark = shade(jacket, -0.25);
 
   const armPath = (side: number, e: { ex: number; ey: number; hx: number; hy: number }) => hose({ x: side * shX, y: shoulderY }, { x: e.ex, y: e.ey }, { x: e.hx, y: e.hy }, armK);
@@ -503,10 +519,30 @@ export const Character: React.FC<{ spec: CharSpec; state: CharState; t: number; 
   // ---------- legs ----------
   const shoeC = outfit === 'suit' || outfit === 'civil' || outfit === 'dress' || outfit === 'tweed' ? '#2a2420' : '#2b2522';
   const booted = outfit === 'tunic' || outfit === 'coat' || outfit === 'pilot' || outfit === 'party';
+  // riding: the hips sit on the seat (default: the library bicycle, seat 40 units behind the middle, 130 up; crank 10 behind, 50 up)
+  const rw = state.ride ? state.rideWith : undefined;
+  const rSize = rw?.size ?? 1;
+  const seat = rw?.seat ?? [-40, -130];
+  const crank = rw?.crank ?? [-10, -50];
+  const rideLift = state.ride ? seat[1] * rSize + 96 : 0;
   const leg = (s: number) => {
-    const hip = { x: s * 12 * build, y: hipY + bob + 6 };
+    const hip = { x: s * 12 * build, y: hipY + bob + 6 + rideLift };
     let foot: V;
     let bend = -dir;
+    if (state.ride) {
+      // the crank of the bicycle is 30 units ahead of the saddle, 50 up; the pedals go round it, half a turn apart
+      const a = (state.pedal ?? 0) + (s > 0 ? 0 : Math.PI);
+      foot = { x: (crank[0] - seat[0]) * rSize + Math.cos(a) * 17 * rSize, y: crank[1] * rSize + Math.sin(a) * 17 * rSize };
+      const j = ik(hip.x, hip.y, foot.x, foot.y, 46, 46, -1);
+      const { d } = hose(hip, { x: j.ex, y: j.ey }, { x: j.hx, y: j.hy }, 0.7);
+      return (
+        <g key={'l' + s}>
+          <path d={d} stroke={INK} strokeWidth={LEG_INK} fill="none" strokeLinecap="round" />
+          <path d={d} stroke={pants} strokeWidth={LEG_FILL} fill="none" strokeLinecap="round" />
+          <ellipse cx={j.hx + 4} cy={j.hy + 3} rx={13} ry={7} fill={shoeC} stroke={INK} strokeWidth={3} />
+        </g>
+      );
+    }
     if (state.seated) {
       foot = { x: s * 22, y: hipY + 54 };
       const knee = { x: s * 22, y: hipY + 16 };
@@ -613,14 +649,28 @@ export const Character: React.FC<{ spec: CharSpec; state: CharState; t: number; 
   })() : null;
 
   const behindArms = pose.behind && kRaw > 0.5;
+  // costume pieces: body slots are drawn in the body frame (feet at 0, shoulders at -172, hips at -98); head slots in the
+  // head frame (head centre at 0; top of the head -74, chin +50, ears at x ±66). hips pieces go under the torso unless "above".
+  const wearOf = (slot: string, above?: boolean, dy = 0) => {
+    const ws = (spec.wear ?? []).filter((w) => w.slot === slot && (above === undefined || !!w.above === above));
+    if (!ws.length) return null;
+    return <g transform={dy ? `translate(0 ${dy})` : undefined}>{ws.map((w, i) => <Drawing key={i} parts={w.parts} t={t} />)}</g>;
+  };
   // a load carried on the shoulder (a sack) sits behind the head, not across the face; the hand is still drawn over it
   const onShoulder = poseName === 'sack' && kRaw > 0.5;
   return (
     <g>
       <ellipse cx={0} cy={2} rx={54 * build} ry={9} fill="#000" opacity={0.16} />
+      {rw ? (
+        <g transform={`translate(${-seat[0] * rSize} 0) scale(${rSize})`}>
+          <Drawing parts={rw.parts} t={t} travel={(state.rideTravel ?? 0) / rSize} />
+        </g>
+      ) : null}
       <g transform={`rotate(${lean} 0 0) scale(${takeSx} ${takeSy})`}>
+        {wearOf('back')}
         {[-1, 1].map(leg)}
-        <g transform={`translate(0 ${bob + (state.kneel ? 44 : 0)})`}>
+        <g transform={`translate(0 ${bob + (state.kneel ? 44 : 0) + rideLift})`}>
+          {wearOf('hips', false)}
           {back || behindArms ? (
             <>
               {armTube(-1, Lf)}
@@ -629,9 +679,13 @@ export const Character: React.FC<{ spec: CharSpec; state: CharState; t: number; 
           ) : null}
           {(pose.rifleBehind && rifleOn) || onShoulder ? heldNode : null}
           {body}
+          {wearOf('hips', true)}
           {scarf}
+          {wearOf('body')}
           <g transform={`translate(${headDx} ${headDy}) rotate(${tilt} 0 ${hy + 46})`}>
+            {wearOf('headback', undefined, hy)}
             <Head spec={spec} expr={expr} blink={blink} talk={talkOpen} look={look + turn * 3} hy={hy} hairC={hairC} skin={skin} back={back} extra={extra} t={t} seed={seed} turn={turn} />
+            {wearOf('head', undefined, hy)}
           </g>
           {back || behindArms ? null : (
             <>

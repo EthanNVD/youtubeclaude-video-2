@@ -89,3 +89,72 @@ def costume_pieces(project: Path | None = None):
     if project is not None:
         out.update(load(project / "assets", types=("costumes",)))
     return out
+
+
+SLOTS = ("head", "headback", "body", "hips", "back")
+
+
+def recolor(parts, cmap):
+    """a copy of parts with fill/stroke colours swapped by cmap {"#3e5d8c": "#8c3e3e"} (case-insensitive) — the adapt path"""
+    cm = {k.lower(): v for k, v in (cmap or {}).items()}
+    out = []
+    for p in parts:
+        q = dict(p)
+        for k in ("fill", "stroke"):
+            if isinstance(q.get(k), str) and q[k].lower() in cm:
+                q[k] = cm[q[k].lower()]
+        if q.get("group"):
+            q["group"] = recolor(q["group"], cmap)
+        out.append(q)
+    return out
+
+
+def costume_slots(asset):
+    """[{slot, parts, above?}] of a costume asset: one piece ("slot" + "parts") or several ("pieces")"""
+    if asset.get("pieces"):
+        return [{"slot": p.get("slot", "head"), "parts": p["parts"], **({"above": True} if p.get("above") else {})} for p in asset["pieces"]]
+    return [{"slot": asset.get("slot", "head"), "parts": asset.get("parts") or [], **({"above": True} if asset.get("above") else {})}]
+
+
+def resolve_cast(cast: dict, project: Path | None = None, film: dict | None = None):
+    """cast entries -> engine specs:
+    - "look": "<characters asset>" merges a saved cast look (the entry's own fields win);
+    - "wear": ["songkok", {"piece": "sarong", "recolor": {"#3e5d8c": "#7a3030"}}, {"slot": "head", "parts": [...]}]
+      turns costume ids into pieces {slot, parts, above} (library + project assets + film "drawings");
+    - name / role / note are dropped (they are for name cards and people).
+    Unknown ids raise KeyError with the closest names (the compiler turns it into an instruction)."""
+    import difflib
+    looks = load(types=("characters",))
+    pieces = costume_pieces(project)
+    if project is not None:
+        looks.update(load(project / "assets", types=("characters",)))
+    out = {}
+    for cid, spec in cast.items():
+        spec = dict(spec)
+        if spec.get("look"):
+            lk = looks.get(spec["look"])
+            if lk is None:
+                raise KeyError(f'cast "{cid}": look "{spec["look"]}" is not a characters asset. Close: {difflib.get_close_matches(spec["look"], list(looks), 3)}')
+            base = {k: v for k, v in (lk.get("spec") or {}).items()}
+            base.update({k: v for k, v in spec.items() if k != "look"})
+            spec = base
+        wear = []
+        for w in spec.get("wear") or []:
+            if isinstance(w, dict) and "parts" in w:
+                wear.append({"slot": w.get("slot", "head"), "parts": w["parts"], **({"above": True} if w.get("above") else {})})
+                continue
+            wid = w if isinstance(w, str) else w.get("piece")
+            pc = pieces.get(wid) or ((film or {}).get("drawings") or {}).get(wid)
+            if pc is None:
+                raise KeyError(f'cast "{cid}": costume piece "{wid}" does not exist. Close: {difflib.get_close_matches(str(wid), list(pieces), 3)}. '
+                               f'Make it: python tools/lib.py new costumes {wid} --project <project>')
+            for sl in costume_slots(pc):
+                if isinstance(w, dict) and w.get("recolor"):
+                    sl = {**sl, "parts": recolor(sl["parts"], w["recolor"])}
+                wear.append(sl)
+        if wear:
+            spec["wear"] = wear
+        else:
+            spec.pop("wear", None)
+        out[cid] = {k: v for k, v in spec.items() if k not in ("name", "role", "note")}
+    return out

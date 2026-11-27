@@ -1,0 +1,62 @@
+{
+ "id": "estate_road_open",
+ "type": "places",
+ "name": "Estate road (open)",
+ "tags": [
+  "malaya",
+  "southeast_asia",
+  "road",
+  "laterite",
+  "plantation",
+  "rubber",
+  "tropical",
+  "ww2"
+ ],
+ "doc": "a red laterite road through a rubber estate, open to the camera (columns, cyclists, convoys)",
+ "spec": {
+  "compose": {
+   "far": [
+    "treeline"
+   ],
+   "ground": "grass",
+   "road": {
+    "kind": "laterite",
+    "y": 940,
+    "w": 210
+   },
+   "rows": [
+    {
+     "what": "rubber_tree",
+     "depth": 650,
+     "gap": 120
+    },
+    {
+     "what": "rubber_tree",
+     "depth": 720,
+     "gap": 150
+    },
+    {
+     "what": "rubber_tree",
+     "depth": 800,
+     "gap": 190
+    },
+    {
+     "what": "rubber_tree",
+     "depth": 1090,
+     "from": -200,
+     "to": 120,
+     "gap": 300
+    }
+   ]
+  },
+  "horizon": 600,
+  "weather": "haze"
+ },
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

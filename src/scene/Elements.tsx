@@ -242,7 +242,7 @@ export const ElementView: React.FC<{ el: ElementBase; ctx: Ctx; index: number }>
       const spec = resolveCast(ctx.cast as never, who, (e.look_ as Record<string, unknown>) ?? undefined);
       // Locomotion from the actual path: the stride phase advances with the distance covered (feet never slide),
       // the stride opens and closes with the speed (no snap from standing to full stride), and runs come from speed.
-      let walk = 0, dir = (e.dir as number) ?? 1, run = false, gait: number | undefined;
+      let walk = 0, dir = (e.dir as number) ?? 1, run = false, gait: number | undefined, dist = 0;
       if (moves) {
         const sAt = (yy: number) => ((el.scale as number | undefined) ?? (ctx.world ? personScaleAt(ctx.world, yy) * ((e.depthScale as number) ?? 1) : 1));
         const h = 0.05;
@@ -263,8 +263,14 @@ export const ElementView: React.FC<{ el: ElementBase; ctx: Ctx; index: number }>
           prev = q;
         }
         gait = (d / (run ? 150 : 84)) * Math.PI * 2;
+        dist = d;
       }
       if (e.walk === true) { walk = 1; dir = ((e.dir as number) ?? 1); gait = undefined; }
+      // a rider pedals instead of walking: the crank turns with the distance ridden
+      // (one turn of the cranks every 300 units: an easy cadence at a riding speed of ~260 units per second)
+      const pedal = e.ride ? (dist / 300) * Math.PI * 2 : undefined;
+      const rideWith = e.ride && typeof e.ride === 'object' ? (e.ride as { parts: Part[]; seat?: number[]; crank?: number[]; size?: number }) : undefined;
+      if (e.ride) { walk = 0; run = false; }
       // `run: true` = use the running gait while the path moves (a standing runner does not run on the spot);
       // without any x/y keys it still means "run in place" (treadmill shots where the set scrolls)
       if (e.run === true) {
@@ -307,7 +313,7 @@ export const ElementView: React.FC<{ el: ElementBase; ctx: Ctx; index: number }>
             })(),
             // big drawings (an open ledger, a sack) are held smaller than a sheet of paper
             scale: holdS,
-            rotate: pose === 'phone' ? -30 : shoulderSack ? 16 : (e.holdsRotate as number) ?? 0,
+            rotate: pose === 'phone' ? -30 : shoulderSack ? 16 : pose === 'dig' ? -22 : (e.holdsRotate as number) ?? 0,
             // the thing's own grip point (the neck of a sack, the handle of a basket, the middle of a crate) sits IN the hand
             dx: -anchor[0] * holdS,
             dy: (pose === 'holdUp' ? -95 : pose === 'hold' || pose === 'carry' ? 4 : 0) - anchor[1] * holdS,
@@ -326,7 +332,7 @@ export const ElementView: React.FC<{ el: ElementBase; ctx: Ctx; index: number }>
         <g>
           <Character
             spec={spec}
-            state={{ pose, prevPose, poseK, expr: e.expr as string, talk: !!e.talk, look: e.look as number, view: e.view as 'front' | 'back', seated: !!e.seated, kneel: !!e.kneel, muzzle, walk, run, dir, headMove: e.headMove as string, turn: e.turn as number, exprAge: t - tExpr, take: e.take as number, gait, poseDur, bigMove: handTravel > 90, gaitStyle: e.walkStyle as string }}
+            state={{ pose, prevPose, poseK, expr: e.expr as string, talk: !!e.talk, look: e.look as number, view: e.view as 'front' | 'back', seated: !!e.seated, kneel: !!e.kneel, muzzle, walk, run, dir, headMove: e.headMove as string, turn: e.turn as number, exprAge: t - tExpr, take: e.take as number, gait, poseDur, bigMove: handTravel > 90, gaitStyle: e.walkStyle as string, ride: !!e.ride, pedal, rideWith, rideTravel: dist }}
             t={t}
             seed={seed}
             held={held}
@@ -361,9 +367,13 @@ export const ElementView: React.FC<{ el: ElementBase; ctx: Ctx; index: number }>
       );
       break;
     }
-    case 'drawing':
-      body = <Drawing parts={(e.parts as Part[]) ?? []} t={t} />;
+    case 'drawing': {
+      // a drawing that moves (a cart, a rickshaw) turns its "roll" wheels with the distance, in its own units
+      const dTravel = moves ? Math.hypot(((e.x as number) ?? 0) - ((el.x as number) ?? 0), ((e.y as number) ?? 0) - ((el.y as number) ?? 0)) / Math.max(0.05, (e.scale as number) ?? 1) : 0;
+      // "phase": seconds of offset, so a row of trees does not sway in step
+      body = <Drawing parts={(e.parts as Part[]) ?? []} t={t + ((e.phase as number) ?? 0)} travel={dTravel} />;
       break;
+    }
     case 'prop':
       body = <Prop item={(e.item as string) ?? 'paper'} t={t} color={e.color as string} text={e.text as string} value={e.value as number} nationKey={e.nation as string} on={!!e.on} />;
       break;

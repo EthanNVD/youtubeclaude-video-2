@@ -1,0 +1,50 @@
+{
+ "id": "singora_beach",
+ "type": "places",
+ "name": "Tropical beach (landing)",
+ "tags": [
+  "thailand",
+  "malaya",
+  "southeast_asia",
+  "beach",
+  "sea",
+  "landing",
+  "coconut",
+  "tropical",
+  "ww2"
+ ],
+ "doc": "a sandy tropical beach with coconut palms and the sea: landings, dawn arrivals",
+ "spec": {
+  "compose": {
+   "far": [
+    "sea"
+   ],
+   "ground": "sand",
+   "rows": [
+    {
+     "what": "coconut_palm",
+     "depth": 700,
+     "from": 1150,
+     "to": 2200,
+     "gap": 260
+    },
+    {
+     "what": "coconut_palm",
+     "depth": 1060,
+     "from": 1700,
+     "to": 2100,
+     "gap": 300
+    }
+   ]
+  },
+  "horizon": 600,
+  "time": "dawn"
+ },
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

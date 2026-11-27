@@ -1,0 +1,700 @@
+{
+ "chapter": "Bicycles and the jungle",
+ "cards": [
+  {
+   "at": "The Japanese army also",
+   "recipe": "scene",
+   "says": "The Japanese army arrived in Malaya with a clever, practical plan.",
+   "idea": "Dawn on the beach at Singora: Japanese soldiers come ashore in a column past a landing boat while their officer stands on the sand, taps his temple and smiles — he has a practical idea.",
+   "where": "singora_beach",
+   "place_id": "singora_beach",
+   "people": [
+    {
+     "who": "jp_officer",
+     "at": "center_left",
+     "depth": "near",
+     "mood": "smug",
+     "face": "right",
+     "do": [
+      {
+       "act": "ponder",
+       "on": "practical idea"
+      }
+     ]
+    }
+   ],
+   "crowd": {
+    "kind": "marchers",
+    "who": [
+     "jp_soldier",
+     "jp_soldier2",
+     "jp_soldier3"
+    ],
+    "n": 6,
+    "depth": "back",
+    "start": "in",
+    "at": 1500
+   },
+   "vehicles": [
+    {
+     "type": "boat",
+     "nation": "JPN",
+     "at": 1180,
+     "depth": 655,
+     "scale": 0.6
+    }
+   ],
+   "camera": "wide"
+  },
+  {
+   "at": "It did not bring",
+   "recipe": "scene",
+   "says": "They brought very few bicycles with them.",
+   "idea": "On the same beach a soldier rides the one bicycle they brought across the sand; the officer counts on one finger and shrugs — just one.",
+   "where": "singora_beach",
+   "place_id": "singora_beach",
+   "people": [
+    {
+     "who": "jp_officer",
+     "at": "center_left",
+     "depth": "near",
+     "mood": "smug",
+     "face": "right",
+     "do": [
+      {
+       "act": "count",
+       "on": "bring"
+      },
+      {
+       "act": "shrug",
+       "on": "bicycles"
+      }
+     ]
+    },
+    {
+     "who": "jp_soldier",
+     "at": "right",
+     "depth": "mid",
+     "rides": "bicycle",
+     "do": [
+      {
+       "act": "walk_to",
+       "to": "center"
+      }
+     ]
+    }
+   ],
+   "camera": "two_shot",
+   "focus": "jp_officer"
+  },
+  {
+   "at": "It knew Malaya was",
+   "recipe": "scene",
+   "says": "Malaya was already full of bicycles.",
+   "idea": "A Malayan town street in the morning haze: villagers in songkoks, a woman and a shopkeeper ride bicycles past the shophouses while two more bicycles lean by the five-foot way — bicycles everywhere.",
+   "where": "malay_town",
+   "place_id": "malay_town",
+   "crowd": {
+    "kind": "cyclists",
+    "who": [
+     "villager",
+     "villager2",
+     "shopkeeper",
+     "villager_woman",
+     "tapper"
+    ],
+    "n": 6,
+    "abreast": 2,
+    "toward": "right",
+    "depth": "mid",
+    "start": "in",
+    "at": 900
+   },
+   "things": [
+    {
+     "what": "bicycle",
+     "at": "far_left",
+     "depth": "back"
+    },
+    {
+     "what": "bicycle",
+     "at": 1640,
+     "depth": "back",
+     "flip": true
+    }
+   ],
+   "camera": "wide"
+  },
+  {
+   "at": "so it took them",
+   "recipe": "scene",
+   "says": "The Japanese took bicycles from shops and from ordinary people.",
+   "idea": "In front of the shophouse a Japanese soldier rides off on the shopkeeper's bicycle while the shopkeeper spreads his hands in protest and a Malay villager shrinks back — the army helps itself.",
+   "where": "malay_town",
+   "place_id": "malay_town",
+   "people": [
+    {
+     "who": "shopkeeper",
+     "at": "center_left",
+     "depth": "mid",
+     "mood": "worried",
+     "face": "right",
+     "do": [
+      {
+       "act": "palms",
+       "on": "took them"
+      },
+      {
+       "act": "despair",
+       "on": "civilians"
+      }
+     ]
+    },
+    {
+     "who": "jp_soldier2",
+     "at": "center",
+     "depth": "mid",
+     "rides": "bicycle",
+     "mood": "smug",
+     "do": [
+      {
+       "act": "exit",
+       "to": "right",
+       "on": "from shops"
+      }
+     ]
+    },
+    {
+     "who": "villager",
+     "at": "right",
+     "depth": "back",
+     "mood": "fear",
+     "face": "left",
+     "do": [
+      {
+       "act": "cower",
+       "on": "civilians"
+      }
+     ]
+    }
+   ],
+   "camera": "wide",
+   "focus": "shopkeeper"
+  },
+  {
+   "at": "and rode south",
+   "recipe": "scene",
+   "says": "Then the soldiers rode the bicycles south.",
+   "idea": "On a red earth road through a rubber estate, rows of Japanese soldiers on bicycles ride to the left, south, three abreast.",
+   "where": "estate_road_open",
+   "place_id": "estate_road_open",
+   "crowd": {
+    "kind": "cyclists",
+    "who": [
+     "jp_soldier",
+     "jp_soldier2",
+     "jp_soldier3"
+    ],
+    "n": 9,
+    "abreast": 3,
+    "toward": "left",
+    "depth": "mid",
+    "start": "in",
+    "at": 1250
+   },
+   "camera": "wide"
+  },
+  {
+   "at": "A British officer who",
+   "recipe": "scene",
+   "says": "A British officer hid in the grass beside a road behind enemy lines.",
+   "idea": "Behind the Japanese lines a bearded British officer lies low in the tall lalang grass at the roadside, binoculars up, watching the red road through the rubber trees.",
+   "where": "estate_road",
+   "place_id": "estate_road",
+   "people": [
+    {
+     "who": "brit_officer",
+     "at": "right",
+     "depth": "front",
+     "kneel": true,
+     "mood": "nervous",
+     "face": "left",
+     "do": [
+      {
+       "act": "binoculars",
+       "on": "lay hidden"
+      }
+     ]
+    }
+   ],
+   "letterbox": true,
+   "camera": "wide_then_close",
+   "focus": "brit_officer"
+  },
+  {
+   "at": "later described them",
+   "recipe": "scene",
+   "says": "He watched Japanese soldiers cycle past in big groups, three or four abreast.",
+   "idea": "Seen over the hidden officer's shoulder, groups of Japanese soldiers cycle past on the road three abreast, row after row, while he stays low in the grass.",
+   "where": "estate_road",
+   "place_id": "estate_road",
+   "people": [
+    {
+     "who": "brit_officer",
+     "at": 300,
+     "depth": "near",
+     "kneel": true,
+     "face": "away",
+     "mood": "nervous"
+    }
+   ],
+   "crowd": {
+    "kind": "cyclists",
+    "who": [
+     "jp_soldier",
+     "jp_soldier2",
+     "jp_soldier3"
+    ],
+    "n": 15,
+    "abreast": 3,
+    "toward": "left",
+    "depth": "back",
+    "start": "in",
+    "at": 1750
+   },
+   "letterbox": true,
+   "camera": "wide"
+  },
+  {
+   "at": "chatting and laughing",
+   "recipe": "scene",
+   "says": "The soldiers chatted and laughed as if they were going to a football match.",
+   "idea": "Closer on the passing riders: Japanese soldiers on bicycles chat and laugh as they pedal, relaxed as football fans on the way to a match.",
+   "where": "estate_road_open",
+   "place_id": "estate_road_open",
+   "crowd": {
+    "kind": "cyclists",
+    "who": [
+     "jp_soldier",
+     "jp_soldier2",
+     "jp_soldier3"
+    ],
+    "n": 6,
+    "abreast": 2,
+    "toward": "left",
+    "depth": "near",
+    "start": "in",
+    "at": 1450,
+    "mood": "happy"
+   },
+   "camera": "pan"
+  },
+  {
+   "at": "which brings us to",
+   "recipe": "scene",
+   "says": "The host opens the first myth of the story: that the jungle was the problem.",
+   "idea": "In his study the host holds up the ledger of the gate and turns to us: myth number one, the jungle.",
+   "where": "host_study",
+   "place_id": "host_study",
+   "people": [
+    {
+     "who": "host",
+     "at": "center",
+     "depth": "mid",
+     "mood": "smug",
+     "do": [
+      {
+       "act": "show",
+       "with": "ledger",
+       "on": "first myth"
+      },
+      {
+       "act": "say",
+       "on": "the jungle"
+      }
+     ]
+    }
+   ],
+   "paper_note": {
+    "lines": [
+     "Myth No. 1:",
+     "the jungle"
+    ],
+    "kicker": "THE GATE",
+    "on": "first myth"
+   },
+   "camera": "medium"
+  },
+  {
+   "at": "You'll often hear that",
+   "recipe": "scene",
+   "says": "People say the British believed the jungle could not be crossed.",
+   "idea": "At Malaya Command in Singapore a staff officer points at the wall map, then holds up a flat hand — nobody comes through that jungle — while his colleague nods.",
+   "where": "hq_office",
+   "place_id": "hq_office",
+   "people": [
+    {
+     "who": "staff1",
+     "at": "center_left",
+     "depth": "mid",
+     "mood": "smug",
+     "face": "left",
+     "do": [
+      {
+       "act": "point",
+       "to": 700,
+       "on": "British thought"
+      },
+      {
+       "act": "stop",
+       "on": "jungle"
+      }
+     ]
+    },
+    {
+     "who": "staff2",
+     "at": "center_right",
+     "depth": "mid",
+     "mood": "proud",
+     "face": "staff1",
+     "do": [
+      {
+       "act": "nod",
+       "on": "passable"
+      }
+     ]
+    }
+   ],
+   "camera": "two_shot",
+   "focus": "staff1"
+  },
+  {
+   "at": "so the Japanese simply",
+   "recipe": "scene",
+   "says": "The legend says the Japanese just walked straight through the jungle.",
+   "idea": "The legend: in a misty green jungle a file of Japanese soldiers pushes through the giant leaves one after another — the story everyone tells.",
+   "where": "jungle_myth",
+   "place_id": "jungle_myth",
+   "crowd": {
+    "kind": "marchers",
+    "who": [
+     "jp_soldier",
+     "jp_soldier2",
+     "jp_soldier3"
+    ],
+    "n": 5,
+    "depth": "near",
+    "start": "in",
+    "at": 1350
+   },
+   "tint": "sepia",
+   "stamp": {
+    "text": "MYTH",
+    "on": "walked through it"
+   },
+   "camera": "wide"
+  },
+  {
+   "at": "The truth is more",
+   "recipe": "scene",
+   "says": "The real story is less simple than that.",
+   "idea": "Back in the Singapore office the confident staff officer lowers his hand and scratches his head, unsure — the truth is awkward.",
+   "where": "hq_office",
+   "place_id": "hq_office",
+   "people": [
+    {
+     "who": "staff1",
+     "at": "center",
+     "depth": "near",
+     "mood": "nervous",
+     "do": [
+      {
+       "act": "scratch_head",
+       "on": "awkward"
+      }
+     ]
+    }
+   ],
+   "camera": "close",
+   "focus": "staff1"
+  },
+  {
+   "at": "Much of what everyone",
+   "recipe": "scene",
+   "says": "Most of the so-called jungle was really rubber plantations.",
+   "idea": "Inside a rubber estate the tapped trees stand in straight rows; a Tamil rubber tapper cuts the bark of a tree and the latex runs into the cup — this 'jungle' is a plantation.",
+   "where": "rubber_estate",
+   "place_id": "rubber_estate",
+   "people": [
+    {
+     "who": "tapper",
+     "at": 470,
+     "depth": "back",
+     "face": "right",
+     "do": [
+      {
+       "act": "peel",
+       "on": "rubber plantations"
+      }
+     ]
+    }
+   ],
+   "things": [
+    {
+     "what": "rubber_tree",
+     "at": 560,
+     "depth": 850
+    }
+   ],
+   "camera": "wide_then_close",
+   "focus": "tapper"
+  },
+  {
+   "at": "coconut groves, villages",
+   "recipe": "scene",
+   "says": "The rest of the so-called jungle was palm groves, kampongs and the roads between them.",
+   "idea": "A Malay kampong among coconut palms: houses on stilts, a woman walks home with a basket, a villager in a songkok cycles along the red road — groves, villages, roads, not jungle.",
+   "where": "kampong",
+   "place_id": "kampong",
+   "people": [
+    {
+     "who": "villager_woman",
+     "at": "center_left",
+     "depth": "back",
+     "holds": "basket",
+     "do": [
+      {
+       "act": "walk_to",
+       "to": "center"
+      }
+     ]
+    },
+    {
+     "who": "villager",
+     "at": "left",
+     "depth": "near",
+     "rides": "bicycle",
+     "mood": "happy",
+     "do": [
+      {
+       "act": "walk_to",
+       "to": "right",
+       "on": "coconut"
+      }
+     ]
+    }
+   ],
+   "camera": "pan"
+  },
+  {
+   "at": "The real jungle at",
+   "recipe": "scene",
+   "says": "The true jungle at the edges looked impossible to get through.",
+   "idea": "At the edge of a plantation an Australian soldier in his slouch hat stops before a dark wall of rainforest, looks up at the tangle of trunks and creepers, and turns back to us — impenetrable.",
+   "where": "rainforest_edge",
+   "place_id": "rainforest_edge",
+   "people": [
+    {
+     "who": "aus_soldier",
+     "at": "center",
+     "depth": "mid",
+     "face": "away",
+     "mood": "worried",
+     "do": [
+      {
+       "act": "look_up",
+       "on": "edges"
+      },
+      {
+       "act": "turn_back",
+       "on": "impenetrable"
+      }
+     ]
+    }
+   ],
+   "camera": "wide"
+  },
+  {
+   "at": "and the Australian official",
+   "recipe": "document",
+   "says": "Australia's own war history calls the idea of an impassable jungle a false impression.",
+   "style": "book",
+   "title": "THE AUSTRALIAN OFFICIAL HISTORY",
+   "lines": [
+    "The jungle looked impenetrable.",
+    "That impression was misleading."
+   ]
+  },
+  {
+   "at": "The Japanese mostly didn't",
+   "recipe": "scene",
+   "says": "Japanese troops rarely cut their way through untouched rainforest.",
+   "idea": "At the same jungle wall a Japanese soldier lifts his parang, looks at the tangle, shakes his head and lowers it — not through there.",
+   "where": "rainforest_edge",
+   "place_id": "rainforest_edge",
+   "people": [
+    {
+     "who": "jp_soldier",
+     "at": "center",
+     "depth": "mid",
+     "holds": "parang",
+     "face": "right",
+     "do": [
+      {
+       "act": "hold_up",
+       "with": "parang",
+       "on": "hack"
+      },
+      {
+       "act": "shake_head",
+       "on": "Virgin Forest"
+      }
+     ]
+    }
+   ],
+   "camera": "medium",
+   "focus": "jp_soldier"
+  },
+  {
+   "at": "They used the roads",
+   "recipe": "scene",
+   "says": "Instead they moved along the roads and through the plantations.",
+   "idea": "Japanese cyclists stream along the red road while a file of soldiers walks between the rubber trees beside it — roads and plantations, not jungle.",
+   "where": "estate_road_open",
+   "place_id": "estate_road_open",
+   "crowd": [
+    {
+     "kind": "cyclists",
+     "who": [
+      "jp_soldier",
+      "jp_soldier2",
+      "jp_soldier3"
+     ],
+     "n": 9,
+     "abreast": 3,
+     "toward": "left",
+     "depth": "mid",
+     "start": "in",
+     "at": 1500
+    },
+    {
+     "kind": "marchers",
+     "who": [
+      "jp_soldier",
+      "jp_soldier2"
+     ],
+     "n": 5,
+     "depth": "far",
+     "start": "in",
+     "at": 700
+    }
+   ],
+   "camera": "pan"
+  },
+  {
+   "at": "went around the British",
+   "recipe": "scene",
+   "says": "They slipped around the British positions along the side paths.",
+   "idea": "At a sandbagged roadblock a Sikh soldier and a British soldier aim down the empty road to the left, while behind them, between the rubber trees, Japanese soldiers file quietly past the other way.",
+   "where": "roadblock",
+   "place_id": "roadblock",
+   "people": [
+    {
+     "who": "sikh_soldier",
+     "at": "center_left",
+     "depth": "near",
+     "holds": "rifle",
+     "face": "left",
+     "mood": "determined",
+     "do": [
+      {
+       "act": "aim",
+       "on": "British positions"
+      }
+     ]
+    },
+    {
+     "who": "brit_soldier",
+     "at": "center",
+     "depth": "near",
+     "holds": "rifle",
+     "face": "left",
+     "mood": "worried"
+    }
+   ],
+   "things": [
+    {
+     "what": "sandbag_wall",
+     "at": 780,
+     "depth": "front"
+    }
+   ],
+   "crowd": {
+    "kind": "marchers",
+    "who": [
+     "jp_soldier",
+     "jp_soldier2",
+     "jp_soldier3"
+    ],
+    "n": 6,
+    "depth": "far",
+    "start": "in",
+    "at": 600
+   },
+   "camera": "wide"
+  },
+  {
+   "at": "and kept moving faster",
+   "recipe": "scene",
+   "says": "They moved faster than the defenders could dig new positions.",
+   "idea": "Australian soldiers dig a gun pit at the roadside as fast as they can while, behind them, Japanese cyclists are already streaming past on the road — too late.",
+   "where": "roadblock",
+   "place_id": "roadblock",
+   "people": [
+    {
+     "who": "aus_soldier",
+     "at": "center_left",
+     "depth": "near",
+     "mood": "worried",
+     "do": [
+      {
+       "act": "dig",
+       "on": "kept moving"
+      },
+      {
+       "act": "wipe_brow",
+       "on": "dig in"
+      }
+     ]
+    },
+    {
+     "who": "aus_soldier2",
+     "at": "center_right",
+     "depth": "near",
+     "mood": "fear",
+     "do": [
+      {
+       "act": "dig",
+       "on": "kept"
+      }
+     ]
+    }
+   ],
+   "crowd": {
+    "kind": "cyclists",
+    "who": [
+     "jp_soldier",
+     "jp_soldier2",
+     "jp_soldier3"
+    ],
+    "n": 9,
+    "abreast": 3,
+    "toward": "left",
+    "depth": "far",
+    "start": "in",
+    "at": 1700
+   },
+   "camera": "push_in"
+  }
+ ]
+}

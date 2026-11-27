@@ -1,0 +1,62 @@
+{
+ "id": "estate_road",
+ "type": "places",
+ "name": "Estate road with tall grass",
+ "tags": [
+  "malaya",
+  "southeast_asia",
+  "road",
+  "laterite",
+  "plantation",
+  "rubber",
+  "hiding",
+  "tropical",
+  "ww2"
+ ],
+ "doc": "a red laterite road through a rubber estate, tall lalang grass in front (a watcher can hide in it)",
+ "spec": {
+  "compose": {
+   "far": [
+    "treeline"
+   ],
+   "ground": "grass",
+   "road": {
+    "kind": "laterite",
+    "y": 885,
+    "w": 210
+   },
+   "rows": [
+    {
+     "what": "rubber_tree",
+     "depth": 650,
+     "gap": 120
+    },
+    {
+     "what": "rubber_tree",
+     "depth": 720,
+     "gap": 150
+    },
+    {
+     "what": "rubber_tree",
+     "depth": 800,
+     "gap": 190
+    },
+    {
+     "what": "lalang_grass",
+     "depth": 1075,
+     "gap": 120,
+     "scale": 1.0
+    }
+   ]
+  },
+  "horizon": 600,
+  "weather": "haze"
+ },
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

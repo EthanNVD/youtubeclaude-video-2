@@ -16,6 +16,7 @@ import { INK, FONT } from '../theme';
  *   motion: "spin": deg/s around "center" (wheels, propellers), "flicker": 0..1 (flames: scale around the base),
  *           "sway": degrees around "pivot" (flags, smoke), "blink": seconds per on/off (lamps), "drift": px/s along x (clouds),
            "bob": px up and down (a boat, an engine idling), "period": seconds per cycle (sway/bob), "phase": seconds of offset
+ *   "roll": the radius of a wheel (on a group): it turns with the distance the thing has travelled (no turning when it stands)
  *   groups: {"group": [parts…], "at": [x, y], "id": "wheel_front"} moves, spins or sways several parts together around its own
  *           origin (spin/sway centre and pivot are in the group's coordinates) — wheels, a tree crown, a turret, a flag
  */
@@ -25,7 +26,7 @@ export type Part = {
   fill?: string; stroke?: string | false; width?: number; opacity?: number; r?: number;
   spin?: number; center?: number[]; flicker?: number; sway?: number; pivot?: number[]; blink?: number; drift?: number;
   bob?: number; period?: number; phase?: number; rule?: 'evenodd' | 'nonzero';
-  group?: Part[]; id?: string; scale?: number;
+  group?: Part[]; id?: string; scale?: number; roll?: number;
 };
 
 const FONTS: Record<string, string> = { cond: FONT.cond, title: FONT.title, hand: FONT.hand, mono: FONT.mono, book: FONT.book };
@@ -39,7 +40,7 @@ const centerOf = (p: Part): [number, number] => {
   return [0, 0];
 };
 
-const PartView: React.FC<{ p: Part; t: number }> = ({ p, t: t0 }) => {
+const PartView: React.FC<{ p: Part; t: number; travel?: number }> = ({ p, t: t0, travel = 0 }) => {
   const t = t0 + (p.phase ?? 0);
   if (p.blink && Math.floor(t / p.blink) % 2 === 1) return null;
   if (p.group) {
@@ -48,9 +49,10 @@ const PartView: React.FC<{ p: Part; t: number }> = ({ p, t: t0 }) => {
     if (p.at) tr.push(`translate(${p.at[0]} ${p.at[1]})`);
     if (p.bob) tr.push(`translate(0 ${Math.sin((t / (p.period ?? 1.6)) * Math.PI * 2) * p.bob})`);
     if (p.spin) { const [cx, cy] = p.center ?? [0, 0]; tr.push(`rotate(${(t * p.spin) % 360} ${cx} ${cy})`); }
+    if (p.roll) { const [cx, cy] = p.center ?? [0, 0]; tr.push(`rotate(${((travel / p.roll) * 180 / Math.PI) % 360} ${cx} ${cy})`); }
     if (p.sway) { const [cx, cy] = p.pivot ?? [0, 0]; tr.push(`rotate(${Math.sin((t / (p.period ?? 3.7)) * Math.PI * 2) * p.sway} ${cx} ${cy})`); }
     if (p.scale) tr.push(`scale(${p.scale})`);
-    return <g transform={tr.join(' ') || undefined} opacity={p.opacity}>{p.group.map((q, i) => <PartView key={i} p={q} t={t0} />)}</g>;
+    return <g transform={tr.join(' ') || undefined} opacity={p.opacity}>{p.group.map((q, i) => <PartView key={i} p={q} t={t0} travel={travel} />)}</g>;
   }
   const stroke = p.stroke === false ? 'none' : (p.stroke ?? INK);
   const sw = p.width ?? 4;
@@ -80,6 +82,7 @@ const PartView: React.FC<{ p: Part; t: number }> = ({ p, t: t0 }) => {
   return tr.length ? <g transform={tr.join(' ')}>{node}</g> : <>{node}</>;
 };
 
-export const Drawing: React.FC<{ parts: Part[]; t: number }> = ({ parts, t }) => (
-  <g>{(parts ?? []).map((p, i) => <PartView key={i} p={p} t={t} />)}</g>
+/** `travel` = distance the thing has moved, in its own units (turns the "roll" wheels) */
+export const Drawing: React.FC<{ parts: Part[]; t: number; travel?: number }> = ({ parts, t, travel }) => (
+  <g>{(parts ?? []).map((p, i) => <PartView key={i} p={p} t={t} travel={travel} />)}</g>
 );

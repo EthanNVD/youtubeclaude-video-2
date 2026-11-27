@@ -1,0 +1,62 @@
+{
+ "id": "roadblock",
+ "type": "places",
+ "name": "Road through a rubber estate (gap for a position)",
+ "tags": [
+  "malaya",
+  "southeast_asia",
+  "road",
+  "laterite",
+  "plantation",
+  "roadblock",
+  "position",
+  "tropical",
+  "ww2"
+ ],
+ "doc": "a laterite road through rubber with a gap in the near trees: room for a roadblock or a gun position",
+ "spec": {
+  "compose": {
+   "far": [
+    "treeline"
+   ],
+   "ground": "grass",
+   "road": {
+    "kind": "laterite",
+    "y": 940,
+    "w": 210
+   },
+   "rows": [
+    {
+     "what": "rubber_tree",
+     "depth": 650,
+     "gap": 120
+    },
+    {
+     "what": "rubber_tree",
+     "depth": 720,
+     "gap": 150
+    },
+    {
+     "what": "rubber_tree",
+     "depth": 800,
+     "gap": 190,
+     "clear": [
+      [
+       700,
+       1250
+      ]
+     ]
+    }
+   ]
+  },
+  "horizon": 600,
+  "weather": "haze"
+ },
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

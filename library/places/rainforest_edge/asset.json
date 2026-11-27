@@ -1,0 +1,72 @@
+{
+ "id": "rainforest_edge",
+ "type": "places",
+ "name": "Jungle edge",
+ "tags": [
+  "malaya",
+  "burma",
+  "southeast_asia",
+  "jungle",
+  "rainforest",
+  "edge",
+  "plantation",
+  "tropical",
+  "ww2"
+ ],
+ "doc": "where a plantation meets the rainforest: a dark wall of jungle behind open ground",
+ "spec": {
+  "compose": {
+   "far": [
+    "jungle"
+   ],
+   "ground": "jungle_floor",
+   "rows": [
+    {
+     "what": "jungle_edge",
+     "depth": 690,
+     "gap": 640,
+     "scale": 0.9
+    },
+    {
+     "what": "jungle_edge",
+     "depth": 760,
+     "gap": 760
+    },
+    {
+     "what": "rubber_tree",
+     "depth": 880,
+     "from": -200,
+     "to": 300,
+     "gap": 200
+    },
+    {
+     "what": "banana_plant",
+     "depth": 1060,
+     "from": 1600,
+     "to": 2100,
+     "gap": 300
+    },
+    {
+     "what": "lalang_grass",
+     "depth": 1080,
+     "gap": 170,
+     "clear": [
+      [
+       300,
+       1500
+      ]
+     ]
+    }
+   ]
+  },
+  "horizon": 600,
+  "weather": "haze"
+ },
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

@@ -1,0 +1,53 @@
+{
+ "id": "parang",
+ "type": "props",
+ "name": "Parang (machete)",
+ "tags": [
+  "malaya",
+  "southeast_asia",
+  "machete",
+  "parang",
+  "jungle",
+  "blade",
+  "tool",
+  "ww2"
+ ],
+ "doc": "a parang: the heavy Malay machete used to cut through undergrowth (held in the hand)",
+ "size": 1.0,
+ "h": 122,
+ "anchors": {
+  "grip": [
+   0,
+   4
+  ]
+ },
+ "parts": [
+  {
+   "path": "M-6 0 L8 0 L8 -10 L-6 -10 Z",
+   "fill": "#3a2a1e",
+   "width": 2.5
+  },
+  {
+   "path": "M-8 10 L10 10 L9 -2 L-7 -2 Z",
+   "fill": "#5a3e28",
+   "width": 3
+  },
+  {
+   "path": "M-6 -10 L-10 -96 Q2 -112 16 -96 L8 -10 Z",
+   "fill": "#b9bec2",
+   "width": 3.5
+  },
+  {
+   "path": "M-8 -30 L-10 -92",
+   "stroke": "#e8ecee",
+   "width": 2.5
+  }
+ ],
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

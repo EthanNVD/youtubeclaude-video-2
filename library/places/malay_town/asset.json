@@ -1,0 +1,58 @@
+{
+ "id": "malay_town",
+ "type": "places",
+ "name": "Malayan town street (shophouses)",
+ "tags": [
+  "malaya",
+  "singapore",
+  "southeast_asia",
+  "town",
+  "street",
+  "shophouse",
+  "chinese",
+  "tropical",
+  "ww2"
+ ],
+ "doc": "a street of Chinese shophouses with coconut palms and a red laterite road",
+ "spec": {
+  "compose": {
+   "far": [
+    "hills"
+   ],
+   "ground": "dry",
+   "road": {
+    "kind": "laterite",
+    "y": 935,
+    "w": 230
+   },
+   "rows": [
+    {
+     "what": "shophouse",
+     "depth": 800,
+     "from": -120,
+     "to": 2100,
+     "gap": 560,
+     "jitter": 0,
+     "vary": false,
+     "flip": "none"
+    },
+    {
+     "what": "coconut_palm",
+     "depth": 760,
+     "from": 150,
+     "to": 1900,
+     "gap": 560
+    }
+   ]
+  },
+  "horizon": 600,
+  "weather": "haze"
+ },
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

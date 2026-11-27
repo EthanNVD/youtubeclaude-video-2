@@ -303,6 +303,19 @@ def footsteps(d=2.0, rate=2.0, surface="hard"):
     return norm(x, 0.5)
 
 
+def bicycle(d=4.0, bell_at=0.6):
+    """bicycles going by: tyres on a road (soft hiss), the chain, freewheels ticking, one ring of a bell"""
+    n = int(d * SR)
+    x = bp(noise(d, "pink"), 600, 2400) * 0.18
+    x += bp(noise(d), 2500, 6000) * 0.05 * (1 + np.sin(t_(d) * 2 * np.pi * 1.1)) / 2
+    for i in range(int(d * 9)):
+        place(x, click(4200, 0.012) * rng.uniform(0.15, 0.3), i / 9 + rng.uniform(0, 0.02))
+    if bell_at is not None and bell_at < d - 0.6:
+        place(x, bell(2600, 0.9) * 0.5, bell_at)
+        place(x, bell(2600, 0.9) * 0.4, bell_at + 0.22)
+    return norm(x * adsr(n, 0.4, 0.6), 0.5)
+
+
 def heartbeat(d=2.0):
     x = np.zeros(int(d * SR))
     for i in range(int(d / 0.9)):
@@ -451,7 +464,7 @@ LIB = {
     "train": lambda: norm(footsteps(4, 3.2) * 0.6 + engine(4, 35, 5, 0.5) * 0.3, 0.6), "splash": splash, "phone_ring": phone_ring, "morse": morse,
     "radio_static": radio_static, "metal_clank": metal_clank, "footsteps": footsteps, "footsteps_snow": lambda: footsteps(2, 2, "snow"),
     "heartbeat": heartbeat, "riser": riser, "impact": impact_hit, "map_draw": lambda: scribble(1.5), "cash": cash, "ship_horn": ship_horn,
-    "cheer": crowd_cheer, "tick": lambda: norm(click(4000, 0.03), 0.4), "church_bell": lambda: bell(420, 3.0),
+    "cheer": crowd_cheer, "bicycle": bicycle, "bicycle_bell": lambda: norm(bell(2600, 0.9) + np.pad(bell(2600, 0.9), (int(0.22 * SR), 0))[: int(0.9 * SR)] * 0.8, 0.6), "tick": lambda: norm(click(4000, 0.03), 0.4), "church_bell": lambda: bell(420, 3.0),
     # ambience beds
     "amb_sea": amb_sea, "amb_wind": amb_wind, "amb_wind_cold": lambda: amb_wind(cold=True), "amb_rain": amb_rain,
     "amb_room": amb_room, "amb_office": amb_office, "amb_basement": lambda: amb_room(hum=True), "amb_factory": amb_factory,

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Weather, type WeatherSpec } from '../fx/Weather';
 import type { CameraKey, CastMember, LonLat, Scene } from '../types';
 import { resolveKeys, clamp, easeFn, partialPolyline, smoothNoise } from '../lib/anim';
 import { SetBackground } from '../sets/Sets';
@@ -194,7 +195,7 @@ export const SceneView: React.FC<{ scene: Scene; t: number; cast?: Record<string
       })()
     : worldEls0;
   const hudEls = noHud ? [] : els.map((el, i) => ({ el, i })).filter(({ el }) => el.hud || HUD_KINDS.has(el.kind));
-  const weather = scene.set?.weather as string | undefined;
+  const weather = scene.set?.weather as WeatherSpec | undefined;
 
   const lbRaw = scene.letterbox;
   const lb = !!lbRaw;
@@ -221,9 +222,7 @@ export const SceneView: React.FC<{ scene: Scene; t: number; cast?: Record<string
       {scene.type === 'map' && scene.map && (scene.map as { paper?: boolean }).paper !== false && scene.map.style !== 'poster' && scene.map.style !== 'dark' ? <PaperOverlay /> : null}
       {/* weather covers the whole screen: the fx element is centred on the frame by itself (x 960, y 540 by default),
           so it must NOT be wrapped in another translate (that pushed the rain into the bottom-right quarter) */}
-      {(weather === 'rain' || weather === 'snow') && scene.set?.kind !== 'room' ? (
-        <ElementView el={{ kind: 'fx', type: weather, enter: 'none', x: 960, y: 540, w: 2200, h: 1300 }} ctx={ctx} index={999} />
-      ) : null}
+      {weather && scene.set?.kind !== 'room' ? <Weather w={weather} t={t} seed={scene.id} /> : null}
       {hudEls.map(({ el, i }) => <ElementView key={'h' + i} el={el} ctx={ctx} index={i} />)}
       {!noHud && scene.tag ? <PlaceTag text={scene.tag as string} a={((scene.tagIn as number) ?? 0.3) < 0 ? 99 : t - ((scene.tagIn as number) ?? 0.3)} /> : null}
       {noHud ? null : lb ? (

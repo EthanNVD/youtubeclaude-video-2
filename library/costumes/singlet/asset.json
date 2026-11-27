@@ -1,0 +1,43 @@
+{
+ "id": "singlet",
+ "type": "costumes",
+ "name": "Singlet (vest top)",
+ "tags": [
+  "malaya",
+  "singapore",
+  "china",
+  "chinese",
+  "shopkeeper",
+  "worker",
+  "coolie",
+  "civilian",
+  "ww2",
+  "vest"
+ ],
+ "doc": "a white cotton singlet: the scoop neck and arm holes (give the person outfit robe, color #efece2 and armColor = skin colour)",
+ "slot": "body",
+ "parts": [
+  {
+   "path": "M-20 -175 Q0 -146 20 -175 Z",
+   "fill": "#f1c9a5",
+   "stroke": false
+  },
+  {
+   "path": "M-21 -174 Q0 -144 21 -174",
+   "stroke": "#2a2622",
+   "width": 3
+  },
+  {
+   "path": "M-29 -170 Q-22 -150 -30 -134 M29 -170 Q22 -150 30 -134",
+   "stroke": "#cfcabb",
+   "width": 3
+  }
+ ],
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

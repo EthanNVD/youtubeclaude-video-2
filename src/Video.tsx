@@ -3,6 +3,7 @@ import { AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig } from '
 import type { Plan, Scene } from './types';
 import { SceneView, TINTS } from './scene/SceneView';
 import { clamp, easeFn } from './lib/anim';
+import { inflatePlan } from './lib/plan';
 
 export type VideoProps = { plan: Plan };
 
@@ -57,7 +58,9 @@ const Layer: React.FC<{ scene: Scene; t: number; plan: Plan; style?: React.CSSPr
   return <SceneLayer scene={scene} t={t} plan={plan} style={style} />;
 };
 
-export const Video: React.FC<VideoProps> = ({ plan }) => {
+export const Video: React.FC<VideoProps> = ({ plan: packed }) => {
+  // drawings are stored once in the plan and referenced ("@d3"): put them back once per plan
+  const plan = React.useMemo(() => inflatePlan(packed), [packed]);
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const T = frame / fps;

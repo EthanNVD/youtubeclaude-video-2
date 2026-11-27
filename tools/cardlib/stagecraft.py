@@ -20,7 +20,14 @@ DEPTH_DOC = "front (big, close to the lens) · near · mid (default) · back · 
 
 # world (depth model) per kind of place: a person whose feet are at y is scaled scale*(y-horizon)/(915-horizon)
 WORLDS = {"room": {"scale": 1.7, "y": 915, "horizon": 520}, "town": {"scale": 1.0, "y": 915, "horizon": 560},
-          "set": {"scale": 1.15, "y": 915}}
+          "set": {"scale": 1.15, "y": 915}, "compose": {"scale": 1.0, "y": 915, "horizon": 560}}
+
+# ------------------------------------------------------------------ composed places (any region): layers, far to near
+COMPOSE_FAR = {"hills": "soft rolling hills", "mountains": "blue mountain peaks", "jungle": "a dark wall of jungle canopy on the horizon",
+               "treeline": "a light line of trees", "palms": "palm silhouettes", "sea": "the sea on the horizon", "town": "far roofs", "none": "nothing"}
+COMPOSE_GROUND = {"grass": "green grass", "laterite": "red tropical earth", "sand": "sand (beach, desert)", "paddy": "rice fields with water",
+                  "mud": "brown mud", "dry": "dry yellow grass (savanna, steppe)", "jungle_floor": "dark green undergrowth", "snow": "snow"}
+COMPOSE_ROADS = {"laterite": "red earth road", "dirt": "dirt road", "tarmac": "tarred road", "cobbles": "cobbled road", "sand": "sand track"}
 
 # ------------------------------------------------------------------ moods: base face + the gestures people make
 MOODS = {
@@ -83,6 +90,7 @@ ACTS = {
     "listen": A("listen", "cups a hand to the ear, listening"),
     "tip_hat": A("tiphat", "touches the hat brim (greeting)"),
     "binoculars": A("binoculars", "looks through binoculars", holds="binoculars"),
+    "dig": A("dig", "digs with a shovel (a trench, a gun pit, a grave)", holds="shovel", cyc=True, sfx=("thud", 0.3)),
     # --- gestures (usually with talking, or a reaction)
     "point": A("point", "points at someone/something (to: id)"),
     "point_down": A("pointdown", "points down at a table / map"),
@@ -167,6 +175,7 @@ CROWDS = {
     "workers": "people working (hammer, carry crates, push carts)",
     "protest": "angry people shouting, fists up",
     "listeners": "people facing a speaker (a meeting, a sermon, a lecture); add \"view\": \"back\" when they stand between us and the speaker",
+    "cyclists": "people riding bicycles across the frame, 3-4 abreast in rows (\"abreast\": 3, \"vehicle\": \"bicycle\", \"toward\": \"left|right\"; \"start\": \"in\" = already in the frame at \"at\", for short shots), chatting",
 }
 
 # ------------------------------------------------------------------ things (engine props) and their sizes

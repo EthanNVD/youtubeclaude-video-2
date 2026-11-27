@@ -4,10 +4,10 @@
                                                               "sets" (with a person for scale), every drawing the film defines
     python tools/make.py projects/<slug> preview --kit       + every room style and town style of the kit
     python tools/make.py projects/<slug> preview --acts      + every act of the scene card, acted by one person
-    python tools/make.py projects/<slug> preview --library   + every drawing of the shared library (assets/library/drawings)
+    python tools/make.py projects/<slug> preview --library   + every drawing of the shared library (library/, see library/README.md)
 
-Writes review/preview/sheet_*.jpg (12 pictures per sheet). Look at every sheet: faces, outfits, ages, sizes of children,
-the rooms and streets, the drawings next to a person. Fix cards/_film.json and run it again until it looks right.
+Writes review/preview/sheet_*.jpg (12 pictures per sheet). Look at every sheet: faces, outfits and costume pieces ("wear"),
+ages, sizes of children, the rooms and streets, the drawings and this film's new assets (projects/<slug>/assets) next to a person. Fix cards/_film.json and run it again until it looks right.
 """
 from __future__ import annotations
 
@@ -78,7 +78,8 @@ def place_sheets(film, scenes):
             print(f"place \"{name}\": {w}")
         ref = {"kind": "actor", "id": "scale_ref", "who": "civilian_man", "x": 1500, "y": SC.DEPTHS["mid"], "pose": "idle", "expr": "neutral"}
         st = dict(pl["set"])
-        _scene(scenes, st, [ref], f"place {name}: {json.dumps({k: v for k, v in st.items() if k not in ('seed',)}, ensure_ascii=False)[:150]}",
+        desc = {k: v for k, v in st.items() if k not in ("seed", "setRows", "plates")}
+        _scene(scenes, st, [ref] + (pl.get("row_els") or []), f"place {name}: {json.dumps(desc, ensure_ascii=False)[:150]}",
                world=pl["world"], tag=f"{name} · {pl.get('tag') or ''}".strip(" ·"))
 
 
@@ -119,11 +120,16 @@ def act_sheets(scenes, who="civilian_man"):
 
 def build(proj: Path, kit=False, acts=False, lib=False):
     film = json.loads((proj / "cards" / "_film.json").read_text(encoding="utf-8")) if (proj / "cards" / "_film.json").exists() else {}
+    film["_proj"] = str(proj)  # this film's own assets (projects/<slug>/assets) are drawable in its places
     scenes = []
     cast_sheets(film, scenes)
     place_sheets(film, scenes)
     if film.get("drawings"):
         drawing_sheets(film["drawings"], scenes, "film drawings")
+    from cardlib import library as LIBMOD
+    mine = {k: v for k, v in LIBMOD.load(proj / "assets", types=LIBMOD.DRAWABLE).items() if v.get("parts")}
+    if mine:
+        drawing_sheets(mine, scenes, "this film's new assets")
     if lib:
         drawing_sheets(RS.library(), scenes, "library drawings")
     if kit:
@@ -132,7 +138,7 @@ def build(proj: Path, kit=False, acts=False, lib=False):
         act_sheets(scenes)
     if not scenes:
         sys.exit("nothing to preview: add \"cast\", \"sets\" or \"drawings\" to cards/_film.json")
-    cast = {cid: {k: v for k, v in spec.items() if k not in ("name", "role", "note")} for cid, spec in film.get("cast", {}).items()}
+    cast = LIBMOD.resolve_cast(film.get("cast", {}), proj, film)
     meta = {"title": "preview", "fps": 24, "width": 1920, "height": 1080, "duration": len(scenes) * DUR}
     if (film.get("look") or {}).get("grade"):
         meta["grade"] = film["look"]["grade"]

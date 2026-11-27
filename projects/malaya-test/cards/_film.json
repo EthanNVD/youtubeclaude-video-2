@@ -1,0 +1,592 @@
+{
+ "title": "Bicycles and the jungle myth — Malaya 1941-42 (living-library test)",
+ "lang": "en",
+ "era": "ww2",
+ "sides": [
+  "japanese",
+  "british"
+ ],
+ "host_set": "study",
+ "look": {
+  "seed": 1942,
+  "grade": "film"
+ },
+ "places": {},
+ "cast": {
+  "jp_officer": {
+   "preset": "japanese_officer",
+   "hat": "none",
+   "wear": [
+    "jp_field_cap"
+   ],
+   "age": 0.4,
+   "facial": "toothbrush"
+  },
+  "jp_soldier": {
+   "preset": "japanese_soldier",
+   "hat": "none",
+   "wear": [
+    "jp_field_cap"
+   ],
+   "age": 0.2
+  },
+  "jp_soldier2": {
+   "preset": "japanese_soldier",
+   "hat": "none",
+   "wear": [
+    "jp_field_cap"
+   ],
+   "age": 0.3,
+   "build": 0.9
+  },
+  "jp_soldier3": {
+   "preset": "japanese_soldier",
+   "hat": "none",
+   "wear": [
+    "jp_field_cap"
+   ],
+   "age": 0.15,
+   "build": 1.1
+  },
+  "shopkeeper": {
+   "preset": "civilian_man",
+   "outfit": "robe",
+   "color": "#efece2",
+   "skin": "#f1c9a5",
+   "armColor": "#f1c9a5",
+   "pants": "#2c2c30",
+   "hair": "short",
+   "hairColor": "#2a2622",
+   "age": 0.6,
+   "wear": [
+    "singlet"
+   ]
+  },
+  "villager": {
+   "preset": "civilian_man",
+   "color": "#e9e3cf",
+   "skin": "#c8986c",
+   "pants": "#3e5d8c",
+   "age": 0.35,
+   "wear": [
+    "songkok",
+    "sarong"
+   ]
+  },
+  "villager2": {
+   "preset": "civilian_man",
+   "color": "#8fae8a",
+   "skin": "#b98a5e",
+   "pants": "#7a3030",
+   "age": 0.5,
+   "facial": "walrus",
+   "wear": [
+    "songkok",
+    {
+     "piece": "sarong",
+     "recolor": {
+      "#3e5d8c": "#8a3a30",
+      "#2b4471": "#6a2a24",
+      "#6f8fc0": "#c07060",
+      "#25395e": "#5a2420"
+     }
+    }
+   ]
+  },
+  "villager_woman": {
+   "preset": "civilian_woman",
+   "color": "#c46a4a",
+   "skin": "#c8986c",
+   "hair": "bun",
+   "age": 0.3,
+   "wear": [
+    {
+     "piece": "sarong",
+     "recolor": {
+      "#3e5d8c": "#5a7a3a",
+      "#2b4471": "#3e5a28",
+      "#6f8fc0": "#a9c070",
+      "#25395e": "#34501e"
+     }
+    }
+   ]
+  },
+  "tapper": {
+   "preset": "civilian_man",
+   "outfit": "robe",
+   "color": "#efece2",
+   "skin": "#8a5a3a",
+   "armColor": "#8a5a3a",
+   "pants": "#efe9d8",
+   "hair": "short",
+   "facial": "walrus",
+   "age": 0.45,
+   "wear": [
+    {
+     "piece": "singlet",
+     "recolor": {
+      "#f1c9a5": "#8a5a3a"
+     }
+    },
+    {
+     "piece": "sarong",
+     "recolor": {
+      "#3e5d8c": "#efe9d8",
+      "#2b4471": "#ddd5c0",
+      "#6f8fc0": "#e8e0cc",
+      "#25395e": "#cfc6ae"
+     }
+    }
+   ]
+  },
+  "brit_officer": {
+   "preset": "british_soldier",
+   "hat": "none",
+   "hair": "tousled",
+   "facial": "beard",
+   "color": "#5f6b45",
+   "age": 0.35
+  },
+  "staff1": {
+   "preset": "british_soldier",
+   "hat": "peaked",
+   "color": "#c9b07a",
+   "facial": "toothbrush",
+   "age": 0.6,
+   "build": 1.1
+  },
+  "staff2": {
+   "preset": "british_soldier",
+   "hat": "peaked",
+   "color": "#c9b07a",
+   "facial": "walrus",
+   "age": 0.7
+  },
+  "aus_soldier": {
+   "preset": "british_soldier",
+   "hat": "none",
+   "color": "#857650",
+   "age": 0.25,
+   "wear": [
+    "slouch_hat"
+   ]
+  },
+  "aus_soldier2": {
+   "preset": "british_soldier",
+   "hat": "none",
+   "color": "#857650",
+   "age": 0.35,
+   "build": 1.1,
+   "wear": [
+    "slouch_hat"
+   ]
+  },
+  "sikh_soldier": {
+   "preset": "british_soldier",
+   "hat": "none",
+   "hair": "none",
+   "facial": "beard",
+   "hairColor": "#2a2622",
+   "skin": "#b98a5e",
+   "color": "#9a8a5c",
+   "age": 0.3,
+   "wear": [
+    "sikh_turban"
+   ]
+  },
+  "host": {
+   "preset": "host"
+  },
+  "brit_soldier": {
+   "preset": "british_soldier",
+   "hat": "helmet_uk",
+   "color": "#857650",
+   "age": 0.25
+  }
+ },
+ "sets": {
+  "singora_beach": {
+   "compose": {
+    "far": [
+     "sea"
+    ],
+    "ground": "sand",
+    "rows": [
+     {
+      "what": "coconut_palm",
+      "depth": 700,
+      "from": 1150,
+      "to": 2200,
+      "gap": 260
+     },
+     {
+      "what": "coconut_palm",
+      "depth": 1060,
+      "from": 1700,
+      "to": 2100,
+      "gap": 300
+     }
+    ]
+   },
+   "horizon": 600,
+   "time": "dawn",
+   "tag": "Singora, Thailand · 8 December 1941"
+  },
+  "malay_town": {
+   "compose": {
+    "far": [
+     "hills"
+    ],
+    "ground": "dry",
+    "road": {
+     "kind": "laterite",
+     "y": 935,
+     "w": 230
+    },
+    "rows": [
+     {
+      "what": "shophouse",
+      "depth": 800,
+      "from": -120,
+      "to": 2100,
+      "gap": 560,
+      "jitter": 0,
+      "vary": false,
+      "flip": "none"
+     },
+     {
+      "what": "coconut_palm",
+      "depth": 760,
+      "from": 150,
+      "to": 1900,
+      "gap": 560
+     }
+    ]
+   },
+   "horizon": 600,
+   "weather": "haze",
+   "tag": "A Malayan town · December 1941"
+  },
+  "estate_road": {
+   "compose": {
+    "far": [
+     "treeline"
+    ],
+    "ground": "grass",
+    "road": {
+     "kind": "laterite",
+     "y": 885,
+     "w": 210
+    },
+    "rows": [
+     {
+      "what": "rubber_tree",
+      "depth": 650,
+      "gap": 120
+     },
+     {
+      "what": "rubber_tree",
+      "depth": 720,
+      "gap": 150
+     },
+     {
+      "what": "rubber_tree",
+      "depth": 800,
+      "gap": 190
+     },
+     {
+      "what": "lalang_grass",
+      "depth": 1075,
+      "gap": 120,
+      "scale": 1.0
+     }
+    ]
+   },
+   "horizon": 600,
+   "weather": "haze",
+   "tag": "Behind the Japanese lines · January 1942"
+  },
+  "roadblock": {
+   "compose": {
+    "far": [
+     "treeline"
+    ],
+    "ground": "grass",
+    "road": {
+     "kind": "laterite",
+     "y": 940,
+     "w": 210
+    },
+    "rows": [
+     {
+      "what": "rubber_tree",
+      "depth": 650,
+      "gap": 120
+     },
+     {
+      "what": "rubber_tree",
+      "depth": 720,
+      "gap": 150
+     },
+     {
+      "what": "rubber_tree",
+      "depth": 800,
+      "gap": 190,
+      "clear": [
+       [
+        700,
+        1250
+       ]
+      ]
+     }
+    ]
+   },
+   "horizon": 600,
+   "weather": "haze",
+   "tag": "North-west Malaya · December 1941"
+  },
+  "rubber_estate": {
+   "compose": {
+    "far": [
+     "treeline"
+    ],
+    "ground": "grass",
+    "rows": [
+     {
+      "what": "rubber_tree",
+      "depth": 660,
+      "gap": 110
+     },
+     {
+      "what": "rubber_tree",
+      "depth": 740,
+      "gap": 150
+     },
+     {
+      "what": "rubber_tree",
+      "depth": 840,
+      "gap": 230,
+      "clear": [
+       [
+        380,
+        640
+       ]
+      ]
+     },
+     {
+      "what": "rubber_tree",
+      "depth": 1080,
+      "gap": 520,
+      "clear": [
+       [
+        200,
+        1500
+       ]
+      ]
+     }
+    ]
+   },
+   "horizon": 600,
+   "weather": "haze",
+   "tag": "A rubber estate, Malaya"
+  },
+  "kampong": {
+   "compose": {
+    "far": [
+     "palms"
+    ],
+    "ground": "grass",
+    "road": {
+     "kind": "laterite",
+     "y": 960,
+     "w": 200
+    },
+    "rows": [
+     {
+      "what": "coconut_palm",
+      "depth": 690,
+      "gap": 180
+     },
+     {
+      "what": "kampong_house",
+      "depth": 790,
+      "from": 1080,
+      "to": 1700,
+      "gap": 620,
+      "flip": "none"
+     },
+     {
+      "what": "coconut_palm",
+      "depth": 800,
+      "from": -100,
+      "to": 900,
+      "gap": 230
+     },
+     {
+      "what": "banana_plant",
+      "depth": 860,
+      "from": 1350,
+      "to": 2100,
+      "gap": 380
+     }
+    ]
+   },
+   "horizon": 600,
+   "weather": "haze",
+   "tag": "A kampong, Malaya"
+  },
+  "jungle_myth": {
+   "compose": {
+    "far": [
+     "jungle"
+    ],
+    "ground": "jungle_floor",
+    "rows": [
+     {
+      "what": "jungle_edge",
+      "depth": 680,
+      "gap": 600,
+      "scale": 0.9
+     },
+     {
+      "what": "jungle_edge",
+      "depth": 790,
+      "gap": 700
+     },
+     {
+      "what": "banana_plant",
+      "depth": 1050,
+      "gap": 330,
+      "clear": [
+       [
+        250,
+        1750
+       ]
+      ]
+     },
+     {
+      "what": "jungle_edge",
+      "depth": 1150,
+      "from": -200,
+      "to": 300,
+      "gap": 600,
+      "scale": 1.1
+     }
+    ]
+   },
+   "horizon": 600,
+   "weather": {
+    "kind": "fog",
+    "amount": 0.35
+   }
+  },
+  "hq_office": {
+   "room": "office",
+   "items": [
+    "map",
+    "window",
+    "flag:UK",
+    "clock"
+   ],
+   "tag": "Malaya Command, Singapore · 1941"
+  },
+  "host_study": {
+   "room": "parlour",
+   "items": [
+    "shelf",
+    "lamp",
+    "window",
+    "clock"
+   ]
+  },
+  "estate_road_open": {
+   "compose": {
+    "far": [
+     "treeline"
+    ],
+    "ground": "grass",
+    "road": {
+     "kind": "laterite",
+     "y": 940,
+     "w": 210
+    },
+    "rows": [
+     {
+      "what": "rubber_tree",
+      "depth": 650,
+      "gap": 120
+     },
+     {
+      "what": "rubber_tree",
+      "depth": 720,
+      "gap": 150
+     },
+     {
+      "what": "rubber_tree",
+      "depth": 800,
+      "gap": 190
+     },
+     {
+      "what": "rubber_tree",
+      "depth": 1090,
+      "from": -200,
+      "to": 120,
+      "gap": 300
+     }
+    ]
+   },
+   "horizon": 600,
+   "weather": "haze",
+   "tag": "Malaya · December 1941"
+  },
+  "rainforest_edge": {
+   "compose": {
+    "far": [
+     "jungle"
+    ],
+    "ground": "jungle_floor",
+    "rows": [
+     {
+      "what": "jungle_edge",
+      "depth": 690,
+      "gap": 640,
+      "scale": 0.9
+     },
+     {
+      "what": "jungle_edge",
+      "depth": 760,
+      "gap": 760
+     },
+     {
+      "what": "rubber_tree",
+      "depth": 880,
+      "from": -200,
+      "to": 300,
+      "gap": 200
+     },
+     {
+      "what": "banana_plant",
+      "depth": 1060,
+      "from": 1600,
+      "to": 2100,
+      "gap": 300
+     },
+     {
+      "what": "lalang_grass",
+      "depth": 1080,
+      "gap": 170,
+      "clear": [
+       [
+        300,
+        1500
+       ]
+      ]
+     }
+    ]
+   },
+   "horizon": 600,
+   "weather": "haze",
+   "tag": "The edge of the jungle, Malaya"
+  }
+ }
+}

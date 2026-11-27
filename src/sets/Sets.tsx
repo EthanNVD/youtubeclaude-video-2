@@ -4,6 +4,7 @@ import { rnd } from '../lib/anim';
 import { Flag } from '../props/Props';
 import { RICH_SETS, RichSet, Lighting } from './Rich';
 import { RoomKit, TownKit } from './Kit';
+import { ComposeSet } from './Compose';
 
 /**
  * Parametric backgrounds. Drawn on a 2400x1400 canvas centered on the 1920x1080 frame
@@ -301,6 +302,9 @@ const BaseSet: React.FC<SetProps> = (p) => {
       return <RoomKit {...p} />;
     case 'town':
       return <TownKit {...p} />;
+    // ---------------- composed landscapes: sky, plates, far layers, ground, road, far rows of assets (src/sets/Compose.tsx) ----------------
+    case 'compose':
+      return <ComposeSet p={p} t={t} />;
     // ---------------- interiors ----------------
     case 'office':
     case 'study': {

@@ -23,6 +23,7 @@ from __future__ import annotations
 import difflib
 import random
 import re
+import shutil
 from pathlib import Path
 
 from shotlib import AID, FX, PROP, SHOT
@@ -136,16 +137,24 @@ def _place(c):
             spec = {"town": w}
         elif w in vocab()["sets"]:
             spec = {"set": w}
+        elif w in LIBMOD.places(Path(c.film["_proj"]) if c.film.get("_proj") else None):
+            # a story place kept in the living library (library/places/<id>, or this project's assets/<id>)
+            spec = dict(LIBMOD.places(Path(c.film["_proj"]) if c.film.get("_proj") else None)[w].get("spec") or {})
+            pid = pid or w
         else:
             raise CardError(f"{_where(c.raw)}: \"where\" = \"{w}\" is not a story place, a room style, a town style or an engine set. "
-                            f"Did you mean {_near(w, list(sets) + _ts_keys('ROOM_STYLES') + _ts_keys('TOWN_STYLES') + sorted(vocab()['sets']))}? "
+                            f"Did you mean {_near(w, list(sets) + _ts_keys('ROOM_STYLES') + _ts_keys('TOWN_STYLES') + sorted(vocab()['sets']) + list(LIBMOD.places()))}? "
                             f"Define new story places in cards/_film.json \"sets\" (playbook/scene-writing.md §2).")
     elif isinstance(w, dict):
         spec = dict(w)
     else:
         raise CardError(f"{_where(c.raw)}: \"where\" must be a name or an object like {{\"room\": \"kitchen\", \"items\": [...]}}.")
     seed = (c.film.get("look") or {}).get("seed", 0)
-    if "room" in spec or spec.get("kit") == "room":
+    row_els = []
+    if "compose" in spec:
+        st, row_els = _compose(c, spec, seed)
+        kind = "compose"
+    elif "room" in spec or spec.get("kit") == "room":
         style = spec.get("room") or spec.get("style") or "kitchen"
         if style not in _ts_keys("ROOM_STYLES"):
             raise CardError(f"{_where(c.raw)}: room style \"{style}\" does not exist. Use one of {_ts_keys('ROOM_STYLES')} (then change items/wall/floor/light).")
@@ -173,12 +182,119 @@ def _place(c):
         if spec.get(k) and not c.raw.get(k):
             st[k] = spec[k]
     world = dict(SC.WORLDS[kind])
-    if kind == "set" and spec.get("horizon"):
-        world["horizon"] = spec["horizon"]
-    out = {"kind": kind, "set": st, "world": world, "key": key or f"{kind}:{st.get('style', st['kind'])}", "tag": spec.get("tag")}
+    if kind in ("set", "compose") and (spec.get("horizon") or st.get("horizon")):
+        world["horizon"] = spec.get("horizon") or st.get("horizon")
+    out = {"kind": kind, "set": st, "world": world, "key": key or f"{kind}:{st.get('style', st['kind'])}", "tag": spec.get("tag"), "row_els": row_els}
     if pid:
         remembered[pid] = {**out, "set": dict(st)}
     return out
+
+
+def _compose(c, spec, seed):
+    """a composed place: {"compose": {"far": [...], "ground": "...", "road": {...}, "rows": [...], "items": [...], "plates": [...]}, "horizon": 560}
+    -> the set (sky, plates, far layers, ground, road, far rows) and the drawing elements of the near rows (sorted in depth with people)"""
+    cp = spec["compose"] if isinstance(spec["compose"], dict) else {}
+    where = _where(c.raw)
+    hz = float(spec.get("horizon", cp.get("horizon", 560)))
+    far = cp.get("far", ["hills"])
+    far = far if isinstance(far, list) else [far]
+    for f in far:
+        if f not in SC.COMPOSE_FAR:
+            raise CardError(f"{where}: compose \"far\": \"{f}\" is not a far layer. Use some of {list(SC.COMPOSE_FAR)}.")
+    ground = cp.get("ground", "grass")
+    if ground not in SC.COMPOSE_GROUND:
+        raise CardError(f"{where}: compose \"ground\": \"{ground}\" is not a ground. Use one of {list(SC.COMPOSE_GROUND)}.")
+    st = {"kind": "compose", "horizon": hz, "far": [f for f in far if f != "none"], "ground": ground, "seed": seed,
+          "_rows_spec": [{"what": r.get("what")} for r in (cp.get("rows") or []) + (cp.get("items") or [])]}
+    if spec.get("ambience") or cp.get("ambience"):
+        st["ambience"] = spec.get("ambience") or cp.get("ambience")
+    road = cp.get("road")
+    if road:
+        road = {"kind": road} if isinstance(road, str) else dict(road)
+        if road.get("kind", "laterite") not in SC.COMPOSE_ROADS:
+            raise CardError(f"{where}: compose road kind \"{road.get('kind')}\" is unknown. Use one of {list(SC.COMPOSE_ROADS)}.")
+        if isinstance(road.get("y"), str):
+            road["y"] = _depth(road["y"])
+        st["road"] = road
+    if cp.get("haze") is not None:
+        st["haze"] = float(cp["haze"])
+    # painted plates (images made by an image model, imported with lib import --type plates): copied into public/plates/<id>/
+    plates = []
+    pool = LIBMOD.load(types=("plates",))
+    if c.film.get("_proj"):
+        pool.update(LIBMOD.load(Path(c.film["_proj"]) / "assets", types=("plates",)))
+    for pl in cp.get("plates") or []:
+        pl = {"id": pl} if isinstance(pl, str) else dict(pl)
+        a = pool.get(pl["id"])
+        if a is None:
+            raise CardError(f"{where}: plate \"{pl['id']}\" is not a plates asset. Close: {_near(pl['id'], list(pool))}. "
+                            f"Make one: library/prompts/plates.md, then python tools/lib.py import <picture> --type plates --layer far …")
+        for layer, fname in (a.get("layers") or {}).items():
+            if pl.get("layers") and layer not in pl["layers"]:
+                continue
+            src = Path(a["_dir"]) / fname
+            dst = Path(__file__).resolve().parents[2] / "public" / "plates" / pl["id"] / fname
+            if src.exists() and (not dst.exists() or dst.stat().st_mtime < src.stat().st_mtime):
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copyfile(src, dst)
+            plates.append({"src": f"plates/{pl['id']}/{fname}", "layer": layer, **{k: pl[k] for k in ("x", "y", "w", "h", "opacity", "drift") if k in pl}})
+    if plates:
+        st["plates"] = plates
+    world = {**SC.WORLDS["compose"], "horizon": hz}
+
+    def ps(y):
+        return max(0.03, world["scale"] * (y - hz) / max(1, world["y"] - hz))
+
+    set_rows, els = [], []
+    rows = list(cp.get("rows") or []) + [{**it, "n": 1, "gap": 1, "from": it.get("at", 960), "to": it.get("at", 960)} for it in (cp.get("items") or [])]
+    for i, r in enumerate(rows):
+        what = r.get("what")
+        dw = drawings(c.film).get(what)
+        if dw is None or not dw.get("parts"):
+            raise CardError(f"{where}: compose row \"{what}\" is not a drawing (library or this film). Did you mean {_near(str(what), list(drawings(c.film)))}? "
+                            f"Find or make it: python tools/lib.py search \"{what}\" · python tools/lib.py new plants {what} --project <project>")
+        try:
+            y0 = float(r["depth"]) if isinstance(r.get("depth"), (int, float)) else _depth(r.get("depth"), "back")
+            x0, x1 = _slot(r.get("from"), -260), _slot(r.get("to"), 2180)
+        except CardError as e:
+            raise CardError(f"{where}: compose row {i + 1} ({what}): {e}")
+        rng = random.Random(f"{seed}:{what}:{i}:{y0}")
+        n = int(r.get("n", 0))
+        gap = float(r.get("gap", (x1 - x0) / max(1, n - 1) if n > 1 else 220 * ps(y0) * float(dw.get("size", 1.0)) * 1.6))
+        jit = float(r.get("jitter", gap * 0.18))
+        spread = float(r.get("spread", 0))
+        clear = r.get("clear") or []
+        flip_mode = r.get("flip", "random")
+        k, x = 0, x0
+        while x <= x1 + 0.5 and k < 200:
+            xx = x + (rng.uniform(-jit, jit) if x0 != x1 else 0)
+            yy = y0 + (rng.uniform(-spread, spread) if spread else 0)
+            x += gap if gap > 0 else 1e9
+            k += 1
+            if any(a <= xx <= b for a, b in clear):
+                continue
+            s = ps(yy) * float(dw.get("size", 1.0)) * float(r.get("scale", 1.0)) * (rng.uniform(0.9, 1.1) if r.get("vary", True) else 1.0)
+            flip = (k % 2 == 0) if flip_mode == "alternate" else (rng.random() < 0.5) if flip_mode == "random" else bool(flip_mode is True)
+            item = {"x": round(xx, 1), "y": round(yy, 1), "s": round(s, 4), "phase": round(rng.uniform(0, 3), 2)}
+            if flip:
+                item["flip"] = True
+            if r.get("layer") == "set" or (r.get("layer") != "people" and yy < hz + 110):
+                set_rows.append((dw["parts"], item))
+            else:
+                el = {"kind": "drawing", "id": f"row{i}_{k}", "x": round(xx), "y": round(yy), "scale": round(s, 4), "parts": dw["parts"],
+                      "phase": item["phase"], "depthY": round(yy + k * 0.001, 3), "enter": "none"}
+                if flip:
+                    el["flip"] = True
+                els.append(el)
+    if set_rows:
+        grouped = {}
+        for parts, item in set_rows:
+            grouped.setdefault(id(parts), {"parts": parts, "items": []})["items"].append(item)
+        st["setRows"] = list(grouped.values())
+    for k in ("time", "weather"):
+        if spec.get(k):
+            st[k] = spec[k]
+    return st, els
 
 
 def _style_items(style):
@@ -291,7 +407,7 @@ HOLD_POSE = {"basket": "basket", "sack": "carry", "baby": "cradle", "crate": "ca
 BIG_HOLDS = {"basket", "sack", "baby", "crate", "rifle", "pot", "bucket", "suitcase", "binoculars"}
 DEFAULT_SLOTS = {1: ["center"], 2: ["center_left", "center_right"], 3: ["left", "center", "right"], 4: ["left", "center_left", "center_right", "right"],
                  5: ["far_left", "left", "center", "right", "far_right"]}
-SPEED = {"walk": 165, "shuffle": 70, "limp": 85, "march": 165, "sneak": 90, "run": 430}
+SPEED = {"walk": 165, "shuffle": 70, "limp": 85, "march": 165, "sneak": 90, "run": 430, "ride": 280}
 
 
 def _people(c, place, rng):
@@ -334,6 +450,11 @@ def _people(c, place, rng):
         a.walk = p.get("walk")
         a.face = p.get("face")
         a.spec = p
+        if p.get("rides"):
+            a.extra["ride"] = _ride_kv(c, p["rides"])
+            a.holds = None
+            if not p.get("pose"):
+                a.rest = a.pose0 = "ride"
         if p.get("name_card") and not c.raw.get("name_card"):
             c.raw["name_card"] = who
         actors[aid] = a
@@ -384,7 +505,15 @@ def _crowd(c, place, actors, rng, focus_x):
             elif kind in ("walkers",):
                 x, y = 0, y0 + rng.choice([-40, 0, 40, 80])
             elif kind == "marchers":
-                x, y = -260 - j * 130, y0 + (j % 2) * 28
+                # "start": "in" = the column is already in the frame, its head at "at" (short shots)
+                x, y = (x0 if cr.get("start") == "in" else -260) - j * 130, y0 + (j % 2) * 28
+            elif kind == "cyclists":
+                ab = int(cr.get("abreast", 3))
+                lane, row = j % ab, j // ab
+                # "start": "in" = the first row is already in the frame at "at" (short shots); default: they ride in from the edge
+                xs = x0 if cr.get("start") == "in" else (-260 if tdir > 0 else 2180)
+                # lanes side by side: the nearer lane rides a little behind, so the riders of a row do not cover each other
+                x, y = xs - tdir * (row * 190 + lane * 48) + rng.uniform(-20, 20), y0 + lane * 40
             else:
                 cols = max(1, (n + 1) // 2)
                 x = x0 + ((j // 2) - (cols - 1) / 2) * 150 + rng.uniform(-30, 30)
@@ -401,7 +530,19 @@ def _crowd(c, place, actors, rng, focus_x):
             a.walk = "march" if kind == "marchers" else ("shuffle" if mood in ("hungry", "tired", "cold", "grief") else None)
             if kind == "workers" and a.rest == "carry":
                 a.holds = "crate"
-            if kind == "marchers":
+            if kind == "cyclists":
+                a.rest, a.pose0 = "ride", "ride"
+                a.extra["ride"] = _ride_kv(c, cr.get("vehicle", "bicycle"))
+                sp = SPEED["ride"] * a.scale() * rng.uniform(0.95, 1.05)
+                a.key(0, fixed=False, x=round(x), y=round(y), flip=tdir < 0)
+                a.key(T, fixed=False, x=round(x + tdir * sp * T), y=round(y), ease="linear")
+                a.moves.append((0, T))
+                a.expr = rng.choice(["happy", "smile", "laugh", "neutral"])
+                if rng.random() < 0.5:
+                    t0 = rng.uniform(0, max(0.1, T - 1.5))
+                    a.key(t0, fixed=False, talk=True)
+                    a.key(t0 + rng.uniform(0.8, 1.6), fixed=False, talk=False)
+            elif kind == "marchers":
                 a.holds = "rifle"
                 sp = SPEED["march"] * a.scale()
                 a.key(0, fixed=False, x=x, y=y)
@@ -443,6 +584,8 @@ def _crowd(c, place, actors, rng, focus_x):
                 a.y = 1215 + (j % 2) * 30
                 a.fixed_scale = round(1.75 + (j % 2) * 0.15, 2)
             actors[aid] = a
+        if kind == "cyclists":
+            c.raw.setdefault("_crowd_sfx", []).append({"t": 0.0, "id": "bicycle", "vol": 0.45, "dur": round(min(8.0, T), 2)})
         if cr.get("react_on"):
             tr = c.t(cr["react_on"])
             for j in range(n):
@@ -617,8 +760,9 @@ def _acts(c, actors, sfx, drops):
 
 def _move(c, a, name, q, t, actors, sfx, snow):
     spec = SC.ACTS[name]
-    style = spec.get("style") or q.get("walk") or a.walk
-    speed = spec.get("speed") or SPEED.get(style or "walk", 140)
+    riding = bool(a.extra.get("ride"))
+    style = None if riding else (spec.get("style") or q.get("walk") or a.walk)
+    speed = SPEED["ride"] if riding else (spec.get("speed") or SPEED.get(style or "walk", 140))
     x0, y0 = a.pos_at(t)
     to = q.get("to")
     if name == "enter":
@@ -674,9 +818,11 @@ def _move(c, a, name, q, t, actors, sfx, snow):
         t_start, t_end = t, t + dur
     if style:
         a.extra["walkStyle"] = style
-    a.key(t_start, pose=q.get("pose") or ("idle" if a.rest not in ("carry", "sack", "basket", "cradle", "shoulder", "port") else a.rest))
+    a.key(t_start, pose=q.get("pose") or ("ride" if riding else "idle" if a.rest not in ("carry", "sack", "basket", "cradle", "shoulder", "port") else a.rest))
     a.moves.append((t_start, t_end))
-    if t_end - t_start > 0.5:
+    if riding and t_end - t_start > 0.5:
+        sfx.append({"t": round(max(0.0, t_start), 2), "id": "bicycle", "vol": 0.4, "dur": round(min(6.0, t_end - t_start), 2)})
+    elif t_end - t_start > 0.5:
         sfx.append({"t": round(max(0.0, t_start), 2), "id": "footsteps_snow" if snow else "footsteps", "vol": 0.35, "dur": round(min(6.0, t_end - t_start), 2)})
 
 
@@ -851,6 +997,21 @@ def _things(c, actors, world, drops=(), indoor=False):
             if seat != "none":
                 out.append(PROP(seat, round(a.x), round(a.y - 2), round(a.scale(), 3), id=f"seat_{a.id}"))
     return out, placed
+
+
+def _ride_kv(c, rid):
+    """the actor element's "ride": the ridden thing's drawing + where the rider sits on it (anchors seat and crank,
+    library/README.md §3). The engine draws it under the rider, flips it with him and rolls its wheels."""
+    dw = drawings(c.film).get(rid)
+    if dw is None or not dw.get("parts"):
+        raise CardError(f"{_where(c.raw)}: \"rides\": \"{rid}\" is not a drawing of the library or of this film. Use \"bicycle\", "
+                        f"or make it: python tools/lib.py new vehicles {rid} --from bicycle --project <project> (give it anchors seat and crank).")
+    an = dw.get("anchors") or {}
+    kv = {"parts": dw["parts"], "size": float(dw.get("size", 1.0))}
+    for k in ("seat", "crank"):
+        if an.get(k):
+            kv[k] = an[k]
+    return kv
 
 
 SHIPS = {"battleship", "cruiser", "destroyer", "cargo", "freighter", "carrier", "transport", "uboat", "submarine"}
@@ -1072,8 +1233,8 @@ def _long_shot_cover(c, actors, shots, cam):
         params={
             "idea": Param("str", required=True, doc="the director's note: what the viewer SEES and why it tells this clause (one sentence, 10+ words). Write it before anything else"),
             "where": Param("str", doc="a story place from cards/_film.json \"sets\", a room style, a town style, an engine set, or an object {\"room\": \"kitchen\", \"items\": [...]}"),
-            "people": Param("list", doc="persons: {who, id, at, depth, face, mood, pose, holds, seated, kneel, walk, size, name_card, do: [{act, on, till, to, with, expr}]}"),
-            "crowd": Param("dict", doc="{kind: queue|watchers|walkers|marchers|mourners|cheering|workers|protest|listeners, n, who: [presets], at, depth, toward, mood, react_on}"),
+            "people": Param("list", doc="persons: {who, id, at, depth, face, mood, pose, holds, seated, kneel, walk, rides (a vehicle drawing, e.g. bicycle: he sits on it and enter/exit/walk_to ride it), size, name_card, do: [{act, on, till, to, with, expr}]}"),
+            "crowd": Param("dict", doc="{kind: queue|watchers|walkers|marchers|cyclists|mourners|cheering|workers|protest|listeners, n, who: [presets], at, depth, toward, mood, react_on; cyclists: abreast, vehicle}"),
             "things": Param("list", doc="props: {what, id, at, depth, on (another thing's id), held_by, n, text, color, appear (phrase), scale, steam/lit}"),
             "effects": Param("list", doc="{fx: smoke|fire|explosion|shellburst|dust|steam|sparks|exclaim|question…, at, depth, on, over (person), size}"),
             "vehicles": Param("list", doc="{type: battleship|cruiser|cargo|truck|cart|wagon|horse|train…, nation, at, depth (or screen y, e.g. 660 on the sea), to (moves there), on, till, scale, flip}"),
@@ -1109,7 +1270,7 @@ def scene(c):
     people = [a for a in actors.values()]
     focus_x = actors[c.p("focus")].x if c.p("focus") in actors else (people[0].x if people else 960)
     _crowd(c, place, actors, rng, focus_x)
-    sfx = []
+    sfx = list(c.raw.pop("_crowd_sfx", []))
     drops = []
     _acts(c, actors, sfx, drops)
     things_els, placed = _things(c, actors, place["world"], drops, indoor=place["kind"] == "room" or place["set"].get("kind") in INDOOR_SETS)
@@ -1180,6 +1341,7 @@ def scene(c):
             el["walkStyle"] = a.walk
         el.update(a.extra)
         els.append(el)
+    els += place.get("row_els") or []
     els += things_els
     els += _vehicles(c, place["world"], sfx)
     els += _effects(c, actors)
@@ -1190,6 +1352,14 @@ def scene(c):
         amb = "basement" if style in ("cellar", "dugout") else "fire" if style in ("farmhouse", "bakery") else "office" if style in ("office", "ministry", "admiralty", "food_office") else "room"
     elif place["kind"] == "town":
         amb = "wind_cold" if (c.raw.get("weather") or st.get("weather")) == "snow" else "crowd" if c.p("crowd") else "wind"
+    elif place["kind"] == "compose":
+        # the sound of a composed place follows what is in it: the sea, tropical plants (insects and birds), snow, else wind
+        tropical = any("tropical" in (drawings(c.film).get(r.get("what"), {}).get("tags") or []) for r in (st.get("_rows_spec") or []))
+        wk = c.raw.get("weather") or st.get("weather")
+        wk = wk.get("kind") if isinstance(wk, dict) else wk
+        amb = (st.get("ambience") or ("rain" if wk in ("rain", "downpour", "drizzle", "lightning") else "sea" if "sea" in (st.get("far") or [])
+               else "wind_cold" if st.get("ground") == "snow" or wk in ("snow", "blizzard") else "jungle" if tropical or "jungle" in (st.get("far") or []) else "wind"))
+    st.pop("_rows_spec", None)
     if place.get("tag") and not c.raw.get("tag") and not c.raw.get("_tag_done"):
         c.raw["tag"] = place["tag"]
     c.raw["_sig"] = {"where": place["key"], "camera": cam, "people": len([a for a in actors.values() if not a.crowd]),

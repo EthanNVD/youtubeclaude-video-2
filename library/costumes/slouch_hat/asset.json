@@ -1,0 +1,72 @@
+{
+ "id": "slouch_hat",
+ "type": "costumes",
+ "name": "Australian slouch hat",
+ "tags": [
+  "australia",
+  "aif",
+  "anzac",
+  "malaya",
+  "singapore",
+  "new_guinea",
+  "hat",
+  "soldier",
+  "ww2",
+  "ww1"
+ ],
+ "doc": "the Australian Army slouch hat: khaki felt, dented crown, puggaree band, the left brim turned up with the Rising Sun badge",
+ "slot": "head",
+ "parts": [
+  {
+   "path": "M-56 -48 Q-62 -110 -30 -124 Q0 -112 30 -124 Q62 -110 56 -48 Z",
+   "fill": "#8f7c52",
+   "width": 4
+  },
+  {
+   "path": "M-30 -118 Q0 -104 30 -118",
+   "stroke": "#6f5f3c",
+   "width": 3
+  },
+  {
+   "path": "M-57 -48 L57 -48 L56 -66 Q0 -60 -56 -66 Z",
+   "fill": "#5e5036",
+   "width": 3.5
+  },
+  {
+   "ellipse": [
+    24,
+    -45,
+    96,
+    14
+   ],
+   "fill": "#8a774d",
+   "width": 4
+  },
+  {
+   "path": "M-52 -42 L-88 -48 Q-106 -84 -86 -124 Q-70 -128 -60 -112 L-56 -60 Z",
+   "fill": "#7f6c44",
+   "width": 4
+  },
+  {
+   "circle": [
+    -77,
+    -84,
+    10
+   ],
+   "fill": "#d2ae45",
+   "width": 2.5
+  },
+  {
+   "path": "M-87 -84 L-67 -84",
+   "stroke": "#8a6d1e",
+   "width": 2
+  }
+ ],
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

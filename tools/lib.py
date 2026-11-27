@@ -7,7 +7,10 @@
     python tools/lib.py import <image.png> --project projects/<slug> --id <id> [--type <type>] [--colors 10] [--snap]
     python tools/lib.py check   [--project projects/<slug>] [ids…]
     python tools/lib.py preview [--project projects/<slug>] [ids…] [--grid]
-    python tools/lib.py promote --project projects/<slug> [ids…] [--replace]
+    python tools/lib.py place <set id> --project projects/<slug> [--tags a,b] [--name ".."] [--doc ".."]
+                                                              save a story place of cards/_film.json "sets" as a places asset
+    python tools/lib.py promote --project projects/<slug> [ids…] [--replace] [--keep]
+                                                              move the film's new assets into library/ (--keep: leave a copy)
     python tools/lib.py style-sheet                           library/STYLE_REFERENCE.jpg (attach it when an image model draws)
 
 Types: props, vehicles, buildings, plants, costumes, characters, places, plates, weather (library/README.md).
@@ -319,6 +322,30 @@ def check_asset(a, known_ids=()):
         inks = sum(1 for p in parts if p.get("stroke") is not False) + sum(1 for c in _fills(parts) if c in ("#2a2320", "#1f1a17", "#2b2522", "#262019"))
         if not inks:
             warns.append(f"{aid}: no dark outline — the house style outlines every shape (keep the default stroke, or import keeps the dark lines)")
+    if a.get("type") == "costumes":
+        sl = L.costume_slots(a)
+        for s in sl:
+            if s["slot"] not in L.SLOTS:
+                errs.append(f"{aid}: slot \"{s['slot']}\" — use one of {list(L.SLOTS)} (head pieces in the head frame, body pieces in the body frame: library/README.md §Costumes)")
+            if not s["parts"]:
+                errs.append(f"{aid}: a piece in slot {s['slot']} has no \"parts\"")
+            for i, p in enumerate(s["parts"]):
+                if not any(k in p for k in KINDS):
+                    errs.append(f"{aid}: {s['slot']} part {i + 1} has none of {KINDS}")
+            bb = bbox(s["parts"])
+            if bb and s["slot"] in ("head", "headback") and (bb[1] < -220 or bb[3] > 160 or bb[0] < -200 or bb[2] > 200):
+                warns.append(f"{aid}: the {s['slot']} piece reaches ({bb[0]:.0f},{bb[1]:.0f})–({bb[2]:.0f},{bb[3]:.0f}); the head frame is about -75..+50 high, ±66 wide — is it drawn in the head frame?")
+            if bb and s["slot"] in ("body", "hips", "back") and (bb[1] < -320 or bb[3] > 20):
+                warns.append(f"{aid}: the {s['slot']} piece reaches y {bb[1]:.0f}..{bb[3]:.0f}; the body frame has the feet at 0 and the shoulders at -172")
+    if a.get("type") == "places":
+        sp = a.get("spec") or {}
+        if not any(k in sp for k in ("compose", "room", "town", "set", "kit")):
+            errs.append(f"{aid}: a places asset needs \"spec\": the story place as written in cards/_film.json \"sets\" "
+                        f"({{\"compose\": {{…}}}}, {{\"room\": \"office\", …}} or {{\"town\": \"village\", …}}) — make it with `lib place <set id>`")
+    if a.get("type") == "characters":
+        sp = a.get("spec") or {}
+        if not sp.get("preset"):
+            errs.append(f"{aid}: a characters asset needs \"spec\": {{\"preset\": \"civilian_man\", …look fields, \"wear\": [costume ids]}}")
     if aid in known_ids:
         warns.append(f"{aid}: an asset with this id already exists in the library (promote with --replace to overwrite, or pick another id)")
     return errs, warns
@@ -378,6 +405,9 @@ def cmd_new(args):
     d = proj / "assets" / aid
     if d.exists():
         die(f"{d} already exists — edit it, or pick another id")
+    taken = L.load().get(aid)
+    if taken and taken.get("type") != type_:
+        die(f"the id \"{aid}\" is already a {taken['type']} asset of the library — ids are unique across all types: pick another (e.g. {aid}_{type_.rstrip('s')})")
     rec = {"id": aid, "type": type_, "name": opt(args, "--name", aid.replace("_", " ")), "tags": [t for t in (opt(args, "--tags", "") or "").split(",") if t],
            "doc": opt(args, "--doc", ""), "size": 1.0, "anchors": {"ground": [0, 0]}, "parts": [], "source": {"kind": "code"},
            "project": proj.name, "status": "draft", "created": TODAY}
@@ -446,24 +476,112 @@ def preview_plan(assets, grid=False):
     return {"meta": {"title": "assets", "fps": 24, "width": 1920, "height": 1080, "duration": len(scenes) * 2.0}, "cast": {}, "scenes": scenes}
 
 
+def people_plan(assets, plan, proj=None):
+    """costumes: worn by three different people (standing, turned and talking, walking); characters: the look standing and acting"""
+    base = len(plan["scenes"])
+    for k, (aid, a) in enumerate(assets.items()):
+        t0 = (base + k) * 2.0
+        if a.get("type") == "costumes":
+            who = [("civilian_man", {}), ("british_soldier", {"hat": "none"}), ("civilian_woman", {"hair": "short"})]
+            els = []
+            for j, (preset, extra) in enumerate(who):
+                cid = f"w{k}_{j}"
+                plan["cast"][cid] = {"preset": preset, "hat": "none", **extra, "wear": L.costume_slots(a)}
+                el = {"kind": "actor", "id": cid, "who": cid, "x": [430, 960, 1490][j], "y": 900, "scale": 1.45,
+                      "pose": ["idle", "talk", "point"][j], "expr": ["neutral", "smile", "happy"][j]}
+                if j == 1:
+                    el.update({"turn": 0.4, "talk": True})
+                if j == 2:
+                    el.update({"flip": True, "turn": 0.4})
+                els.append(el)
+        else:
+            sp = dict(a.get("spec") or {"preset": "civilian_man"})
+            if sp.get("wear"):
+                sp = L.resolve_cast({"x": sp}, proj)["x"]
+            plan["cast"][f"c{k}"] = sp
+            els = [{"kind": "actor", "id": "a", "who": f"c{k}", "x": 700, "y": 900, "scale": 1.45, "pose": "idle", "expr": "neutral"},
+                   {"kind": "actor", "id": "b", "who": f"c{k}", "x": 1220, "y": 900, "scale": 1.45, "pose": "explain", "expr": "smile", "talk": True, "turn": 0.4}]
+        els.append({"kind": "label", "text": f"{aid} · {a.get('type')}", "x": 960, "y": 1010, "style": "tag", "size": 28, "in": 0, "enter": "none"})
+        plan["scenes"].append({"id": f"a{base + k:03d}_{aid}", "start": t0, "end": t0 + 2.0, "type": "stage", "set": {"kind": "studio"}, "elements": els,
+                               "beat": f"{aid} ({a.get('type')}) {a.get('doc', '')[:90]}", "transition": "cut"})
+    plan["meta"]["duration"] = len(plan["scenes"]) * 2.0
+    return plan
+
+
+def places_plan(assets, plan, proj=None):
+    """places: the place itself with a man for scale (rows of things included)"""
+    import types as _types
+    from cardlib import recipes_scene as RS
+    from cardlib import stagecraft as SC
+    base = len(plan["scenes"])
+    for k, (aid, a) in enumerate(assets.items()):
+        film = {"sets": {aid: a["spec"]}, "cast": {}}
+        if proj:
+            film["_proj"] = str(proj)
+        raw = {"where": aid, "place_id": aid, "recipe": "scene", "_file": "asset.json", "_n": aid, "at": "(preview)"}
+        c = _types.SimpleNamespace(film=film, raw=raw, warns=[], cast={})
+        c.p = lambda key, d=None, raw=raw: raw.get(key, d)
+        pl = RS._place(c)
+        t0 = (base + k) * 2.0
+        els = [{"kind": "actor", "id": "man", "who": "civilian_man", "x": 1500, "y": SC.DEPTHS["mid"], "pose": "idle", "expr": "neutral"}]
+        els += pl.get("row_els") or []
+        st = {kk: v for kk, v in pl["set"].items() if not kk.startswith("_")}
+        plan["scenes"].append({"id": f"a{base + k:03d}_{aid}", "start": t0, "end": t0 + 2.0, "type": "stage", "set": st, "world": pl["world"],
+                               "elements": els, "beat": f"{aid} (places) {a.get('doc', '')[:90]}", "transition": "cut",
+                               "tag": f"{aid} · places", "tagIn": -1})
+    plan["meta"]["duration"] = len(plan["scenes"]) * 2.0
+    return plan
+
+
+def cmd_place(args):
+    """save a story place of the film (cards/_film.json "sets") as a places asset of the project"""
+    proj = Path(opt(args, "--project") or die("add --project projects/<slug>"))
+    ids = [a for a in args if not a.startswith("--") and a not in (opt(args, "--project"), opt(args, "--tags"), opt(args, "--name"), opt(args, "--doc"))]
+    if not ids:
+        die("say which story place: python tools/lib.py place <set id> --project projects/<slug>")
+    film = json.loads((proj / "cards" / "_film.json").read_text(encoding="utf-8"))
+    sets = film.get("sets") or {}
+    for sid in ids:
+        if sid not in sets:
+            die(f"\"{sid}\" is not in cards/_film.json \"sets\" ({sorted(sets)})")
+        spec = {k: v for k, v in sets[sid].items() if k not in ("tag",)}
+        d = proj / "assets" / sid
+        # ids are unique across ALL types (the project's assets/ folder is flat): never overwrite a plant called like the place
+        for f in (d / "asset.json", *L.LIB.glob(f"*/{sid}/asset.json")):
+            if f.exists() and json.loads(f.read_text(encoding="utf-8")).get("type") != "places":
+                die(f"\"{sid}\" is already the id of a {json.loads(f.read_text(encoding='utf-8')).get('type')} asset ({rel(f)}). "
+                    f"Rename the story place in cards/_film.json \"sets\" (and in the cards), e.g. {sid}_place, then run this again.")
+        d.mkdir(parents=True, exist_ok=True)
+        kind = "composed landscape" if "compose" in spec else "room" if "room" in spec else "town" if "town" in spec else "set"
+        rec = {"id": sid, "type": "places", "name": opt(args, "--name", sid.replace("_", " ")),
+               "tags": [t for t in (opt(args, "--tags", "") or "").split(",") if t] or ["place", kind.split()[0]],
+               "doc": opt(args, "--doc", f"a {kind}: {sets[sid].get('tag') or sid}"), "spec": spec, "source": {"kind": "code"},
+               "project": proj.name, "status": "draft", "created": TODAY}
+        (d / "asset.json").write_text(json.dumps(rec, indent=1, ensure_ascii=False), encoding="utf-8")
+        print(json.dumps({"place": sid, "asset": rel(d / "asset.json"), "next": "add 3+ tags (region, era, kind), then lib preview / lib promote"}))
+
+
 def cmd_preview(args, ids=None, into_library=False):
     proj = Path(opt(args, "--project")) if opt(args, "--project") else None
     ids = ids if ids is not None else [a for a in args if not a.startswith("--") and a != opt(args, "--project")]
-    pool = L.load(proj / "assets") if proj and not into_library else L.load()
-    pool = {k: v for k, v in pool.items() if v.get("type") in L.DRAWABLE and (not ids or k in ids)}
-    if not pool:
-        die("nothing to preview (drawable assets: props, vehicles, buildings, plants)")
+    pool0 = L.load(proj / "assets") if proj and not into_library else L.load()
+    pool = {k: v for k, v in pool0.items() if v.get("type") in L.DRAWABLE and (not ids or k in ids)}
+    people = {k: v for k, v in pool0.items() if v.get("type") in ("costumes", "characters") and (not ids or k in ids)}
+    places = {k: v for k, v in pool0.items() if v.get("type") == "places" and v.get("spec") and (not ids or k in ids)}
+    if not pool and not people and not places:
+        die("nothing to preview (props, vehicles, buildings, plants, costumes, characters, places)")
     out = (proj / "review" / "assets") if proj and not into_library else (ROOT / "library" / "_previews")
     if out.exists():
         shutil.rmtree(out)
-    _render(preview_plan(pool, grid="--grid" in args), out)
+    _render(places_plan(places, people_plan(people, preview_plan(pool, grid="--grid" in args), proj), proj), out)
+    every = {**pool, **people, **places}
     if into_library or not proj:
         for f in out.glob("a*_*.jpg"):
             aid = re.sub(r"^a\d{3}_", "", re.sub(r"_\d+$", "", f.stem))
-            if aid in pool:
-                shutil.copyfile(f, Path(pool[aid]["_dir"]) / "preview.jpg")
+            if aid in every:
+                shutil.copyfile(f, Path(every[aid]["_dir"]) / "preview.jpg")
         shutil.rmtree(out)
-        print(json.dumps({"previews": len(pool)}))
+        print(json.dumps({"previews": len(every)}))
     else:
         subprocess.run([sys.executable, str(ROOT / "tools" / "contact_sheet.py"), str(out), "--per", "6"], cwd=ROOT)
         print(json.dumps({"sheets": sorted(rel(p) for p in out.glob("sheet_*.jpg")), "next": "look at every sheet; fix asset.json; lib check"}, indent=1))
@@ -495,7 +613,12 @@ def cmd_promote(args):
         _shrink_sources(dst / "source")
         done.append(aid)
     if done:
-        drawable = [k for k in done if pool[k].get("type") in L.DRAWABLE]
+        # promotion MOVES the asset: one copy only (the film now uses the library one; improvements reach every film)
+        if "--keep" not in args:
+            for aid in done:
+                shutil.rmtree(pool[aid]["_dir"], ignore_errors=True)
+            pool = {k: {**v, "_dir": str(L.LIB / v["type"] / k)} for k, v in pool.items()}
+        drawable = [k for k in done if pool[k].get("type") in L.DRAWABLE + ("costumes", "characters", "places")]
         if drawable:
             cmd_preview([], ids=drawable, into_library=True)
         index()
@@ -546,6 +669,8 @@ def cmd_match(args):
     proj = Path(opt(args, "--project") or die("add --project projects/<slug>"))
     needs = read_needs(proj)
     entries = index(write=False)
+    fj = proj / "cards" / "_film.json"
+    film_sets = (json.loads(fj.read_text(encoding="utf-8")).get("sets") or {}) if fj.exists() else {}
     entries += [{"id": k, "type": v.get("type"), "source": "project", "name": v.get("name", k), "tags": v.get("tags", []), "doc": v.get("doc", "")}
                 for k, v in L.load(proj / "assets").items()]
     lines = ["# Inventory against the library", "", f"Project `{proj.name}` · {TODAY} · made by `python tools/lib.py match`.", "",
@@ -555,6 +680,15 @@ def cmd_match(args):
         types = KIND_TYPES.get(n["kind"].rstrip("s"), None) or KIND_TYPES.get(n["kind"], None)
         hits = search(f"{n.get('id', '')} {n.get('description', '')}", types, 3, entries)
         best_s, best = hits[0] if hits else (0, None)
+        # the same id already in the library (or the engine): use it as it is
+        same = [e for e in entries if e["id"] == n.get("id") and (not types or e["type"] in types) and e["source"] != "project"]
+        if same and not (best and best["source"] == "project" and best["id"] == n.get("id")):
+            best_s, best = 1.0, same[0]
+        if types and "places" in types and n.get("id") in film_sets:
+            out.append({"need": n, "best": n["id"], "score": 1.0, "decision": "defined in this film"})
+            lines.append(f"| {n.get('id')}: {n.get('description', '')[:60]} | {n['kind']} | {n['id']} (cards/_film.json sets) | 1.00 | defined in this film | "
+                         f"keep it for the next film: `lib place {n['id']} --project {rel(proj)}` |")
+            continue
         person = bool(types) and "characters" in types
         if best and best["source"] == "project":
             dec, nxt = "made in this project", f"`lib preview --project {rel(proj)} {best['id']}`"
@@ -571,7 +705,7 @@ def cmd_match(args):
         lines.append(f"| {n.get('id')}: {n.get('description', '')[:60]} | {n['kind']} | {best['id'] if best else '—'} ({best['source'] if best else ''}) | {best_s:.2f} | {dec} | {nxt} |")
     (proj / "work").mkdir(exist_ok=True)
     (proj / "work" / "match.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    summary = {d: sum(1 for o in out if o["decision"].startswith(d)) for d in ("use", "adapt", "create", "made")}
+    summary = {d: sum(1 for o in out if o["decision"].startswith(d)) for d in ("use", "adapt", "create", "made", "defined")}
     print(json.dumps({"needs": len(out), **summary, "report": rel(proj / "work" / "match.md")}, indent=1))
 
 
@@ -597,6 +731,8 @@ def main():
         cmd_promote(args)
     elif cmd == "match":
         cmd_match(args)
+    elif cmd == "place":
+        cmd_place(args)
     elif cmd in ("import", "style-sheet"):
         import vectorize
         vectorize.main(cmd, args)

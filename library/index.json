@@ -1,5 +1,26 @@
 [
  {
+  "id": "banana_plant",
+  "type": "plants",
+  "source": "library",
+  "name": "Banana plant",
+  "tags": [
+   "malaya",
+   "southeast_asia",
+   "tropical",
+   "banana",
+   "village",
+   "kampong",
+   "garden",
+   "plant"
+  ],
+  "doc": "a banana plant: a green pseudo-stem with big torn paddle leaves (kampong gardens, roadsides)",
+  "preview": "library/plants/banana_plant/preview.jpg",
+  "path": "library/plants/banana_plant",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
   "id": "bicycle",
   "type": "vehicles",
   "source": "library",
@@ -7,16 +28,86 @@
   "tags": [
    "bicycle",
    "bike",
+   "civilian",
    "cycle",
+   "cyclist",
    "messenger",
+   "ride",
+   "transport",
    "village",
-   "civilian"
+   "wheel"
   ],
-  "doc": "a bicycle standing on its stand (messengers, a soldier's or a nurse's bike, a village policeman)",
-  "preview": null,
+  "doc": "a bicycle, upright (a messenger's, a soldier's or a nurse's bike, a village policeman); people ride it with \"rides\": \"bicycle\"",
+  "preview": "library/vehicles/bicycle/preview.jpg",
   "path": "library/vehicles/bicycle",
   "status": "approved",
   "project": "creative-blockade"
+ },
+ {
+  "id": "coconut_palm",
+  "type": "plants",
+  "source": "library",
+  "name": "Coconut palm",
+  "tags": [
+   "malaya",
+   "southeast_asia",
+   "pacific",
+   "tropical",
+   "palm",
+   "coconut",
+   "beach",
+   "village",
+   "grove",
+   "tree"
+  ],
+  "doc": "a tall coconut palm with a curved ringed trunk, a crown of feathery fronds and a bunch of coconuts (groves, kampongs, beaches)",
+  "preview": "library/plants/coconut_palm/preview.jpg",
+  "path": "library/plants/coconut_palm",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "estate_road",
+  "type": "places",
+  "source": "library",
+  "name": "Estate road with tall grass",
+  "tags": [
+   "malaya",
+   "southeast_asia",
+   "road",
+   "laterite",
+   "plantation",
+   "rubber",
+   "hiding",
+   "tropical",
+   "ww2"
+  ],
+  "doc": "a red laterite road through a rubber estate, tall lalang grass in front (a watcher can hide in it)",
+  "preview": "library/places/estate_road/preview.jpg",
+  "path": "library/places/estate_road",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "estate_road_open",
+  "type": "places",
+  "source": "library",
+  "name": "Estate road (open)",
+  "tags": [
+   "malaya",
+   "southeast_asia",
+   "road",
+   "laterite",
+   "plantation",
+   "rubber",
+   "tropical",
+   "ww2"
+  ],
+  "doc": "a red laterite road through a rubber estate, open to the camera (columns, cyclists, convoys)",
+  "preview": "library/places/estate_road_open/preview.jpg",
+  "path": "library/places/estate_road_open",
+  "status": "approved",
+  "project": "malaya-test"
  },
  {
   "id": "field_kitchen",
@@ -39,6 +130,160 @@
   "project": "creative-blockade"
  },
  {
+  "id": "jp_field_cap",
+  "type": "costumes",
+  "source": "library",
+  "name": "Japanese field cap with neck flaps",
+  "tags": [
+   "japan",
+   "ija",
+   "japanese",
+   "malaya",
+   "burma",
+   "pacific",
+   "cap",
+   "soldier",
+   "ww2"
+  ],
+  "doc": "the Imperial Japanese Army field cap (senjo-bo): soft khaki cap, short visor, yellow star, cloth neck flaps hanging to the shoulders",
+  "preview": "library/costumes/jp_field_cap/preview.jpg",
+  "path": "library/costumes/jp_field_cap",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "jungle_edge",
+  "type": "plants",
+  "source": "library",
+  "name": "Jungle edge (rainforest wall)",
+  "tags": [
+   "malaya",
+   "burma",
+   "new_guinea",
+   "southeast_asia",
+   "jungle",
+   "rainforest",
+   "forest",
+   "tropical",
+   "wall",
+   "dense"
+  ],
+  "doc": "a stretch of dense tropical rainforest seen from its edge: tall trunks with buttress roots, lianas, layers of dark foliage, ferns at the foot; put several side by side for a wall of jungle",
+  "preview": "library/plants/jungle_edge/preview.jpg",
+  "path": "library/plants/jungle_edge",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "jungle_myth",
+  "type": "places",
+  "source": "library",
+  "name": "Deep jungle in mist",
+  "tags": [
+   "malaya",
+   "burma",
+   "new_guinea",
+   "southeast_asia",
+   "jungle",
+   "rainforest",
+   "fog",
+   "tropical",
+   "ww2"
+  ],
+  "doc": "inside dense rainforest in mist: giant trunks and leaves (the jungle of legend)",
+  "preview": "library/places/jungle_myth/preview.jpg",
+  "path": "library/places/jungle_myth",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "kampong",
+  "type": "places",
+  "source": "library",
+  "name": "Kampong (Malay village)",
+  "tags": [
+   "malaya",
+   "malay",
+   "southeast_asia",
+   "village",
+   "kampong",
+   "coconut",
+   "stilts",
+   "tropical",
+   "ww2"
+  ],
+  "doc": "a Malay village among coconut palms: houses on stilts, banana plants, a red road",
+  "preview": "library/places/kampong/preview.jpg",
+  "path": "library/places/kampong",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "kampong_house",
+  "type": "buildings",
+  "source": "library",
+  "name": "Kampong house (Malay house on stilts)",
+  "tags": [
+   "malaya",
+   "malay",
+   "kampong",
+   "village",
+   "house",
+   "stilts",
+   "attap",
+   "southeast_asia",
+   "ww2"
+  ],
+  "doc": "a Malay village house raised on wooden stilts: plank walls, shuttered windows, a steep thatched (attap) roof with a gable, wooden steps up to the door",
+  "preview": "library/buildings/kampong_house/preview.jpg",
+  "path": "library/buildings/kampong_house",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "lalang_grass",
+  "type": "plants",
+  "source": "library",
+  "name": "Lalang (tall grass clump)",
+  "tags": [
+   "malaya",
+   "southeast_asia",
+   "tropical",
+   "grass",
+   "lalang",
+   "roadside",
+   "cover",
+   "hiding"
+  ],
+  "doc": "a clump of tall lalang grass (waist high): roadsides and clearings; a row of it in front hides a watcher",
+  "preview": "library/plants/lalang_grass/preview.jpg",
+  "path": "library/plants/lalang_grass",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "malay_town",
+  "type": "places",
+  "source": "library",
+  "name": "Malayan town street (shophouses)",
+  "tags": [
+   "malaya",
+   "singapore",
+   "southeast_asia",
+   "town",
+   "street",
+   "shophouse",
+   "chinese",
+   "tropical",
+   "ww2"
+  ],
+  "doc": "a street of Chinese shophouses with coconut palms and a red laterite road",
+  "preview": "library/places/malay_town/preview.jpg",
+  "path": "library/places/malay_town",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
   "id": "notice_board",
   "type": "props",
   "source": "library",
@@ -56,6 +301,179 @@
   "path": "library/props/notice_board",
   "status": "approved",
   "project": "creative-blockade"
+ },
+ {
+  "id": "parang",
+  "type": "props",
+  "source": "library",
+  "name": "Parang (machete)",
+  "tags": [
+   "malaya",
+   "southeast_asia",
+   "machete",
+   "parang",
+   "jungle",
+   "blade",
+   "tool",
+   "ww2"
+  ],
+  "doc": "a parang: the heavy Malay machete used to cut through undergrowth (held in the hand)",
+  "preview": "library/props/parang/preview.jpg",
+  "path": "library/props/parang",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "rainforest_edge",
+  "type": "places",
+  "source": "library",
+  "name": "Jungle edge",
+  "tags": [
+   "malaya",
+   "burma",
+   "southeast_asia",
+   "jungle",
+   "rainforest",
+   "edge",
+   "plantation",
+   "tropical",
+   "ww2"
+  ],
+  "doc": "where a plantation meets the rainforest: a dark wall of jungle behind open ground",
+  "preview": "library/places/rainforest_edge/preview.jpg",
+  "path": "library/places/rainforest_edge",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "roadblock",
+  "type": "places",
+  "source": "library",
+  "name": "Road through a rubber estate (gap for a position)",
+  "tags": [
+   "malaya",
+   "southeast_asia",
+   "road",
+   "laterite",
+   "plantation",
+   "roadblock",
+   "position",
+   "tropical",
+   "ww2"
+  ],
+  "doc": "a laterite road through rubber with a gap in the near trees: room for a roadblock or a gun position",
+  "preview": "library/places/roadblock/preview.jpg",
+  "path": "library/places/roadblock",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "rubber_estate",
+  "type": "places",
+  "source": "library",
+  "name": "Rubber estate (rows of tapped trees)",
+  "tags": [
+   "malaya",
+   "southeast_asia",
+   "plantation",
+   "rubber",
+   "estate",
+   "tropical",
+   "ww2"
+  ],
+  "doc": "inside a Malayan rubber estate: straight rows of tapped rubber trees in the humid haze",
+  "preview": "library/places/rubber_estate/preview.jpg",
+  "path": "library/places/rubber_estate",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "rubber_tree",
+  "type": "plants",
+  "source": "library",
+  "name": "Rubber tree (tapped)",
+  "tags": [
+   "malaya",
+   "southeast_asia",
+   "plantation",
+   "estate",
+   "rubber",
+   "tree",
+   "tropical",
+   "ww2"
+  ],
+  "doc": "a tapped rubber tree: slim grey trunk with the diagonal tapping cut and a latex cup, a light crown high up; plant it in straight rows (Malayan rubber estates)",
+  "preview": "library/plants/rubber_tree/preview.jpg",
+  "path": "library/plants/rubber_tree",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "sandbag_wall",
+  "type": "props",
+  "source": "library",
+  "name": "Sandbag wall (low)",
+  "tags": [
+   "ww2",
+   "ww1",
+   "sandbags",
+   "roadblock",
+   "position",
+   "defence",
+   "trench",
+   "cover"
+  ],
+  "doc": "a low wall of stacked sandbags (three courses, waist high): a roadblock, a gun position, the front of a trench",
+  "preview": "library/props/sandbag_wall/preview.jpg",
+  "path": "library/props/sandbag_wall",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "sarong",
+  "type": "costumes",
+  "source": "library",
+  "name": "Sarong (checked kain pelikat)",
+  "tags": [
+   "malaya",
+   "malay",
+   "indonesia",
+   "india",
+   "burma",
+   "southeast_asia",
+   "sarong",
+   "skirt",
+   "civilian",
+   "ww2"
+  ],
+  "doc": "a checked cotton sarong wrapped at the waist and falling to the ankles (Malay, Tamil, Burmese men); recolour it in the cast",
+  "preview": "library/costumes/sarong/preview.jpg",
+  "path": "library/costumes/sarong",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "shophouse",
+  "type": "buildings",
+  "source": "library",
+  "name": "Chinese shophouse",
+  "tags": [
+   "malaya",
+   "singapore",
+   "penang",
+   "chinese",
+   "shop",
+   "shophouse",
+   "town",
+   "street",
+   "southeast_asia",
+   "ww2"
+  ],
+  "doc": "a two-storey Chinese shophouse of a Malayan town: a covered five-foot way with pillars and the open shop behind, shuttered windows above, a tiled roof, a red signboard; put several side by side for a street",
+  "preview": "library/buildings/shophouse/preview.jpg",
+  "path": "library/buildings/shophouse",
+  "status": "approved",
+  "project": "malaya-test"
  },
  {
   "id": "shovel",
@@ -76,6 +494,119 @@
   "path": "library/props/shovel",
   "status": "approved",
   "project": "_libtest"
+ },
+ {
+  "id": "sikh_turban",
+  "type": "costumes",
+  "source": "library",
+  "name": "Sikh turban (dastar, khaki)",
+  "tags": [
+   "india",
+   "indian_army",
+   "sikh",
+   "punjab",
+   "malaya",
+   "burma",
+   "turban",
+   "headwear",
+   "ww2",
+   "ww1"
+  ],
+  "doc": "the Sikh soldier's wrapped turban, folds crossing to a point over the forehead (Indian Army: khaki); give the person a beard",
+  "preview": "library/costumes/sikh_turban/preview.jpg",
+  "path": "library/costumes/sikh_turban",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "singlet",
+  "type": "costumes",
+  "source": "library",
+  "name": "Singlet (vest top)",
+  "tags": [
+   "malaya",
+   "singapore",
+   "china",
+   "chinese",
+   "shopkeeper",
+   "worker",
+   "coolie",
+   "civilian",
+   "ww2",
+   "vest"
+  ],
+  "doc": "a white cotton singlet: the scoop neck and arm holes (give the person outfit robe, color #efece2 and armColor = skin colour)",
+  "preview": "library/costumes/singlet/preview.jpg",
+  "path": "library/costumes/singlet",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "singora_beach",
+  "type": "places",
+  "source": "library",
+  "name": "Tropical beach (landing)",
+  "tags": [
+   "thailand",
+   "malaya",
+   "southeast_asia",
+   "beach",
+   "sea",
+   "landing",
+   "coconut",
+   "tropical",
+   "ww2"
+  ],
+  "doc": "a sandy tropical beach with coconut palms and the sea: landings, dawn arrivals",
+  "preview": "library/places/singora_beach/preview.jpg",
+  "path": "library/places/singora_beach",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "slouch_hat",
+  "type": "costumes",
+  "source": "library",
+  "name": "Australian slouch hat",
+  "tags": [
+   "australia",
+   "aif",
+   "anzac",
+   "malaya",
+   "singapore",
+   "new_guinea",
+   "hat",
+   "soldier",
+   "ww2",
+   "ww1"
+  ],
+  "doc": "the Australian Army slouch hat: khaki felt, dented crown, puggaree band, the left brim turned up with the Rising Sun badge",
+  "preview": "library/costumes/slouch_hat/preview.jpg",
+  "path": "library/costumes/slouch_hat",
+  "status": "approved",
+  "project": "malaya-test"
+ },
+ {
+  "id": "songkok",
+  "type": "costumes",
+  "source": "library",
+  "name": "Songkok (Malay velvet cap)",
+  "tags": [
+   "malaya",
+   "malay",
+   "indonesia",
+   "brunei",
+   "hat",
+   "cap",
+   "muslim",
+   "civilian",
+   "ww2"
+  ],
+  "doc": "the black velvet songkok, flat-topped and oval, worn by Malay men (villagers, clerks, policemen, aristocrats)",
+  "preview": "library/costumes/songkok/preview.jpg",
+  "path": "library/costumes/songkok",
+  "status": "approved",
+  "project": "malaya-test"
  },
  {
   "id": "zeppelin",
@@ -3319,6 +3850,18 @@
   "doc": "engine set",
   "preview": null,
   "how": "\"where\": \"codebreak\""
+ },
+ {
+  "id": "compose",
+  "type": "places",
+  "source": "builtin",
+  "name": "compose",
+  "tags": [
+   "compose"
+  ],
+  "doc": "engine set",
+  "preview": null,
+  "how": "\"where\": \"compose\""
  },
  {
   "id": "conference",

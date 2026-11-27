@@ -1,0 +1,66 @@
+{
+ "id": "rubber_estate",
+ "type": "places",
+ "name": "Rubber estate (rows of tapped trees)",
+ "tags": [
+  "malaya",
+  "southeast_asia",
+  "plantation",
+  "rubber",
+  "estate",
+  "tropical",
+  "ww2"
+ ],
+ "doc": "inside a Malayan rubber estate: straight rows of tapped rubber trees in the humid haze",
+ "spec": {
+  "compose": {
+   "far": [
+    "treeline"
+   ],
+   "ground": "grass",
+   "rows": [
+    {
+     "what": "rubber_tree",
+     "depth": 660,
+     "gap": 110
+    },
+    {
+     "what": "rubber_tree",
+     "depth": 740,
+     "gap": 150
+    },
+    {
+     "what": "rubber_tree",
+     "depth": 840,
+     "gap": 230,
+     "clear": [
+      [
+       380,
+       640
+      ]
+     ]
+    },
+    {
+     "what": "rubber_tree",
+     "depth": 1080,
+     "gap": 520,
+     "clear": [
+      [
+       200,
+       1500
+      ]
+     ]
+    }
+   ]
+  },
+  "horizon": 600,
+  "weather": "haze"
+ },
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

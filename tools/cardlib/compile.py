@@ -134,7 +134,11 @@ def compile_project(proj: Path, write=True):
         for e in s.get("elements", []):
             if e.get("kind") in ("actor", "crowd") and isinstance(e.get("who"), str):
                 e["who"] = SIDES.resolve_who(e["who"], cast)
-    clean_cast = {cid: {k: v for k, v in spec.items() if k not in ("name", "role", "note")} for cid, spec in cast.items()}
+    from . import library as LIBMOD
+    try:
+        clean_cast = LIBMOD.resolve_cast(cast, proj, film)
+    except KeyError as e:
+        return {"ok": False, "errors": [f"cards/_film.json {e.args[0]}"], "warnings": warns}
     for cid, spec in clean_cast.items():
         if not spec.get("preset") and not spec.get("outfit"):
             errors.append(f"cards/_film.json cast \"{cid}\": add \"preset\" (a look from recipes/PEOPLE.md), e.g. \"preset\": \"german_officer\".")
@@ -183,9 +187,39 @@ def compile_project(proj: Path, write=True):
     plan = {"meta": meta, "cast": clean_cast, "scenes": scenes}
     import layout_check  # noqa: E402
     layout_check.fix_speeds(plan)
+    pack_drawings(plan)
     if write:
         (proj / "plan.json").write_text(json.dumps(plan, indent=1, ensure_ascii=False), encoding="utf-8")
     return {"ok": True, "errors": [], "warnings": warns, "scenes": len(scenes), "duration": end_time, "mix": mix}
+
+
+def pack_drawings(plan):
+    """store every drawing once: lists under "parts" / "holdsDrawing" go to plan["drawings"] and are replaced by "@d<n>"
+    (a row of twelve rubber trees, every rider's bicycle, every costume piece: one copy each). src/lib/plan.ts undoes it."""
+    table, seen = {}, {}
+
+    def walk(v):
+        if isinstance(v, list):
+            return [walk(x) for x in v]
+        if isinstance(v, dict):
+            out = {}
+            for k, x in v.items():
+                if k in ("parts", "holdsDrawing") and isinstance(x, list) and x:
+                    key = json.dumps(x, sort_keys=True, separators=(",", ":"))
+                    if key not in seen:
+                        seen[key] = f"d{len(seen)}"
+                        table[seen[key]] = x
+                    out[k] = "@" + seen[key]
+                else:
+                    out[k] = walk(x)
+            return out
+        return v
+
+    plan["cast"] = walk(plan["cast"])
+    plan["scenes"] = walk(plan["scenes"])
+    if table:
+        plan["drawings"] = table
+    return plan
 
 
 def mix_of(scenes):

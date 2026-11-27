@@ -1,0 +1,226 @@
+{
+ "id": "shophouse",
+ "type": "buildings",
+ "name": "Chinese shophouse",
+ "tags": [
+  "malaya",
+  "singapore",
+  "penang",
+  "chinese",
+  "shop",
+  "shophouse",
+  "town",
+  "street",
+  "southeast_asia",
+  "ww2"
+ ],
+ "doc": "a two-storey Chinese shophouse of a Malayan town: a covered five-foot way with pillars and the open shop behind, shuttered windows above, a tiled roof, a red signboard; put several side by side for a street",
+ "size": 1.0,
+ "h": 640,
+ "anchors": {
+  "ground": [
+   0,
+   0
+  ]
+ },
+ "parts": [
+  {
+   "rect": [
+    -280,
+    -560,
+    560,
+    560
+   ],
+   "fill": "#e6d4a2",
+   "width": 4
+  },
+  {
+   "rect": [
+    -280,
+    -250,
+    560,
+    250
+   ],
+   "fill": "#3a2e26",
+   "width": 4
+  },
+  {
+   "rect": [
+    -250,
+    -230,
+    500,
+    230
+   ],
+   "fill": "#5a4636",
+   "stroke": false
+  },
+  {
+   "path": "M-250 -150 L250 -150 M-250 -80 L250 -80",
+   "stroke": "#6e5a46",
+   "width": 5
+  },
+  {
+   "rect": [
+    -200,
+    -140,
+    70,
+    60
+   ],
+   "fill": "#9a7a4a",
+   "width": 2.5
+  },
+  {
+   "rect": [
+    120,
+    -130,
+    80,
+    50
+   ],
+   "fill": "#7a8a5a",
+   "width": 2.5
+  },
+  {
+   "rect": [
+    -286,
+    -268,
+    34,
+    268
+   ],
+   "fill": "#efe3bd",
+   "width": 3.5
+  },
+  {
+   "rect": [
+    -100,
+    -268,
+    34,
+    268
+   ],
+   "fill": "#efe3bd",
+   "width": 3.5
+  },
+  {
+   "rect": [
+    66,
+    -268,
+    34,
+    268
+   ],
+   "fill": "#efe3bd",
+   "width": 3.5
+  },
+  {
+   "rect": [
+    252,
+    -268,
+    34,
+    268
+   ],
+   "fill": "#efe3bd",
+   "width": 3.5
+  },
+  {
+   "rect": [
+    -290,
+    -290,
+    580,
+    34
+   ],
+   "fill": "#d9c58e",
+   "width": 4
+  },
+  {
+   "rect": [
+    -140,
+    -350,
+    280,
+    54
+   ],
+   "fill": "#a8322a",
+   "width": 4
+  },
+  {
+   "rect": [
+    -128,
+    -340,
+    256,
+    34
+   ],
+   "fill": "none",
+   "stroke": "#e2b84a",
+   "width": 3
+  },
+  {
+   "rect": [
+    -230,
+    -500,
+    96,
+    130
+   ],
+   "fill": "#4f7f8f",
+   "width": 3.5
+  },
+  {
+   "rect": [
+    -48,
+    -500,
+    96,
+    130
+   ],
+   "fill": "#4f7f8f",
+   "width": 3.5
+  },
+  {
+   "rect": [
+    134,
+    -500,
+    96,
+    130
+   ],
+   "fill": "#4f7f8f",
+   "width": 3.5
+  },
+  {
+   "path": "M-182 -500 L-182 -370 M-230 -435 L-134 -435",
+   "stroke": "#3a5f6b",
+   "width": 3
+  },
+  {
+   "path": "M0 -500 L0 -370 M-48 -435 L48 -435",
+   "stroke": "#3a5f6b",
+   "width": 3
+  },
+  {
+   "path": "M182 -500 L182 -370 M134 -435 L230 -435",
+   "stroke": "#3a5f6b",
+   "width": 3
+  },
+  {
+   "path": "M-300 -560 L-260 -640 L260 -640 L300 -560 Z",
+   "fill": "#a8523a",
+   "width": 4
+  },
+  {
+   "path": "M-280 -580 L280 -580 M-270 -600 L270 -600 M-264 -620 L264 -620",
+   "stroke": "#8a3f2c",
+   "width": 3
+  },
+  {
+   "rect": [
+    -300,
+    -568,
+    600,
+    14
+   ],
+   "fill": "#efe3bd",
+   "width": 3
+  }
+ ],
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

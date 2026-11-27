@@ -1,0 +1,69 @@
+{
+ "id": "jungle_myth",
+ "type": "places",
+ "name": "Deep jungle in mist",
+ "tags": [
+  "malaya",
+  "burma",
+  "new_guinea",
+  "southeast_asia",
+  "jungle",
+  "rainforest",
+  "fog",
+  "tropical",
+  "ww2"
+ ],
+ "doc": "inside dense rainforest in mist: giant trunks and leaves (the jungle of legend)",
+ "spec": {
+  "compose": {
+   "far": [
+    "jungle"
+   ],
+   "ground": "jungle_floor",
+   "rows": [
+    {
+     "what": "jungle_edge",
+     "depth": 680,
+     "gap": 600,
+     "scale": 0.9
+    },
+    {
+     "what": "jungle_edge",
+     "depth": 790,
+     "gap": 700
+    },
+    {
+     "what": "banana_plant",
+     "depth": 1050,
+     "gap": 330,
+     "clear": [
+      [
+       250,
+       1750
+      ]
+     ]
+    },
+    {
+     "what": "jungle_edge",
+     "depth": 1150,
+     "from": -200,
+     "to": 300,
+     "gap": 600,
+     "scale": 1.1
+    }
+   ]
+  },
+  "horizon": 600,
+  "weather": {
+   "kind": "fog",
+   "amount": 0.35
+  }
+ },
+ "source": {
+  "kind": "code"
+ },
+ "project": "malaya-test",
+ "status": "approved",
+ "created": "2026-11-27",
+ "promoted": "2026-11-27"
+}

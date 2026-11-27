@@ -100,6 +100,9 @@ def load_words(proj: Path) -> Words:
 
 
 # ------------------------------------------------------------------ recipe registry
+WEATHER_KINDS = ["rain", "drizzle", "downpour", "snow", "blizzard", "haze", "fog", "dust", "sandstorm", "ash", "leaves", "petals", "lightning"]
+
+
 class Param:
     def __init__(self, type_="str", default=None, values=None, doc="", required=False):
         self.type, self.default, self.values, self.doc, self.required = type_, default, values, doc, required
@@ -132,7 +135,8 @@ COMMON = {
     "counter": Param("dict", doc="{\"to\": 57470, \"from\": 0, \"suffix\": \" KILLED\", \"prefix\": \"\", \"on\": \"phrase\", \"color\": \"#f08070\"} a number counting up at the top (over the action)"),
     "stamp": Param("dict", doc="{\"text\": \"FAILED\", \"on\": \"phrase\"} a rubber stamp slammed on screen"),
     "time": Param("enum", values=["day", "dusk", "dawn", "night"], doc="time of day of the place"),
-    "weather": Param("enum", values=["rain", "snow"], doc="weather"),
+    "weather": Param("weather", doc="weather: rain · drizzle · downpour · snow · blizzard · haze · fog · dust · sandstorm · ash · leaves · petals · lightning, "
+                                     "or {\"kind\": \"rain\", \"amount\": 0.9, \"wind\": 0.4} (amount 0..1, wind -1..1; lightning: \"flash\": [seconds])"),
     "tint": Param("enum", values=["sepia", "grey", "cold", "warm", "night", "red"], doc="colour mood: grey = grief, sepia = myth/memory"),
     "letterbox": Param("str", doc="cinema bars for a dramatised moment (about one per chapter): true or a caption"),
     "transition": Param("enum", values=["cut", "fade", "dip", "flash"], doc="how this scene comes in (dip = big jump in time/place)"),
@@ -426,6 +430,10 @@ def check_card(raw) -> list[str]:
             continue
         if spec.type == "enum" and spec.values and v not in spec.values and not (k == "variant" and v in ("auto", "A", "B", "C", "D")):
             errs.append(f"{w}: \"{k}\" = {json.dumps(v)} is not allowed. Use one of {spec.values}.")
+        if spec.type == "weather":
+            kind = v if isinstance(v, str) else (v.get("kind") if isinstance(v, dict) else None)
+            if kind not in WEATHER_KINDS:
+                errs.append(f"{w}: \"{k}\" = {json.dumps(v)} is not a weather. Use one of {WEATHER_KINDS} or {{\"kind\": \"rain\", \"amount\": 0.8}}.")
         if spec.type == "int" and not isinstance(v, int):
             errs.append(f"{w}: \"{k}\" must be a whole number, e.g. 3 (no quotes).")
         if spec.type == "bool" and not isinstance(v, bool):
