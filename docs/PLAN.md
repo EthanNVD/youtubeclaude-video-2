@@ -77,7 +77,7 @@ Coordinates are those of the engine's Drawing parts: (0,0) = where the thing sta
 ### Phase 6 — docs for every model
 - [x] `playbook/library.md` (the loop: inventory → match → create → preview → promote) + one page per asset type with a full worked example
 - [x] Update AGENTS.md, SKILL.md, scene-writing.md, 02-understand (inventory), templates, QUALITY, CHANGELOG, ROADMAP
-- [ ] Create GitHub repo youtubeclaude-video-2 (private), push
+- [x] Create GitHub repo youtubeclaude-video-2 (private), push (EthanNVD/youtubeclaude-video-2, 2026-11-27)
 
 ## Progress log
 - 2026-11-27: brief approved; Phase 0 done. Phase 1: library loader, Drawing groups, lib.py (index/search/new/check/preview/promote/match) working; shovel made by code and promoted as the first test. Open: library/README.md text, builtin previews, moving library vehicles in scene cards.
