@@ -1,0 +1,26 @@
+{
+ "id": "battlefield_smoke",
+ "type": "weather",
+ "name": "Battlefield smoke and ash",
+ "tags": [
+  "battle",
+  "smoke",
+  "ash",
+  "burning",
+  "city",
+  "ww1",
+  "ww2"
+ ],
+ "doc": "ash drifting down over a burning town or a shelled front",
+ "spec": {
+  "kind": "ash",
+  "amount": 0.6,
+  "wind": 0.2
+ },
+ "source": {
+  "kind": "code"
+ },
+ "project": "library",
+ "status": "approved",
+ "created": "2026-11-27"
+}

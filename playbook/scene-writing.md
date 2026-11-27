@@ -78,9 +78,9 @@ When you are stuck, take a device from [visual-ideas.md](visual-ideas.md):
 | `recipe` | `"scene"` | |
 | `says` | the meaning, in your words (6+ words) | never copy the narration |
 | `idea` | the director's note (10+ words) | checked against the other cards for repetition |
-| `where` | a story place from `_film.json` `"sets"`, or a room style, a town style, an engine set, or an object | §3 |
+| `where` | a story place from `_film.json` `"sets"`, a library place (`kampong`, `rubber_estate`…), a room style, a town style, an engine set, or an object | §3 |
 | `place_id` | the story place's name | same `place_id` = same place: the tag and the look carry over |
-| `time`, `weather` | `day dawn dusk night`; `rain snow` | indoors, the weather shows only through the window |
+| `time`, `weather` | `day dawn dusk night`; `rain drizzle downpour snow blizzard haze fog dust sandstorm ash leaves petals lightning`, or `{"kind": "rain", "amount": 0.9, "wind": 0.4}`, or a library preset (`monsoon_downpour`) | indoors, nothing falls ([library/weather.md](library/weather.md)) |
 | `people` | a list of persons | §4 |
 | `crowd` | one group (or a list of groups) | §4.5 |
 | `things` | props on the floor, on other things, in hands; drawings you defined | §5 |
@@ -153,6 +153,18 @@ The style sets the walls, roofs and the **language of the shop signs**. Change i
 
 The full list is in `recipes/STAGECRAFT.md`.
 
+**A composed landscape** (any region, any season): `{"compose": {"far": [...], "ground": "...", "road": {...}, "rows": [...]}, "horizon": 600}`.
+Layers far to near: sky by time, painted plates, far shapes (`hills mountains jungle treeline palms sea town`), the ground
+(`grass laterite sand paddy mud dry jungle_floor snow`), a road, and rows of library plants and buildings in depth
+(rows below the people stand in front of them). The fields, with a worked example, are in [library/places.md](library/places.md).
+```json
+"estate_road": {"compose": {"far": ["treeline"], "ground": "grass", "road": {"kind": "laterite", "y": 885, "w": 210},
+                            "rows": [{"what": "rubber_tree", "depth": 650, "gap": 120}, {"what": "rubber_tree", "depth": 800, "gap": 190},
+                                     {"what": "lalang_grass", "depth": 1075, "gap": 120}]},
+                "horizon": 600, "weather": "haze", "tag": "Behind the Japanese lines · January 1942"}
+```
+**A library place**: `"where": "kampong"` — places kept from earlier films (`python tools/lib.py search "village"`).
+
 ### 3.3 Flags and signs must be right
 
 - A flag says whose it is: `flag:AUS`, `portrait:UK`, `banner:FRA`. A room style that hangs a flag (e.g. `ministry`) needs `flag:<NATION>` in its items or `"nation"` on the place, otherwise the compiler warns. A wrong flag is a factual error the viewer sees at once.
@@ -213,7 +225,8 @@ Run `python tools/make.py projects/<slug> preview` and look at the cast sheets b
 | `face` | `left right viewer away`, or a person's or thing's id | toward the others |
 | `mood` | `neutral worried sad grief angry determined proud happy tired hungry cold shocked fear smug nervous` | `neutral` |
 | `pose` | the starting pose (`recipes/STAGECRAFT.md`) | from the mood or what they hold |
-| `holds` | a thing in the hand (a prop or one of your drawings) | — |
+| `holds` | a thing in the hand (a prop, a library drawing with a grip, or one of your drawings) | — |
+| `rides` | a vehicle drawing the person sits on (`bicycle`): he pedals; `walk_to`, `enter`, `exit` ride it at riding speed | — |
 | `seated` / `kneel` | `true` (a chair indoors, a crate outdoors is added) | — |
 | `walk` | `shuffle` (hungry, exhausted), `march`, `limp`, `sneak` | normal |
 | `size` | 0.7–0.8 for children | the cast's `size` or 1 |
@@ -281,7 +294,8 @@ Kinds:
 - `queue`: a line waiting at a door, facing it, shuffling forward now and then;
 - `watchers`, `listeners` (with `"view": "back"` they become heads along the bottom of the frame, never in front of the speaker);
 - `walkers`: passers-by at different depths and speeds;
-- `marchers`: a column with rifles;
+- `marchers`: a column with rifles (`"start": "in"` = the column is already in the frame, its head at `at`);
+- `cyclists`: rows of riders on bicycles, `"abreast": 3` side by side, chatting and laughing (`"toward"`, `"vehicle"`, `"start": "in"`);
 - `mourners`, `cheering`, `workers`, `protest`.
 
 `react_on` changes their faces together, slightly staggered.
@@ -366,7 +380,11 @@ Drawing-level fields:
 - `top`: height of its top surface, for things placed `on` it;
 - `doc`: one line for the catalogue.
 
-**The shared library** `assets/library/drawings/*.json` holds drawings any film can use: `field_kitchen`, `notice_board`, `zeppelin`, `bicycle`, and growing. When a drawing you made would help other films, copy it there (one file per drawing, named after it).
+**The living library** (`library/`) holds the drawings any film can use: props (`shovel`, `parang`, `sandbag_wall`, `notice_board`),
+vehicles (`bicycle`, `field_kitchen`, `zeppelin`), buildings (`kampong_house`, `shophouse`), plants (`rubber_tree`,
+`coconut_palm`, `banana_plant`, `lalang_grass`, `jungle_edge`), and growing. Search it first: `python tools/lib.py search "words"`.
+A drawing that would help other films is made as an asset of the film (`python tools/lib.py new …`) instead of in
+`"drawings"`, then promoted at the end ([library.md](library.md)).
 
 Check every drawing on the preview sheet, next to the man drawn for scale (§8).
 
@@ -506,16 +524,18 @@ The first card is in Berlin, the second in London, with the same act and a diffe
 ## 8. Pre-production: build and check the cast, places and drawings first
 
 Before the cards:
+0. List what the pictures need (`understanding.md` §8b) and run `python tools/lib.py match --project projects/<slug>`:
+   use, adapt or create every row ([library.md](library.md)).
 1. Write `cards/_film.json`:
-   - `cast`: every person, children with `size`;
-   - `sets`: every story place, with `tag`;
-   - `drawings`: every new thing, vehicle or set piece the story needs;
+   - `cast`: every person, children with `size`; costume pieces with `"wear"` ([library/costumes.md](library/costumes.md));
+   - `sets`: every story place, with `tag`: a room, a town, or a composed landscape ([library/places.md](library/places.md));
+   - `drawings`: one-off things only this film needs (anything reusable is a library asset instead);
    - `look`: `{"seed": <any number>, "grade": "film|warm|cold|bleak|sepia|vivid"}`. The seed gives this film its own gestures and camera choices; the grade gives it its own colour. Pick the grade from the story: cold for a hunger winter, warm for a Vienna classroom.
 2. Run `python tools/make.py projects/<slug> preview`. It renders `review/preview/sheet_*.jpg`:
    - every cast member standing and acting;
    - every story place with a man for scale;
-   - every drawing next to a man.
-   - Add `--kit`, `--acts` or `--library` to see the whole room/town catalogue, every act, or the shared drawings.
+   - every drawing and every new asset of the film (`projects/<slug>/assets/`) next to a man.
+   - Add `--kit`, `--acts` or `--library` to see the whole room/town catalogue, every act, or the library's drawings.
 3. Look at every sheet:
    - Are the faces, ages and outfits right? Are the children small?
    - Does each place say the right thing (flags, signs, the season)?

@@ -100,5 +100,12 @@ _painted FAR background layers (sky, far hills, mid distance); never for things 
 
 _weather and atmosphere presets (rain, fog, haze, dust, snow…) with their parameters_
 
+| id | what | tags | made in | preview |
+|---|---|---|---|---|
+| `battlefield_smoke` | ash drifting down over a burning town or a shelled front | battle, smoke, ash, burning, city, ww1, ww2 | library |  |
+| `monsoon_downpour` | a heavy tropical downpour driven by the wind (monsoon season) | tropical, monsoon, rain, downpour, malaya, burma, india, vietnam | library |  |
+| `morning_fog` | thick morning fog over fields and rivers (a dawn attack, a crossing) | fog, mist, morning, river, field, europe, ww1, ww2 | library |  |
+| `tropical_haze` | the humid haze of the tropics: the distance fades into a warm white | tropical, haze, humid, malaya, southeast_asia, pacific, jungle | library |  |
+
 Builtin (2): `rain`, `snow`
 

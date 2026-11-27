@@ -262,9 +262,10 @@ def write_stagecraft():
     for k in sorted(v["props"]):
         L.append(f"| `{k}` | {SC.THINGS.get(k, {}).get('size', '—')} | {SC.THING_DOC.get(k, '')} |")
     lib = RS.library()
-    L += ["", "## Shared drawings (`assets/library/drawings/`)", "",
-          "Use them like things (`{\"what\": \"field_kitchen\"}`) or hold them. Draw your own in `cards/_film.json` \"drawings\" "
-          "([scene-writing.md](../playbook/scene-writing.md) §5.2); copy the good ones into the library.", "", "| drawing | what it is |", "|---|---|"]
+    L += ["", "## Library drawings (`library/`)", "",
+          "Use them like things (`{\"what\": \"rubber_tree\"}`), hold them, ride them (`\"rides\": \"bicycle\"`) or put them in rows of a "
+          "composed place. Find more with `python tools/lib.py search \"words\"`; make new ones as assets of the film and promote them "
+          "([playbook/library.md](../playbook/library.md)).", "", "| drawing | what it is |", "|---|---|"]
     L += [f"| `{k}` | {d.get('doc', '')} |" for k, d in lib.items()]
     lib_imgs = sorted(f.stem for f in SC_IMG.glob("library_*.jpg")) if SC_IMG.exists() else []
     L += [""] + [img(n, 480) for n in lib_imgs] + [""]

@@ -47,7 +47,7 @@ Coordinates are those of the engine's Drawing parts: (0,0) = where the thing sta
 - [x] Engine Drawing: `group` parts with motion (spin / sway / bob around a pivot), so wheels and crowns move
 - [x] Compiler: a library asset is usable everywhere a thing is (`things`, `holds`, `vehicles` that move, rows/groves), with its anchors (ground, grip, top, seat)
 - [x] `tools/lib.py`: `index`, `search`, `new`, `preview`, `check`, `promote`, `match` (+ make.py steps `lib`)
-- [ ] Builtin index: every engine prop, vehicle, preset, set, room/town style, act → index.json + INDEX.md with previews
+- [x] Builtin index: every engine prop, vehicle, preset, set, room/town style, act → index.json + INDEX.md (previews for the kit styles and acts)
 - [x] Move `assets/library/drawings/*` into `library/props|vehicles/…` with asset.json
 
 ### Phase 2 — image → vector
@@ -57,28 +57,32 @@ Coordinates are those of the engine's Drawing parts: (0,0) = where the thing sta
 - [x] Test: render an engine drawing to PNG, re-import it, compare
 
 ### Phase 3 — people
-- [ ] Costume layers in Character.tsx: pieces drawn in the head frame (hats, turbans, headscarves) and the body frame (tunics, sarongs, robes, vests, belts), above or below the arms; colours from the cast entry
-- [ ] Poses: `ride` (bicycle: hands on the bars, legs pedalling), `dig` (+ shovel), `crouch` (hidden, peeking)
-- [ ] Riding coupling in the scene card: `rides: "<asset>"` → the vehicle follows the person
-- [ ] Malaya pieces: songkok, sarong, Sikh turban, Australian slouch hat, Japanese field cap with neck flaps, Chinese singlet
+- [x] Costume layers in Character.tsx: pieces drawn in the head frame (hats, turbans, headscarves) and the body frame (tunics, sarongs, robes, vests, belts), above or below the arms; colours from the cast entry
+- [x] Poses: `ride` (bicycle: hands on the bars, legs pedalling), `dig` (+ shovel); `crouch` left for later (kneel is used)
+- [x] Riding coupling in the scene card: `rides: "<asset>"` → the vehicle follows the person
+- [x] Malaya pieces: songkok, sarong, Sikh turban, Australian slouch hat, Japanese field cap with neck flaps, Chinese singlet
 
 ### Phase 4 — world
-- [ ] Parametric weather: rain (drizzle → tropical downpour), snow, fog, haze, heat shimmer, dust, sandstorm, ash, leaves, petals, lightning; intensity, wind, front/back layers
-- [ ] Plant placement: rows (plantations), groves, edges (jungle walls) in depth
-- [ ] Place kind `compose`: sky (by time) + painted plate layers + ground (laterite road, paddy, sand, grass…) + asset rows
-- [ ] Plates: raster layers copied into public/ at render time; parallax by layer
+- [x] Parametric weather: rain (drizzle → tropical downpour), snow, fog, haze, heat shimmer, dust, sandstorm, ash, leaves, petals, lightning; intensity, wind, front/back layers
+- [x] Plant placement: rows (plantations), groves, edges (jungle walls) in depth
+- [x] Place kind `compose`: sky (by time) + painted plate layers + ground (laterite road, paddy, sand, grass…) + asset rows
+- [x] Plates: raster layers copied into public/ at render time; parallax by layer
 
 ### Phase 5 — the 1-minute proof (Malaya 1941–42)
-- [ ] Project `projects/malaya-test` (66 s cut of fall-of-singapore 09:36–10:42), prepare
-- [ ] Inventory → `lib match` → create every missing asset (code path here; prompts written for Muse), preview sheets
-- [ ] Scene cards, compile, review --at all, fix only wrong cards, render, send
-- [ ] `lib promote` every new asset; INDEX.md shows them
+- [x] Project `projects/malaya-test` (66 s cut of fall-of-singapore 09:36–10:42), prepare
+- [x] Inventory → `lib match` → create every missing asset (code path here; prompts written for Muse), preview sheets
+- [x] Scene cards, compile, review --at all, fix only wrong cards, render, send
+- [x] `lib promote` every new asset; INDEX.md shows them
 
 ### Phase 6 — docs for every model
-- [ ] `playbook/library.md` (the loop: inventory → match → create → preview → promote) + one page per asset type with a full worked example
-- [ ] Update AGENTS.md, SKILL.md, scene-writing.md, 02-understand (inventory), templates, QUALITY, CHANGELOG, ROADMAP
+- [x] `playbook/library.md` (the loop: inventory → match → create → preview → promote) + one page per asset type with a full worked example
+- [x] Update AGENTS.md, SKILL.md, scene-writing.md, 02-understand (inventory), templates, QUALITY, CHANGELOG, ROADMAP
 - [ ] Create GitHub repo youtubeclaude-video-2 (private), push
 
 ## Progress log
 - 2026-11-27: brief approved; Phase 0 done. Phase 1: library loader, Drawing groups, lib.py (index/search/new/check/preview/promote/match) working; shovel made by code and promoted as the first test. Open: library/README.md text, builtin previews, moving library vehicles in scene cards.
 - 2026-11-27: Phase 2 done: lib import (background cut, k-means colours, OpenCV contours with holes, corner-keeping smoothing, ground point, art.svg), --as-part moving groups, plates kept as pictures, style-sheet, prompts per type, library/README.md. Tested on a drawn kampong house (matches the source) and a cart + spinning wheel.
+- 2026-11-27: Phase 3 done: costume pieces in 5 slots (multi-piece, recolour, armColor), riding drawn inside the rider (seat/crank anchors, pedals, rolling wheels), cyclists, dig, bicycle sounds.
+- 2026-11-27: Phase 4 done: composed places (sky, plates, far layers, ground, road, rows in depth), library places (`lib place`, `"where": "<id>"`), parametric weather + presets, plans store each drawing once.
+- 2026-11-27: Phase 5 done: malaya-test rendered (67 s, 20 cards); 24 assets made in code and promoted (6 costumes, 5 plants, 2 buildings, 2 props, 9 places) + 4 weather presets.
+- 2026-11-27: Phase 6: playbook/library.md + 9 type pages; AGENTS, SKILL, scene-writing, 02-understand, template, QUALITY, CHANGELOG, ROADMAP updated. Open: GitHub repo + push.

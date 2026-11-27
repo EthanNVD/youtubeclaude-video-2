@@ -126,7 +126,7 @@ Town fields: `ground` (cobbles mud snow dirt), `back` (spire chimneys hills city
 
 ### Engine sets (`{"set": "<name>"}`)
 
-`air`, `airfield`, `archbridge`, `barbed`, `beach`, `board`, `branches`, `bridge`, `bunker`, `cabin`, `cabinet`, `cell`, `city`, `classroom`, `cockpit`, `codebreak`, `conference`, `corridor`, `countryside`, `curtain`, `dark`, `deck`, `desert`, `desk`, `dock`, `doorframe`, `factory`, `field`, `flightdeck`, `frontdesk`, `garden`, `grass`, `hangar`, `harbor`, `heath`, `home`, `hotel`, `jungle`, `kitchen`, `memorial`, `mud`, `nomansland`, `ocean`, `office`, `officedesk`, `paper`, `parliament`, `plant`, `podium`, `polder`, `radio`, `rail`, `railway`, `rally`, `river`, `ruins`, `sandbags`, `sea`, `sky`, `snow`, `station`, `steppe`, `street`, `studio`, `study`, `tent`, `train_interior`, `trench`, `void`, `warroom`, `workshop`
+`air`, `airfield`, `archbridge`, `barbed`, `beach`, `board`, `branches`, `bridge`, `bunker`, `cabin`, `cabinet`, `cell`, `city`, `classroom`, `cockpit`, `codebreak`, `compose`, `conference`, `corridor`, `countryside`, `curtain`, `dark`, `deck`, `desert`, `desk`, `dock`, `doorframe`, `factory`, `field`, `flightdeck`, `frontdesk`, `garden`, `grass`, `hangar`, `harbor`, `heath`, `home`, `hotel`, `jungle`, `kitchen`, `memorial`, `mud`, `nomansland`, `ocean`, `office`, `officedesk`, `paper`, `parliament`, `plant`, `podium`, `polder`, `radio`, `rail`, `railway`, `rally`, `river`, `ruins`, `sandbags`, `sea`, `sky`, `snow`, `station`, `steppe`, `street`, `studio`, `study`, `tent`, `train_interior`, `trench`, `void`, `warroom`, `workshop`
 
 ## People
 
@@ -188,6 +188,7 @@ Cast presets and look fields: [PEOPLE.md](PEOPLE.md). Moods (the face, and the g
 | `listen` | cups a hand to the ear, listening | listen | — |
 | `tip_hat` | touches the hat brim (greeting) | tiphat | — |
 | `binoculars` | looks through binoculars | binoculars | binoculars |
+| `dig` | digs with a shovel (a trench, a gun pit, a grave) | dig | shovel |
 | `point` | points at someone/something (to: id) | point | — |
 | `point_down` | points down at a table / map | pointdown | — |
 | `beckon` | waves someone to come closer | beckon | — |
@@ -284,6 +285,7 @@ The pose acts, acted (five per picture, in the order of the table above):
 | `workers` | people working (hammer, carry crates, push carts) |
 | `protest` | angry people shouting, fists up |
 | `listeners` | people facing a speaker (a meeting, a sermon, a lecture); add "view": "back" when they stand between us and the speaker |
+| `cyclists` | people riding bicycles across the frame, 3-4 abreast in rows ("abreast": 3, "vehicle": "bicycle", "toward": "left|right"; "start": "in" = already in the frame at "at", for short shots), chatting |
 
 ## Things (`things`)
 
@@ -357,15 +359,25 @@ The pose acts, acted (five per picture, in the order of the table above):
 | `turnips` | 0.55 | a heap of turnips (n = how many) |
 | `typewriter` | 0.6 |  |
 
-## Shared drawings (`assets/library/drawings/`)
+## Library drawings (`library/`)
 
-Use them like things (`{"what": "field_kitchen"}`) or hold them. Draw your own in `cards/_film.json` "drawings" ([scene-writing.md](../playbook/scene-writing.md) §5.2); copy the good ones into the library.
+Use them like things (`{"what": "rubber_tree"}`), hold them, ride them (`"rides": "bicycle"`) or put them in rows of a composed place. Find more with `python tools/lib.py search "words"`; make new ones as assets of the film and promote them ([playbook/library.md](../playbook/library.md)).
 
 | drawing | what it is |
 |---|---|
-| `bicycle` | a bicycle standing on its stand (messengers, a soldier's or a nurse's bike, a village policeman) |
-| `field_kitchen` | army field kitchen (a two-wheeled wagon with a soup kettle and a smoking chimney): soup queues, cooks at the front, soup kitchens at home |
+| `kampong_house` | a Malay village house raised on wooden stilts: plank walls, shuttered windows, a steep thatched (attap) roof with a gable, wooden steps up to the door |
+| `shophouse` | a two-storey Chinese shophouse of a Malayan town: a covered five-foot way with pillars and the open shop behind, shuttered windows above, a tiled roof, a red signboard; put several side by side for a street |
+| `banana_plant` | a banana plant: a green pseudo-stem with big torn paddle leaves (kampong gardens, roadsides) |
+| `coconut_palm` | a tall coconut palm with a curved ringed trunk, a crown of feathery fronds and a bunch of coconuts (groves, kampongs, beaches) |
+| `jungle_edge` | a stretch of dense tropical rainforest seen from its edge: tall trunks with buttress roots, lianas, layers of dark foliage, ferns at the foot; put several side by side for a wall of jungle |
+| `lalang_grass` | a clump of tall lalang grass (waist high): roadsides and clearings; a row of it in front hides a watcher |
+| `rubber_tree` | a tapped rubber tree: slim grey trunk with the diagonal tapping cut and a latex cup, a light crown high up; plant it in straight rows (Malayan rubber estates) |
 | `notice_board` | a notice board on two legs with pinned notices (ration announcements, call-up orders, casualty lists) — set "text" on the card's paper_note for the exact words |
+| `parang` | a parang: the heavy Malay machete used to cut through undergrowth (held in the hand) |
+| `sandbag_wall` | a low wall of stacked sandbags (three courses, waist high): a roadblock, a gun position, the front of a trench |
+| `shovel` | a long-handled shovel for digging trenches and gun pits (held in both hands; drawn around the hand) |
+| `bicycle` | a bicycle, upright (a messenger's, a soldier's or a nurse's bike, a village policeman); people ride it with "rides": "bicycle" |
+| `field_kitchen` | army field kitchen (a two-wheeled wagon with a soup kettle and a smoking chimney): soup queues, cooks at the front, soup kitchens at home |
 | `zeppelin` | WW1 airship (Zeppelin) — a thing in the sky: place it with "y" (screen y, e.g. 260) and "scale" (0.5-1.2); "to" makes it drift across |
 
 <img src="img/stagecraft/library_40.jpg" width="480">
@@ -411,5 +423,5 @@ Use them like things (`{"what": "field_kitchen"}`) or hold them. Draw your own i
 
 ## Poses (`pose`: a person's starting pose)
 
-`aim`, `basket`, `beckon`, `beg`, `behind`, `binoculars`, `carry`, `charge`, `cheer`, `chin`, `clap`, `comfort`, `count`, `cower`, `cradle`, `cross`, `cry`, `drink`, `ease`, `eat`, `explain`, `face`, `facepalm`, `fist`, `gasp`, `give`, `hammer`, `head`, `heart`, `hips`, `hold`, `holdUp`, `idle`, `knock`, `ladle`, `lean`, `listen`, `offer`, `palms`, `peel`, `phone`, `pockets`, `point`, `pointDown`, `pointL`, `pointSelf`, `pointUp`, `pointdown`, `port`, `pray`, `present`, `pull`, `push`, `raise`, `reach`, `reachup`, `read`, `rub`, `sack`, `salute`, `scratch`, `shiver`, `shoulder`, `show`, `shrug`, `slam`, `smoke`, `stir`, `stop`, `surrender`, `talk`, `talk2`, `think`, `thumbsup`, `tiphat`, `typing`, `wait`, `warm`, `wave`, `wipe`, `wring`, `write`
+`aim`, `basket`, `beckon`, `beg`, `behind`, `binoculars`, `carry`, `charge`, `cheer`, `chin`, `clap`, `comfort`, `count`, `cower`, `cradle`, `cross`, `cry`, `dig`, `drink`, `ease`, `eat`, `explain`, `face`, `facepalm`, `fist`, `gasp`, `give`, `hammer`, `head`, `heart`, `hips`, `hold`, `holdUp`, `idle`, `knock`, `ladle`, `lean`, `listen`, `offer`, `palms`, `peel`, `phone`, `pockets`, `point`, `pointDown`, `pointL`, `pointSelf`, `pointUp`, `pointdown`, `port`, `pray`, `present`, `pull`, `push`, `raise`, `reach`, `reachup`, `read`, `ride`, `rub`, `sack`, `salute`, `scratch`, `shiver`, `shoulder`, `show`, `shrug`, `slam`, `smoke`, `stir`, `stop`, `surrender`, `talk`, `talk2`, `think`, `thumbsup`, `tiphat`, `typing`, `wait`, `warm`, `wave`, `wipe`, `wring`, `write`
 

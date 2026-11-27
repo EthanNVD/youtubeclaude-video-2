@@ -11,9 +11,9 @@
 | field | required | value | default | meaning |
 |---|---|---|---|---|
 | `idea` | **yes** | text |  | the director's note: what the viewer SEES and why it tells this clause (one sentence, 10+ words). Write it before anything else |
-| `where` | no | text |  | a story place from cards/_film.json "sets", a room style, a town style, an engine set, or an object {"room": "kitchen", "items": [...]} |
-| `people` | no | list |  | persons: {who, id, at, depth, face, mood, pose, holds, seated, kneel, walk, size, name_card, do: [{act, on, till, to, with, expr}]} |
-| `crowd` | no | object |  | {kind: queue|watchers|walkers|marchers|mourners|cheering|workers|protest|listeners, n, who: [presets], at, depth, toward, mood, react_on} |
+| `where` | no | text |  | a story place from cards/_film.json "sets", a library place (kampong, rubber_estate…), a room style, a town style, an engine set, or an object {"room": "kitchen", "items": [...]} / {"compose": {"far": [...], "ground": "grass", "rows": [...]}} |
+| `people` | no | list |  | persons: {who, id, at, depth, face, mood, pose, holds, seated, kneel, walk, rides (a vehicle drawing, e.g. bicycle: he sits on it and enter/exit/walk_to ride it), size, name_card, do: [{act, on, till, to, with, expr}]} |
+| `crowd` | no | object |  | {kind: queue|watchers|walkers|marchers|cyclists|mourners|cheering|workers|protest|listeners, n, who: [presets], at, depth, toward, mood, react_on; cyclists: abreast, vehicle} |
 | `things` | no | list |  | props: {what, id, at, depth, on (another thing's id), held_by, n, text, color, appear (phrase), scale, steam/lit} |
 | `effects` | no | list |  | {fx: smoke|fire|explosion|shellburst|dust|steam|sparks|exclaim|question…, at, depth, on, over (person), size} |
 | `vehicles` | no | list |  | {type: battleship|cruiser|cargo|truck|cart|wagon|horse|train…, nation, at, depth (or screen y, e.g. 660 on the sea), to (moves there), on, till, scale, flip} |

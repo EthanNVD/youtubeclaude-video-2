@@ -1,0 +1,25 @@
+{
+ "id": "tropical_haze",
+ "type": "weather",
+ "name": "Tropical haze",
+ "tags": [
+  "tropical",
+  "haze",
+  "humid",
+  "malaya",
+  "southeast_asia",
+  "pacific",
+  "jungle"
+ ],
+ "doc": "the humid haze of the tropics: the distance fades into a warm white",
+ "spec": {
+  "kind": "haze",
+  "amount": 0.6
+ },
+ "source": {
+  "kind": "code"
+ },
+ "project": "library",
+ "status": "approved",
+ "created": "2026-11-27"
+}

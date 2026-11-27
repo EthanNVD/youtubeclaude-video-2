@@ -101,6 +101,7 @@ def load_words(proj: Path) -> Words:
 
 # ------------------------------------------------------------------ recipe registry
 WEATHER_KINDS = ["rain", "drizzle", "downpour", "snow", "blizzard", "haze", "fog", "dust", "sandstorm", "ash", "leaves", "petals", "lightning"]
+EXTRA_WEATHER = set()  # ids of weather presets in the library and the project (set by compile.py)
 
 
 class Param:
@@ -432,7 +433,7 @@ def check_card(raw) -> list[str]:
             errs.append(f"{w}: \"{k}\" = {json.dumps(v)} is not allowed. Use one of {spec.values}.")
         if spec.type == "weather":
             kind = v if isinstance(v, str) else (v.get("kind") if isinstance(v, dict) else None)
-            if kind not in WEATHER_KINDS:
+            if kind not in WEATHER_KINDS and not (isinstance(v, str) and v in EXTRA_WEATHER):
                 errs.append(f"{w}: \"{k}\" = {json.dumps(v)} is not a weather. Use one of {WEATHER_KINDS} or {{\"kind\": \"rain\", \"amount\": 0.8}}.")
         if spec.type == "int" and not isinstance(v, int):
             errs.append(f"{w}: \"{k}\" must be a whole number, e.g. 3 (no quotes).")

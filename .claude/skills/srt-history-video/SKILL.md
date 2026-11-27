@@ -21,11 +21,16 @@ The film is told like an animated movie: one clause → one concrete picture of 
    - numbers (spoken / stat / chart);
    - chapters;
    - for every clause: WHO · DOES WHAT · WHERE · WHEN · **IDEA** (what we see, why) · scene card or recipe (`playbook/narration-to-picture.md` §1, `playbook/visual-ideas.md`).
-   - **Pre-production lists**: every person, story place, thing and vehicle the pictures need (template §8b).
+   - **Pre-production lists**: every person, costume, story place, building, plant, vehicle, thing and weather the pictures need (template §8b).
+2a. **The living library** (`playbook/library.md`): `python tools/lib.py match --project projects/<slug>` → `work/match.md`.
+   Use what exists, adapt what is close (`lib new … --from`, `"recolor"`), create what is missing:
+   - with an image model (Muse): `prompt.txt` + `library/STYLE_REFERENCE.jpg` → `lib import` (vector) — far backgrounds stay pictures (`plates`);
+   - without one: draw the parts in code (the type pages in `playbook/library/` have complete examples);
+   - then `lib preview --grid` and `lib check`.
 2b. Pre-production, in `cards/_film.json`:
-   - `cast`: everyone; children with `"size": 0.7–0.8`;
-   - `sets`: story places from the room/street kit, with tags;
-   - `drawings`: things the engine lacks, drawn from shapes;
+   - `cast`: everyone; children with `"size": 0.7–0.8`; costume pieces with `"wear"`;
+   - `sets`: story places — rooms, towns, or composed landscapes (`compose`: far layers, ground, road, rows of library plants and buildings), with tags; library places by id;
+   - `drawings`: only one-off things;
    - `look`: seed and grade, so each film looks and moves differently.
 
    Then run `python tools/make.py projects/<slug> preview` and fix until every sheet is right (`playbook/scene-writing.md` §8).
@@ -80,7 +85,7 @@ Talk to the user in their language (Vietnamese by default). On-screen text and m
 ## When recipes are not enough (strong models)
 - **A recurring kind of sentence**: add a recipe in `tools/cardlib/recipes_*.py`. Then run `python tools/catalog.py --previews`, check its preview tiles, and add a row to `narration-to-picture.md` (`playbook/08-advanced.md` §B).
 - **A moment no recipe shows**: write a `scene` card. It composes any place, people, acts, things, crowd, vehicles and camera (`playbook/scene-writing.md`).
-- **A thing the engine lacks**: draw it in `cards/_film.json` `"drawings"` (shapes, no code). Copy good ones to `assets/library/drawings/`.
+- **A thing the engine lacks** (a costume, a building, a plant, a vehicle, a prop, a place, a weather): make it a library asset of the film (`playbook/library.md`), then `lib promote` it when the film is done.
 - **A one-off moment beyond that**: use the `raw` recipe, which takes an engine scene. Schema: [references/plan-schema.md](references/plan-schema.md).
 - **A missing visual** (set, prop, vehicle, pose, fx): extend the engine in `src/`, then run `npx tsc --noEmit` and render a still. Follow the neighbouring code's style. Never fake a missing visual with a label.
 

@@ -27,6 +27,17 @@ Related control files:
 - [x] Characters: head attached, rubber-hose limbs, pose blending, walk/run, held props, host + aide
 - [x] First full film: Market Garden (34:04)
 
+### M3 — The living library (video-2, 2026-11-27)
+- [x] Asset records, loader, `tools/lib.py` (match, new, import, check, preview, place, promote)
+- [x] Image path: image → vector import, plates as pictures, prompts per type, style reference
+- [x] People: costume pieces (5 slots, multi-piece, recolour), riding, cyclists, dig
+- [x] World: composed places, rows in depth, library places, parametric weather + presets
+- [x] Proof: `projects/malaya-test` (24 new assets promoted)
+- [ ] Image-path proof with real Muse pictures (a plate and a vehicle with rolling wheels)
+- [ ] `crouch` pose (hidden, peeking) — `kneel` is used meanwhile
+- [ ] Riders: hands follow the `bars` anchor of other ridden things (motorbike, rickshaw, horse)
+- [ ] Costume pieces that turn with the head (3/4 views) — today they stay front view
+
 ### M2 — Film-quality look (current)
 Goal: a frame from our video can sit next to a frame from the reference channel without looking cheap.
 
@@ -34,7 +45,7 @@ Goal: a frame from our video can sit next to a frame from the reference channel 
 - [x] A1 Depth of field: backgrounds soft, actors sharp (`set.dof`)
 - [x] A2 Colour grade: warm and slightly desaturated, stronger vignette, film grain (meta.grade)
 - [x] A3 Gentle camera drift on every stage shot that has no camera keys
-- [ ] A4 Atmospheric perspective inside every set: far layers lighter/bluer, 3+ depth layers
+- [~] A4 Atmospheric perspective inside every set: far layers lighter/bluer, 3+ depth layers (done for composed places: haze/fog fade the far rows)
 - [ ] A5 Foreground occluders in more sets (branches, snow banks, sandbags, window frames)
 
 **Vehicles & motion**

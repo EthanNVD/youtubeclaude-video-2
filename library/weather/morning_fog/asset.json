@@ -1,0 +1,26 @@
+{
+ "id": "morning_fog",
+ "type": "weather",
+ "name": "Morning fog",
+ "tags": [
+  "fog",
+  "mist",
+  "morning",
+  "river",
+  "field",
+  "europe",
+  "ww1",
+  "ww2"
+ ],
+ "doc": "thick morning fog over fields and rivers (a dawn attack, a crossing)",
+ "spec": {
+  "kind": "fog",
+  "amount": 0.7
+ },
+ "source": {
+  "kind": "code"
+ },
+ "project": "library",
+ "status": "approved",
+ "created": "2026-11-27"
+}

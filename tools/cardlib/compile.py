@@ -44,6 +44,10 @@ def compile_project(proj: Path, write=True):
     film, cards, chapters = load_cards(proj)
     W = load_words(proj)
     errors, warns = [], []
+    from . import core as CORE
+    from . import library as LIBMOD
+    presets = LIBMOD.weather_presets(proj)
+    CORE.EXTRA_WEATHER = set(presets)
     for raw in cards:
         errors += check_card(raw)
     if errors:
@@ -184,6 +188,11 @@ def compile_project(proj: Path, write=True):
     for s in scenes:
         s.pop("_cls", None)
         s.pop("_raw", None)
+    # a weather preset of the library ("weather": "monsoon_downpour") becomes its parameters
+    for s_ in scenes:
+        wv = (s_.get("set") or {}).get("weather")
+        if isinstance(wv, str) and wv in presets:
+            s_["set"]["weather"] = presets[wv].get("spec") or {"kind": "rain"}
     plan = {"meta": meta, "cast": clean_cast, "scenes": scenes}
     import layout_check  # noqa: E402
     layout_check.fix_speeds(plan)

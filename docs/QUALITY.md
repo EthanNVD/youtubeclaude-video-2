@@ -21,7 +21,8 @@ A video is **done** only when every box below is ticked. Copy this list into `pr
   - [ ] each idea on screen appears on the word that names it.
 - [ ] No hate symbols: armbands plain, no swastika banners; rally/podium banners show national flags.
 - [ ] Fact flags from the outline are fixed on screen (spelling of names and places; numbers as narrated).
-- [ ] Pre-production checked: `preview` sheets of the cast (children small), every story place (flags, signs, season) and every drawing (size next to a man).
+- [ ] Pre-production checked: `preview` sheets of the cast (children small, costume pieces on the head and body, not floating), every story place (flags, signs, season; rows join up; nothing big hides the middle) and every drawing (size next to a man).
+- [ ] Library: `work/match.md` done (nothing that exists was made again); every new asset passed `lib check` (0 errors) and `lib preview`; riders sit on their bicycles with feet on the pedals.
 - [ ] Scene cards: `cards` prints no repetition warning (look, idea, camera) and no staging warning (edge of frame, flag without a nation); `work/missing_assets.json` read.
 - [ ] Review questions 17–23 of `playbook/05-review.md` pass for every scene: focus visible, held things clear of faces, writing readable and the right way round, flags right, children small, seats right, gestures on the word.
 
@@ -50,4 +51,5 @@ A video is **done** only when every box below is ticked. Copy this list into `pr
 ## E. Hand-off
 - [ ] `projects/<slug>/STATUS.md` updated: what was delivered, known weaknesses, what to verify.
 - [ ] Engine problems found during this video logged in `ROADMAP.md` → Known issues.
+- [ ] Story places worth keeping saved (`lib place`), new assets promoted (`lib promote`): `library/INDEX.md` lists them with previews.
 - [ ] Repo committed and pushed. No media committed.

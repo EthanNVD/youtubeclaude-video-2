@@ -342,6 +342,11 @@ def check_asset(a, known_ids=()):
         if not any(k in sp for k in ("compose", "room", "town", "set", "kit")):
             errs.append(f"{aid}: a places asset needs \"spec\": the story place as written in cards/_film.json \"sets\" "
                         f"({{\"compose\": {{…}}}}, {{\"room\": \"office\", …}} or {{\"town\": \"village\", …}}) — make it with `lib place <set id>`")
+    if a.get("type") == "weather":
+        from cardlib.core import WEATHER_KINDS
+        k = (a.get("spec") or {}).get("kind")
+        if k not in WEATHER_KINDS:
+            errs.append(f"{aid}: a weather asset needs \"spec\": {{\"kind\": one of {WEATHER_KINDS}, \"amount\": 0..1, \"wind\": -1..1}}")
     if a.get("type") == "characters":
         sp = a.get("spec") or {}
         if not sp.get("preset"):

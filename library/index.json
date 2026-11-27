@@ -21,6 +21,26 @@
   "project": "malaya-test"
  },
  {
+  "id": "battlefield_smoke",
+  "type": "weather",
+  "source": "library",
+  "name": "Battlefield smoke and ash",
+  "tags": [
+   "battle",
+   "smoke",
+   "ash",
+   "burning",
+   "city",
+   "ww1",
+   "ww2"
+  ],
+  "doc": "ash drifting down over a burning town or a shelled front",
+  "preview": null,
+  "path": "library/weather/battlefield_smoke",
+  "status": "approved",
+  "project": "library"
+ },
+ {
   "id": "bicycle",
   "type": "vehicles",
   "source": "library",
@@ -282,6 +302,48 @@
   "path": "library/places/malay_town",
   "status": "approved",
   "project": "malaya-test"
+ },
+ {
+  "id": "monsoon_downpour",
+  "type": "weather",
+  "source": "library",
+  "name": "Monsoon downpour",
+  "tags": [
+   "tropical",
+   "monsoon",
+   "rain",
+   "downpour",
+   "malaya",
+   "burma",
+   "india",
+   "vietnam"
+  ],
+  "doc": "a heavy tropical downpour driven by the wind (monsoon season)",
+  "preview": null,
+  "path": "library/weather/monsoon_downpour",
+  "status": "approved",
+  "project": "library"
+ },
+ {
+  "id": "morning_fog",
+  "type": "weather",
+  "source": "library",
+  "name": "Morning fog",
+  "tags": [
+   "fog",
+   "mist",
+   "morning",
+   "river",
+   "field",
+   "europe",
+   "ww1",
+   "ww2"
+  ],
+  "doc": "thick morning fog over fields and rivers (a dawn attack, a crossing)",
+  "preview": null,
+  "path": "library/weather/morning_fog",
+  "status": "approved",
+  "project": "library"
  },
  {
   "id": "notice_board",
@@ -607,6 +669,26 @@
   "path": "library/costumes/songkok",
   "status": "approved",
   "project": "malaya-test"
+ },
+ {
+  "id": "tropical_haze",
+  "type": "weather",
+  "source": "library",
+  "name": "Tropical haze",
+  "tags": [
+   "tropical",
+   "haze",
+   "humid",
+   "malaya",
+   "southeast_asia",
+   "pacific",
+   "jungle"
+  ],
+  "doc": "the humid haze of the tropics: the distance fades into a warm white",
+  "preview": null,
+  "path": "library/weather/tropical_haze",
+  "status": "approved",
+  "project": "library"
  },
  {
   "id": "zeppelin",

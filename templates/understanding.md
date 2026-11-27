@@ -71,16 +71,22 @@ Example:
 0:23 | The Kaiser could hardly  | Kaiser                | walks to the window, back to us     | kaiser_study | dusk | contemplate
 ```
 
-## 8b. Pre-production — what the pictures need (becomes `cast`, `sets`, `drawings` in cards/_film.json)
+## 8b. Pre-production — what the pictures need (becomes `cast`, `sets` and library assets)
 
-| kind | id | description (preset + look / room or town style + modules / parts) | first used at |
+kind = `person` · `costume` · `place` · `building` · `plant` · `vehicle` · `prop` · `weather` · `plate`.
+The id says what it is (`rubber_tree`, `sikh_turban`); the description is 4–12 words a stranger could draw (region, era).
+
+| kind | id | description | first used at |
 |---|---|---|---|
 | person | mother | civilian_woman, dark purple dress, age 0.3 | 1:22 |
 | person | girl | civilian_woman, age 0, build 0.85, size 0.74 (a child) | 1:22 |
+| costume | headscarf | a dark wool headscarf tied under the chin (Germany 1917) | 1:22 |
 | place | mueller_kitchen | room kitchen: shelf:empty, window:snow_street, clock; candle light; poor | 1:22 |
-| thing | declaration_half | drawing: a paper, paragraph two faded | 0:00 |
+| prop | declaration_half | a paper, paragraph two faded | 0:00 |
+| weather | snow | light snow through the window | 1:22 |
 
-Then run `python tools/make.py projects/<slug> preview` and look at every sheet.
+Then run `python tools/lib.py match --project projects/<slug>` (→ `work/match.md`: use / adapt / create), make what is
+missing (playbook/library.md), and run `python tools/make.py projects/<slug> preview`; look at every sheet.
 
 ## 9. Fact flags
 List anything that is uncertain or debated, and any name that may be misspelled. Fix the spelling on screen; never change the timing.

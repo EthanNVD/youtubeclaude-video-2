@@ -1232,7 +1232,7 @@ def _long_shot_cover(c, actors, shots, cam):
         not_when="A battle, a map move, a chart: use those recipes (assault, wave, map_*, chart). A scene must show people/things doing what the clause says.",
         params={
             "idea": Param("str", required=True, doc="the director's note: what the viewer SEES and why it tells this clause (one sentence, 10+ words). Write it before anything else"),
-            "where": Param("str", doc="a story place from cards/_film.json \"sets\", a room style, a town style, an engine set, or an object {\"room\": \"kitchen\", \"items\": [...]}"),
+            "where": Param("str", doc="a story place from cards/_film.json \"sets\", a library place (kampong, rubber_estate…), a room style, a town style, an engine set, or an object {\"room\": \"kitchen\", \"items\": [...]} / {\"compose\": {\"far\": [...], \"ground\": \"grass\", \"rows\": [...]}}"),
             "people": Param("list", doc="persons: {who, id, at, depth, face, mood, pose, holds, seated, kneel, walk, rides (a vehicle drawing, e.g. bicycle: he sits on it and enter/exit/walk_to ride it), size, name_card, do: [{act, on, till, to, with, expr}]}"),
             "crowd": Param("dict", doc="{kind: queue|watchers|walkers|marchers|cyclists|mourners|cheering|workers|protest|listeners, n, who: [presets], at, depth, toward, mood, react_on; cyclists: abreast, vehicle}"),
             "things": Param("list", doc="props: {what, id, at, depth, on (another thing's id), held_by, n, text, color, appear (phrase), scale, steam/lit}"),

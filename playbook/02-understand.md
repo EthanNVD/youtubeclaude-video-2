@@ -72,10 +72,14 @@ For every beat, after WHO / DOES WHAT / WHERE / WHEN, write the **idea**: one se
 
 ## Pre-production lists (§8b of the template)
 
-While you understand the script, list everything the pictures need:
-- **people**: everyone who appears, named or not: the mother, the clerk, the admiral, the children;
-- **story places** with their tags;
-- **things** the engine has no prop for: a field kitchen, a declaration, a school desk;
-- **vehicles**.
+While you understand the script, list everything the pictures need, one row each (kind · id · description · first used at):
+- **people** (`person`): every kind of person who appears, named or not: the mother, the clerk, the admiral, a Malay villager;
+- **costumes** (`costume`): what they wear that a preset does not have: a songkok, a turban, a sarong, a slouch hat;
+- **story places** (`place`) with their tags; **buildings** (`building`) and **plants** (`plant`) of the region;
+- **things** (`prop`) and **vehicles** (`vehicle`): a field kitchen, a parang, a bicycle people ride;
+- **weather** (`weather`) and painted far backgrounds (`plate`) if the image path is used.
 
-They become `cast`, `sets` and `drawings` in `cards/_film.json`. Check them with `python tools/make.py projects/<slug> preview` before writing cards.
+Then match the list against the living library: `python tools/lib.py match --project projects/<slug>` writes
+`work/match.md` (use / adapt / create for every row). Make what is missing ([library.md](library.md)), then build the
+`cast`, `sets` (and one-off `drawings`) of `cards/_film.json` and check them with
+`python tools/make.py projects/<slug> preview` before writing cards.

@@ -2,6 +2,24 @@
 
 Newest first. One entry per change that matters to the look, the pipeline or the docs.
 
+## 2026-11-27 — Video-2: the living library
+Why: every person, costume, place, plant, vehicle and weather was fixed in the engine's library; a new region or story
+(Malaya 1942) had nothing to show. Now each film finds what exists, adapts what is close, creates what is missing (with
+an image model, or by drawing shapes in code) and promotes it, so the library grows with every film.
+
+What changed:
+- `library/<type>/<id>/asset.json` for props, vehicles, buildings, plants, costumes, characters, places, plates, weather;
+  `tools/lib.py`: index, search, match, new, import (image → vector), check, preview, place, promote, style-sheet;
+  `library/README.md`, `library/prompts/`, `library/STYLE_REFERENCE.jpg`.
+- People: costume pieces drawn on the rig in five slots (`wear`, `recolor`, `armColor`); riding (`"rides": "bicycle"`,
+  seat and crank anchors, pedals and rolling wheels); `cyclists` crowds; `dig` pose; bicycle sounds.
+- World: composed places (`compose`: sky, plates, far layers, ground, road, rows of library assets in depth); library
+  places by id; parametric weather (rain → downpour, snow, blizzard, haze, fog, dust, sandstorm, ash, leaves, petals,
+  lightning; amount, wind) and weather presets.
+- Plans store each drawing once (`plan.drawings`, `"@d<n>"`).
+- Docs for every model: `playbook/library.md` (the loop) and one page per type with a worked example (`playbook/library/`).
+- Proof: `projects/malaya-test` (66 s): 20 scene cards, 24 new assets drawn in code and promoted.
+
 ## 2026-11-22 — Rain and snow cover the whole frame
 Why: the user saw rain (and snow) only in the bottom-right quarter of the picture, in this film and in earlier ones.
 

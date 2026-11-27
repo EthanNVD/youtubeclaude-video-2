@@ -9,7 +9,8 @@ people's costume pieces, props, vehicles, buildings, plants, places, painted far
 3. **Preview** and **check** it.
 4. **Promote** it here, so the next film starts richer.
 
-The whole loop for a film is in [playbook/library.md](../playbook/library.md). This page is the reference: what is in an asset and how to make one.
+The whole loop for a film is in [playbook/library.md](../playbook/library.md). Each type has a page with a complete worked
+example in [playbook/library/](../playbook/library/). This page is the reference: what is in an asset and how to make one.
 
 ---
 
@@ -41,11 +42,13 @@ A film makes its new assets in `projects/<slug>/assets/<id>/` (same layout, `"st
 | `vehicles` | things that move (a bicycle, a cart, an airship) | `"things": [{"what": "<id>", "to": "right", "when": "words"}]` |
 | `buildings` | whole buildings (a kampong house, a shophouse) | `"things"` at the back, or in a composed place |
 | `plants` | trees, palms, bushes, crops (sway) | `"things"`, or rows in a composed place |
-| `costumes` | pieces people wear (hats, turbans, sarongs) | in the cast entry (playbook/library.md §Costumes) |
-| `characters` | ready cast looks | copy into `cards/_film.json` "cast" |
+| `costumes` | pieces people wear (hats, turbans, sarongs) | in the cast entry: `"wear": ["<id>", {"piece": "<id>", "recolor": {…}}]` |
+| `characters` | ready cast looks (preset + colours + pieces) | in the cast entry: `"look": "<id>"` |
 | `places` | story places (a room / town spec, or a composed landscape) | `"where": "<id>"` |
-| `plates` | painted FAR background layers (sky, far, mid) | in a composed place |
-| `weather` | weather presets | `"weather": "<id>"` |
+| `plates` | painted FAR background layers (sky, far, mid) | in a composed place: `"plates": ["<id>"]` |
+| `weather` | weather presets (kind, amount, wind) | `"weather": "<id>"` (or a kind: `"rain"`, `{"kind": "fog", "amount": 0.7}`) |
+
+Ids are unique across **all** types (a place cannot share its id with a plant).
 
 The engine's own code-drawn things are in the index too, as `builtin`:
 - props, vehicles, cast presets, sets;
@@ -73,6 +76,16 @@ The engine's own code-drawn things are in the index too, as `builtin`:
  "project": "malaya-test", "status": "approved", "created": "2026-11-27"
 }
 ```
+
+### What the other types keep instead of a drawing
+| type | key fields |
+|---|---|
+| vehicles that are ridden | `"anchors": {"seat": [x, y], "crank": [x, y], "bars": [x, y]}`: where the hips sit, the centre the feet go round, the hands |
+| `costumes` | `"slot": "head" \| "headback" \| "body" \| "hips" \| "back"` + `"parts"` (drawn in that slot's frame), or `"pieces": [{"slot", "parts", "above"}, …]` |
+| `characters` | `"spec": {"preset": "civilian_man", …look fields…, "wear": [costume ids]}` |
+| `places` | `"spec"`: the story place exactly as in `cards/_film.json` "sets" (`{"compose": {…}, "horizon": 600}`, `{"room": "office", …}`) |
+| `plates` | `"layers": {"sky": "sky.png", "far": "far.png", "mid": "mid.png"}` (pictures in the asset folder) |
+| `weather` | `"spec": {"kind": "downpour", "amount": 1, "wind": 0.5}` |
 
 ## 4. The drawing: parts
 
@@ -104,12 +117,13 @@ Motion on any part:
 - `flicker` (flames);
 - `blink` (lamps);
 - `drift`;
-- `phase` (seconds of offset).
+- `phase` (seconds of offset);
+- `roll` (on a group: the wheel's radius — it turns with the distance the thing travels, and stops when it stops).
 
 **Moving parts:** put them in a group, which moves as one around its own origin.
 
 ```json
-{"group": [ …wheel parts drawn around (0, 0)… ], "id": "wheel_front", "at": [-70, -38], "spin": 240}
+{"group": [ …wheel parts drawn around (0, 0)… ], "id": "wheel_front", "at": [76, -50], "roll": 48}
 {"group": [ …crown parts… ], "id": "crown", "at": [0, -300], "sway": 3, "pivot": [0, 40], "period": 4}
 ```
 
@@ -147,7 +161,10 @@ Draw the parts in `asset.json` by hand (§4):
 1. `python tools/lib.py preview --project projects/<slug> <id> --grid`: the thing next to a man, on a coordinate grid. Read positions off the grid to fix anchors and moving parts.
 2. `python tools/lib.py check --project projects/<slug> <id>`: fix every ERROR; read every warning.
 3. Use it in the cards. It already works in this film.
-4. At the end of the film: `python tools/lib.py promote --project projects/<slug>`. It refuses ids that exist (use `--replace` or a variant id like `rubber_tree_2`), shrinks source pictures, makes `preview.jpg` and updates INDEX.md.
+4. Story places of the film: `python tools/lib.py place <set id> --project projects/<slug> --tags …` keeps them as `places` assets.
+5. At the end of the film: `python tools/lib.py promote --project projects/<slug>`. It **moves** the assets into `library/`
+   (`--keep` leaves a copy), refuses ids that exist (use `--replace`, or a variant id like `rubber_tree_young`), shrinks
+   source pictures, makes `preview.jpg` and updates INDEX.md.
 
 ## 6. Rules that keep the library good
 - **Search before you make.** `lib search` with 2–4 words. Read the top 5. A close one is adapted, not duplicated.

@@ -1,0 +1,27 @@
+{
+ "id": "monsoon_downpour",
+ "type": "weather",
+ "name": "Monsoon downpour",
+ "tags": [
+  "tropical",
+  "monsoon",
+  "rain",
+  "downpour",
+  "malaya",
+  "burma",
+  "india",
+  "vietnam"
+ ],
+ "doc": "a heavy tropical downpour driven by the wind (monsoon season)",
+ "spec": {
+  "kind": "downpour",
+  "amount": 1,
+  "wind": 0.5
+ },
+ "source": {
+  "kind": "code"
+ },
+ "project": "library",
+ "status": "approved",
+ "created": "2026-11-27"
+}

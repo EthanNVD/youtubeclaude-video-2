@@ -12,11 +12,13 @@ the "Two Sides of War" style, plus its YouTube package. You are the **director**
   - Every script gets its own places, people and pictures. Nothing is a fixed template.
 - **Recipes** (tested compositions: battles, maps, charts, documents) are the fast way to show those moments.
 - A compiler turns the cards into the film.
-- What the engine lacks, you create first:
-  - people (cast entries);
-  - places (story places built from the room/street kit);
-  - objects, equipment and simple vehicles (declarative drawings);
-  - then you check them on preview sheets.
+- **The living library** (`library/`, [playbook/library.md](playbook/library.md)) holds everything films have needed so far:
+  costume pieces, props, vehicles, buildings, plants, places, painted far backgrounds, weather presets.
+  - For every film you list what the pictures need, **use** what exists, **adapt** what is close, **create** what is missing
+    (with an image model, or by drawing shapes in code), check it on preview sheets,
+  - and at the end you **promote** the new things into the library, so the next film starts richer.
+  - Any region and any story works this way: Malaya 1942 needed songkoks, sarongs, rubber estates and bicycles; they are
+    now in the library (`projects/malaya-test`).
 
 ## The 9 steps (do them in order; each has its own page in `playbook/`)
 
@@ -25,14 +27,15 @@ the "Two Sides of War" style, plus its YouTube package. You are the **director**
 | 0 | Start the session | read this file, `ROADMAP.md`, the project's `STATUS.md` | [00-START-HERE](playbook/00-START-HERE.md) |
 | 1 | Prepare the inputs | `python tools/make.py projects/<slug> prepare` | [01-setup](playbook/01-setup.md) |
 | 2 | Understand the script | read **all** of `work/reading.md`, fill in `understanding.md` (with one `idea` per clause) | [02-understand](playbook/02-understand.md) + [visual-ideas](playbook/visual-ideas.md) |
-| 2b | Pre-production | `cards/_film.json`: `cast` (everyone, children with `size`), `sets` (story places), `drawings` (things the engine lacks), `look`; then `python tools/make.py projects/<slug> preview` and look at every sheet | [scene-writing §8](playbook/scene-writing.md#8-pre-production-build-and-check-the-cast-places-and-drawings-first) |
+| 2a | Inventory and match | `understanding.md` §8b (everything the pictures need), then `python tools/lib.py match --project projects/<slug>` → `work/match.md`: use / adapt / create | [library](playbook/library.md) |
+| 2b | Pre-production | create what is missing (`lib new`, `lib import` or shapes in code, `lib preview`, `lib check`); `cards/_film.json`: `cast` (presets + `wear` costume pieces), `sets` (story places: rooms, towns, composed landscapes), `look`; then `python tools/make.py projects/<slug> preview` and look at every sheet | [library](playbook/library.md) + [scene-writing §8](playbook/scene-writing.md#8-pre-production-build-and-check-the-cast-places-and-drawings-first) |
 | 3 | Write the cards | `cards/ch01.json`, `ch02.json`, …: `scene` cards for the story, recipes for battles/maps/charts | [scene-writing](playbook/scene-writing.md) + [03-cards](playbook/03-cards.md) + [narration-to-picture](playbook/narration-to-picture.md) + [recipes/STAGECRAFT](recipes/STAGECRAFT.md) + [recipes/CATALOG](recipes/CATALOG.md) |
 | 4 | Compile and fix | `python tools/make.py projects/<slug> cards` (repeat until `"ok": true`, warnings fixed) | [04-compile](playbook/04-compile.md) |
 | 5 | Look at it | `python tools/make.py projects/<slug> review --at all`, open every `review/sheet_*.jpg`; fix **only the wrong cards**, re-check them with `--scenes` | [05-review](playbook/05-review.md) |
 | 6 | Sound | `python tools/make.py projects/<slug> audio` | [06-sound-render](playbook/06-sound-render.md) |
 | 7 | Render | `python tools/make.py projects/<slug> video`, then `mux`; later fixes: `patch` re-renders only the changed scenes | [06-sound-render](playbook/06-sound-render.md) |
 | 8 | YouTube package | titles, thumbnail prompts, description, tags | [07-youtube](playbook/07-youtube.md) |
-| 9 | Hand over | report to the user, update `STATUS.md` | [00-START-HERE](playbook/00-START-HERE.md#9-hand-over) |
+| 9 | Hand over | `lib place` (story places worth keeping) + `lib promote` (the film's new assets → `library/`); report to the user, update `STATUS.md` | [library §7](playbook/library.md) + [00-START-HERE](playbook/00-START-HERE.md#9-hand-over) |
 
 ## Rules that are never broken
 
@@ -56,9 +59,11 @@ the "Two Sides of War" style, plus its YouTube package. You are the **director**
    - Write the `idea` first.
    - No two cards in a short span with the same place + camera + acts, unless it is a deliberate callback (`"revisit": true`). The compiler compares them.
    - Take devices from `playbook/visual-ideas.md`, each at most twice per film.
-5c. **Build what is missing; never fake it with a label.** A person, a place, a piece of equipment or a simple vehicle:
-   - create it in `cards/_film.json` (`cast`, `sets`, `drawings`);
-   - check it with `preview`.
+5c. **Build what is missing; never fake it with a label.** A person, a costume, a place, a building, a plant, a vehicle, a thing:
+   - search the library first (`lib match`, `lib search`);
+   - create what is missing as an asset of the film (`playbook/library.md` §5), or in `cards/_film.json` (`cast`, `sets`);
+   - check it with `lib preview` and `make.py … preview`;
+   - promote it at the end so it is never made twice.
 5d. **Fix only what is wrong.** After `review`:
    - change only the wrong cards;
    - re-check them with `review --scenes …`;
@@ -93,7 +98,10 @@ the "Two Sides of War" style, plus its YouTube package. You are the **director**
 | `playbook/scene-writing.md` | **the `scene` card**: method, every field, templates, examples, pre-production, fixing single scenes |
 | `playbook/visual-ideas.md` | a bank of picture devices for numbers, lists, decisions, hunger, loss, news, journeys, memory |
 | `recipes/STAGECRAFT.md` | everything a `scene` card can name (places, modules, acts, moods, crowds, things, drawings, cameras), with pictures |
-| `assets/library/drawings/` | shared declarative drawings (field kitchen, notice board, zeppelin, bicycle, …): add the good ones you draw |
+| `library/` | **the living library**: one folder per asset (`library/<type>/<id>/asset.json` + `preview.jpg`); `library/INDEX.md` lists everything; `library/README.md` is the reference |
+| `playbook/library.md`, `playbook/library/` | the library loop, and one page per asset type with a worked example |
+| `tools/lib.py` | the library tool: `match`, `search`, `new`, `import`, `check`, `preview`, `place`, `promote`, `style-sheet` |
+| `projects/malaya-test/` | the worked example of the library loop (66 s, Malaya 1941–42: costumes, plantations, bicycles) |
 | `projects/creative-blockade/`, `projects/creative-austria/` | two complete scene-card films (WW1 blockade; how Austria taught Hitler) |
 | `recipes/CATALOG.md` | every recipe: when to use it, its fields, preview images |
 | `recipes/PEOPLE.md` | sides, uniforms, character presets |
