@@ -51,10 +51,10 @@ Coordinates are those of the engine's Drawing parts: (0,0) = where the thing sta
 - [x] Move `assets/library/drawings/*` into `library/props|vehicles/…` with asset.json
 
 ### Phase 2 — image → vector
-- [ ] `lib import <image>`: remove the plain background, quantise colours (≤ 12), trace regions (OpenCV contours with holes), simplify, darkest colour → INK, optional palette snap, find the ground point and size, write parts + art.svg
-- [ ] Multi-part import (body + wheel images → groups with pivots)
-- [ ] Style reference sheet generator (`lib style-sheet`) + prompt templates per type (`library/prompts/*.md`)
-- [ ] Test: render an engine drawing to PNG, re-import it, compare
+- [x] `lib import <image>`: remove the plain background, quantise colours (≤ 12), trace regions (OpenCV contours with holes), simplify, darkest colour → INK, optional palette snap, find the ground point and size, write parts + art.svg
+- [x] Multi-part import (body + wheel images → groups with pivots)
+- [x] Style reference sheet generator (`lib style-sheet`) + prompt templates per type (`library/prompts/*.md`)
+- [x] Test: render an engine drawing to PNG, re-import it, compare
 
 ### Phase 3 — people
 - [ ] Costume layers in Character.tsx: pieces drawn in the head frame (hats, turbans, headscarves) and the body frame (tunics, sarongs, robes, vests, belts), above or below the arms; colours from the cast entry
@@ -81,3 +81,4 @@ Coordinates are those of the engine's Drawing parts: (0,0) = where the thing sta
 
 ## Progress log
 - 2026-11-27: brief approved; Phase 0 done. Phase 1: library loader, Drawing groups, lib.py (index/search/new/check/preview/promote/match) working; shovel made by code and promoted as the first test. Open: library/README.md text, builtin previews, moving library vehicles in scene cards.
+- 2026-11-27: Phase 2 done: lib import (background cut, k-means colours, OpenCV contours with holes, corner-keeping smoothing, ground point, art.svg), --as-part moving groups, plates kept as pictures, style-sheet, prompts per type, library/README.md. Tested on a drawn kampong house (matches the source) and a cart + spinning wheel.

@@ -24,7 +24,7 @@ export type Part = {
   text?: string; at?: number[]; size?: number; font?: string; anchor?: 'start' | 'middle' | 'end';
   fill?: string; stroke?: string | false; width?: number; opacity?: number; r?: number;
   spin?: number; center?: number[]; flicker?: number; sway?: number; pivot?: number[]; blink?: number; drift?: number;
-  bob?: number; period?: number; phase?: number;
+  bob?: number; period?: number; phase?: number; rule?: 'evenodd' | 'nonzero';
   group?: Part[]; id?: string; scale?: number;
 };
 
@@ -61,7 +61,7 @@ const PartView: React.FC<{ p: Part; t: number }> = ({ p, t: t0 }) => {
   else if (p.ellipse) node = <ellipse cx={p.ellipse[0]} cy={p.ellipse[1]} rx={p.ellipse[2]} ry={p.ellipse[3]} {...style} />;
   else if (p.poly) node = <polygon points={p.poly.map((q) => q.join(',')).join(' ')} {...style} />;
   else if (p.line) node = <polyline points={p.line.map((q) => q.join(',')).join(' ')} fill="none" stroke={p.stroke === false ? 'none' : (p.stroke ?? p.fill ?? INK)} strokeWidth={p.width ?? 6} opacity={p.opacity} strokeLinecap="round" strokeLinejoin="round" />;
-  else if (p.path) node = <path d={p.path} {...style} />;
+  else if (p.path) node = <path d={p.path} fillRule={p.rule} {...style} />;
   else if (p.text !== undefined) {
     const [x, y] = p.at ?? [0, 0];
     node = <text x={x} y={y} textAnchor={p.anchor ?? 'middle'} fontFamily={FONTS[p.font ?? 'cond'] ?? FONT.cond} fontWeight={700} fontSize={p.size ?? 24} fill={p.fill ?? INK} opacity={p.opacity}>{p.text}</text>;
