@@ -65,7 +65,11 @@ def main():
         validate()
         d = proj / "review"
         if d.exists() and not opt("scenes"):
-            shutil.rmtree(d)
+            # a full review replaces the scene stills and sheets; the pre-production sheets in review/preview and
+            # review/assets (make.py preview, lib preview) stay
+            for f in d.iterdir():
+                if f.is_file():
+                    f.unlink()
         for old in d.glob("sheet_*.jpg") if d.exists() else []:
             old.unlink()  # a partial review makes new sheets of the re-rendered scenes only: never leave stale sheets behind
         args = ["stills", merged, d, "--scale", "0.5", "--at", opt("at") or "mid"]
